@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasse</title>
+    <style>
+        *{
+            cursor: url("noshooting.png"), auto;
+            cursor: url("mire.png"), auto;
+            margin: 0;
+        }
+
+        body.click *,
+        .click *,
+        .click  {
+            cursor: url("shooting.png")2 1, auto;
+            cursor: url("shooting.png"), auto;
+        }
+        body{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<p>1. Avant la chasse : poser la règle</p>
+<p>Michael :</p>
+<p>« One shot. »</p>
+<p>Stan (light, almost mocking) :</p>
+<p>« One shot? »</p>
+<p>Michael (no smile) :</p>
+<p>« One shot. »</p>
+<p>2. Face au cerf : correction du geste</p>
+<p>Nick (too fast, excited) :</p>
+<p>« I got him. I got him. »</p>
+<p>Michael (holding him back) :</p>
+<p>« You can’t take him like that. »</p>
+<p>Nick :</p>
+<p>« Why not? »</p>
+<p>Michael :</p>
+<p>« You’ve got to do it clean. »</p>
+<p>3. Explication morale : humaniser l’animal</p>
+<p>Nick :</p>
+<p>« He’s right there. »</p>
+<p>Michael :</p>
+<p>« If he hears the shot, he won’t be hurt. »</p>
+<p>(Silence. Michael adjusts his breathing.)</p>
+<p>4. Le tir : suspension du langage</p>
+<p>(Michael aims for a long time. Gunshot.)</p>
+<p>(The deer falls.)</p>
+<p>(No immediate dialogue.)</p>
+<p>5. Après le tir : constat, pas triomphe</p>
+<p>Nick (low voice) :</p>
+<p>« It’s a good shot. »</p>
+<p>Michael (fixed gaze) :</p>
+<p>(does not answer / barely nods, depending on versions)</p>
+<p>6. Rappel implicite : la règle gravée</p>
+<p>Michael (later, on the way down) :</p>
+<p>« One shot. »</p>
+<p>(No one answers.)</p>
+
+<audio id="shot" src="rifle_mixdown.mp3" preload="auto"></audio>
+
+</body>
+<!-- <script>
+document.addEventListener("mousedown", () => {
+    document.body.classList.add("click");
+});
+
+document.addEventListener("mouseup", () => {
+    document.body.classList.remove("click");
+});
+</script> -->
+<script>
+const shot = document.getElementById("shot");
+
+document.addEventListener("mousedown", () => {
+    document.body.classList.add("click");
+    shot.currentTime = 0;
+    shot.play();
+});
+
+document.addEventListener("mouseup", () => {
+    document.body.classList.remove("click");
+});
+</script>
+</html>
