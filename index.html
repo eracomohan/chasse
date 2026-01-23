@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+
+
+
+
+
+
+ @@@
+@@@@@@@@
+@@@@@@@@
+@@@@@@@@
+@@@@@@@@
+@@@@@@@@
+@@@@@@@@
+@@@@@@@@
+@@@@@@@@
+ @@@@
+-->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasse</title>
+    <style>
+        *{
+            cursor: url("noshooting.png"), auto;
+            cursor: url("mire.png"), auto;
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family: Helvetica, sans-serif;
+        }
+        *::selection{
+            color: rgba(0, 0, 0, 0);
+            rotate: -90deg;
+        color:rgb(255, 0, 0);
+        text-shadow:
+        1px 0.1px 1px #7b0000,
+        1px 0.2px 1px #8a0000,
+        1px 0.3px 1px #bc0000,
+        1px 0.4px 1px #d50000,
+        1px 0.5px 1px #ff0000;
+        } 
+        .click body,
+        .click *,
+        body.click *,
+        .click *,
+        .click {
+            cursor: url("shooting.png")2 1, auto;
+            cursor: url("shooting.png"), auto;
+            cursor: url("coupdefeu.png"), auto;
+        }
+        body{
+            height: 100vh;
+            padding: 1em;
+        }
+        h1{
+            text-align: center;
+        }
+        .replique{
+            margin-left: 1em;
+        }
+        .didascalie{
+            font-style: italic;
+        }
+        h2{
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <em>The Deer Hunter</em>
+    </h1>
+    <h2>1. Avant la chasse : poser la règle</h2>
+    <p>Michael :</p>
+    <p class="replique">« One shot. »</p>
+    <p>Stan (light, almost mocking) :</p>
+    <p class="replique">« One shot? »</p>
+    <p>Michael (no smile) :</p>
+    <p class="replique">« One shot. »</p>
+    <h2>2. Face au cerf : correction du geste</h2>
+    <p>Nick (too fast, excited) :</p>
+    <p class="replique">« I got him. I got him. »</p>
+    <p>Michael (holding him back) :</p>
+    <p class="replique">« You can’t take him like that. »</p>
+    <p>Nick :</p>
+    <p class="replique">« Why not? »</p>
+    <p>Michael :</p>
+    <p class="replique">« You’ve got to do it clean. »</p>
+    <h2>3. Explication morale : humaniser l’animal</h2>
+    <p>Nick :</p>
+    <p class="replique">« He’s right there. »</p>
+    <p>Michael :</p>
+    <p class="replique">« If he hears the shot, he won’t be hurt. »</p>
+    <p class="didascalie">(Silence. Michael adjusts his breathing.)</p>
+    <h2>4. Le tir : suspension du langage</h2>
+    <p>(Michael aims for a long time. Gunshot.)</p>
+    <p class="didascalie">(The deer falls.)</p>
+    <p class="didascalie">(No immediate dialogue.)</p>
+    <h2>5. Après le tir : constat, pas triomphe</h2>
+    <p>Nick (low voice) :</p>
+    <p class="replique">« It’s a good shot. »</p>
+    <p>Michael (fixed gaze) :</p>
+    <p class="didascalie">(does not answer / barely nods, depending on versions)</p>
+    <h2>6. Rappel implicite : la règle gravée</h2>
+    <p>Michael (later, on the way down) :</p>
+    <p class="replique">« One shot. »</p>
+    <p class="didascalie">(No one answers.)</p>
+    <audio id="shot" src="rifle_mixdown.mp3" preload="auto"></audio>
+</body>
+<!-- <script>
+document.addEventListener("mousedown", () => {
+    document.body.classList.add("click");
+});
+
+document.addEventListener("mouseup", () => {
+    document.body.classList.remove("click");
+});
+</script> -->
+<script>
+const shot = document.getElementById("shot");
+
+document.addEventListener("mousedown", () => {
+    document.body.classList.add("click");
+    shot.currentTime = 0;
+    shot.play();
+});
+
+document.addEventListener("mouseup", () => {
+    document.body.classList.remove("click");
+});
+</script>
+</html>
