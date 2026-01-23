@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <!--
-
-
-
-
-
-
- @@@
-@@@@@@@@
-@@@@@@@@
-@@@@@@@@
-@@@@@@@@
-@@@@@@@@
-@@@@@@@@
-@@@@@@@@
-@@@@@@@@
- @@@@
+ELMMOH
 -->
 <html lang="fr">
 <head>
@@ -24,10 +9,8 @@
     <title>Chasse</title>
     <style>
         *{
-            cursor: url("noshooting.png"), auto;
-            cursor: url("mire.png"), auto;
+            cursor: url("mire.png") 16 16, auto;
             margin: 0;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-family: Helvetica, sans-serif;
         }
         *::selection{
@@ -46,9 +29,7 @@
         body.click *,
         .click *,
         .click {
-            cursor: url("shooting.png")2 1, auto;
-            cursor: url("shooting.png"), auto;
-            cursor: url("coupdefeu.png"), auto;
+            cursor: url("coupdefeu.png") 16 16, auto;
         }
         body{
             height: 100vh;
@@ -109,15 +90,6 @@
     <p class="didascalie">(No one answers.)</p>
     <audio id="shot" src="rifle_mixdown.mp3" preload="auto"></audio>
 </body>
-<!-- <script>
-document.addEventListener("mousedown", () => {
-    document.body.classList.add("click");
-});
-
-document.addEventListener("mouseup", () => {
-    document.body.classList.remove("click");
-});
-</script> -->
 <script>
 const shot = document.getElementById("shot");
 
