@@ -9,7 +9,7 @@ ELMMOH
     <title>Chasse</title>
     <style>
         *{
-            cursor: url("mire.png") 16 16, auto;
+            cursor: url("mire-blanc.png") 16 16, auto;
             margin: 0;
             font-family: Helvetica, sans-serif;
         }
@@ -34,19 +34,15 @@ ELMMOH
         body{
             height: 100vh;
             padding: 1em;
+            color: white;
+            background-color: black;
         }
-        h1{
-            text-align: center;
-        }
-        .replique{
-            margin-left: 1em;
-        }
-        .didascalie{
-            font-style: italic;
-        }
-        h2{
-            margin-top: 1em;
-        }
+        h1{text-align: center;margin-top: 1.5em;}
+        .replique{margin-left: 1em;}
+        .didascalie{font-style: italic;}
+        h2, h3{margin-top: 1em;}
+        h4{margin-top: 0.5em;}
+        p{margin-bottom: 0.5em;}
     </style>
 </head>
 <body>
@@ -88,8 +84,34 @@ ELMMOH
     <p>Michael (later, on the way down) :</p>
     <p class="replique">« One shot. »</p>
     <p class="didascalie">(No one answers.)</p>
-    <h2>Annexes</h2>
-    <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685">Lien pour voir/télécharger le film.</a>
+    <h1>Annexes</h1>
+    <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685" target="_blank">Lien pour voir/télécharger un film un peu longuet</a>
+    <h2>ANALYSE</h2>
+    <p>Dans le film <em>The Deer Hunter</em> de Michael Cimino (1978), le passage directement centré sur la chasse au cerf se situe au début du récit, avant le départ des personnages pour la guerre du Vietnam.</p>
+    <p>Ce passage joue un rôle fondamental dans la construction symbolique et morale du film.</p>
+    <h3>Le passage clé : la chasse au cerf dans les montagnes de Pennsylvanie</h3>
+    <p>La séquence de chasse intervient après la longue scène du mariage, dans la première partie du film. Michael, Nick et leurs amis quittent la ville industrielle pour se rendre dans les montagnes de Pennsylvanie afin de chasser le cerf.</p>
+    <p>Ce déplacement marque un changement de rythme, d’espace et de rapport au monde.</p>
+    <h3>Localisation dans le film</h3>
+    <p>La scène se situe dans la première heure du film.</p>
+    <p>Elle intervient après l’exposition sociale et communautaire des personnages et avant toute représentation de la guerre.</p>
+    <h3>Déroulement de la scène</h3>
+    <p>Michael impose une règle stricte : un seul tir.</p>
+    <p>La chasse est filmée comme un rituel lent et silencieux, presque spirituel.</p>
+    <p>Michael observe longuement le cerf, ajuste son geste, hésite, puis tire une seule balle.</p>
+    <p>Après le tir, il s’approche de l’animal avec gravité, sans exaltation ni triomphe.</p>
+    <h3>Enjeux thématiques : le cerf et la chasse</h3>
+    <h4>Le cerf</h4>
+    <p>Il incarne la nature, la noblesse et une forme d’innocence. Il s’oppose symboliquement à la violence industrielle, mécanique et absurde de la guerre à venir.</p>
+    <h4>La chasse</h4>
+    <p>Elle est présentée comme un acte codifié, maîtrisé et respectueux. Elle repose sur la retenue, la précision et la responsabilité du geste. Elle contraste radicalement avec la violence chaotique et arbitraire du Vietnam, notamment la roulette russe.</p>
+    <h4>La règle du « one shot »</h4>
+    <p>Elle condense une éthique du geste faite de contrôle, de responsabilité et de conscience de la mort donnée. Elle devient plus tard un miroir inversé de la guerre, où la mort est répétée, aléatoire et dénuée de sens.</p>
+    <h3>Lecture symbolique globale</h3>
+    <p>Cette séquence établit clairement un avant, un monde structuré par des rituels, une maîtrise du corps et une relation encore signifiante à la mort.</p>
+    <p>Elle annonce un après, marqué par la perte de repères, la déshumanisation et l’effondrement du sens moral sous l’effet de la guerre.</p>
+    <p>Le cerf fonctionne ainsi comme une figure sacrificielle, préfigurant la transformation puis la destruction des personnages eux-mêmes.</p>
+    <p>Ce passage doit être compris comme une scène fondatrice. Il ne parle pas seulement de chasse, mais pose les bases morales et symboliques que le film s’attachera ensuite à déconstruire.</p>
     <audio id="shot" src="rifle_mixdown.mp3" preload="auto"></audio>
 </body>
 <script>
@@ -104,5 +126,44 @@ document.addEventListener("mousedown", () => {
 document.addEventListener("mouseup", () => {
     document.body.classList.remove("click");
 });
+
+
+    function handleOrientation(event) {
+      const beta = event.beta;
+      const gamma = event.gamma;
+
+      const hue = ((beta + 180) / 160) * 360;
+      const lightness = ((gamma + 90) / 180) * 1 + 15;
+
+      document.body.style.backgroundColor =
+        `hsl(${hue.toFixed(0)}, 80%, ${lightness.toFixed(0)}%)`;
+    }
+
+    function startOrientation() {
+      window.addEventListener("deviceorientation", handleOrientation);
+    }
+
+    function requestPermissionOnce() {
+      document.removeEventListener("click", requestPermissionOnce);
+
+      if (
+        typeof DeviceOrientationEvent !== "undefined" &&
+        typeof DeviceOrientationEvent.requestPermission === "function"
+      ) {
+        DeviceOrientationEvent.requestPermission()
+          .then(permission => {
+            if (permission === "granted") {
+              startOrientation();
+            } else {
+              alert("Permission refusée 😢");
+            }
+          })
+          .catch(console.error);
+      } else {
+        startOrientation();
+      }
+    }
+
+    document.addEventListener("click", requestPermissionOnce);
 </script>
 </html>
