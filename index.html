@@ -132,7 +132,7 @@ document.addEventListener("mouseup", () => {
       const beta = event.beta;
       const gamma = event.gamma;
 
-      const hue = ((beta + 180) / 160) * 360;
+      const hue = ((beta + 180) / 10) * 120;
       const lightness = ((gamma + 90) / 180) * 1 + 15;
 
       document.body.style.backgroundColor =
