@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <!--
- +-------------------------------------------------------------------------------------------------------+
- |                      __________________________________________________________.                      |
- |            __  __*="" ╰-------┳--------------------╮---------------------------|       == |ELMMOH:>►  |
- |  ___..=="""  Y'       __)______╮___________________)▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔                       |
- | !"         _     _==""(C_)                                                                            |
- | !    _.=""' "=__/                                                                                     |
- | ╰==""                                                                                                 |
- +-------------------------------------------------------------------------------------------------------+ 
+                       __________________________________________________________.                      
+             __  __*="" ╰-------┳--------------------╮---------------------------|     == |HOLEMM:>►  
+   ___..=="""  Y'       __)______╮___________________)▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔                       
+  !"         _     _==""(C_)                                                                            
+  !    _.=""' "=__/                                                                                     
+  ╰==""                                                                                                 
 -->
 <html lang="fr">
 <head>
@@ -44,7 +42,7 @@
             color: white;
             background-color: black;
         }
-        h1{text-align: center;margin-top: 1.5em;}
+        h1{margin-top: 1.5em;}
         .replique{margin-left: 1em;}
         .didascalie{font-style: italic;}
         h2, h3{margin-top: 1em;}
@@ -53,7 +51,7 @@
     </style>
 </head>
 <body>
-    <h1>
+    <h1 style="text-align: center;">
         <em>The Deer Hunter</em>
     </h1>
     <h2>1. Avant la chasse : poser la règle</h2>
@@ -92,7 +90,7 @@
     <p class="replique">« One shot. »</p>
     <p class="didascalie">(No one answers.)</p>
     <h1>Annexes</h1>
-    <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685" target="_blank">Lien pour voir/télécharger un film un peu longuet</a>
+    <p>Vous pouvez voir/télécharger un film un peu longuet en cliquant sur <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685" target="_blank">ce lien</a>.</p>
     <h2>ANALYSE</h2>
     <p>Dans le film <em>The Deer Hunter</em> de Michael Cimino (1978), le passage directement centré sur la chasse au cerf se situe au début du récit, avant le départ des personnages pour la guerre du Vietnam.</p>
     <p>Ce passage joue un rôle fondamental dans la construction symbolique et morale du film.</p>
@@ -149,29 +147,16 @@ document.addEventListener("mouseup", () => {
     function startOrientation() {
       window.addEventListener("deviceorientation", handleOrientation);
     }
-/*
-    function requestPermissionOnce() {
-      document.removeEventListener("click", requestPermissionOnce);
-*/
-      if (
-        typeof DeviceOrientationEvent !== "undefined" &&
-        typeof DeviceOrientationEvent.requestPermission === "function"
-      ) {
-        DeviceOrientationEvent.requestPermission()
-          .then(permission => {
-            if (permission === "granted") {
-              startOrientation();
-            } else {
-              alert("Permission refusée 😢");
-            }
-          })
-          .catch(console.error);
-      } else {
-        startOrientation();
-      }/*
-    }
 
-    document.addEventListener("click", requestPermissionOnce);
-    */
+    if (
+      typeof DeviceOrientationEvent.requestPermission === "function"
+    ) {
+      DeviceOrientationEvent.requestPermission()
+        .then(permission => {
+        })
+        .catch(console.error);
+    } else {
+      startOrientation();
+    }
 </script>
 </html>
