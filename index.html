@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <!--
-                       __________________________________________________________.                      
-             __  __*="" ╰-------┳--------------------╮---------------------------|     == |HOLEMM:>►  
-   ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                       
-  !"         _     _==""(C_)                                                                            
-  !    _.=""' "=__/                                                                                     
-  ╰==""                                                                                                 
+                         __________________________________________________________.                    
+               __  __*="" ╰-------┳--------------------╮---------------------------|     == |HOLEMM:>►  
+     ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                    
+    !"         _     _==""(C_)                                                                          
+    !    _.=""' "=__/                                                                                   
+    ╰==""                                                                                               
 -->
 <html lang="fr">
 <head>
@@ -89,6 +89,7 @@
     <p class="didascalie">(No one answers.)</p>
     <h1>Annexes</h1>
     <p>Vous pouvez voir/télécharger un film un peu longuet en cliquant sur <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685" target="_blank">ce lien</a>.</p>
+    <a href="test-emma.html">les tests d'emma</a>
     <h2>ANALYSE</h2>
     <p>Dans le film <em>The Deer Hunter</em> de Michael Cimino (1978), le passage directement centré sur la chasse au cerf se situe au début du récit, avant le départ des personnages pour la guerre du Vietnam.</p>
     <p>Ce passage joue un rôle fondamental dans la construction symbolique et morale du film.</p>
@@ -118,25 +119,25 @@
     <audio id="shot" src="rifle_mixdown.mp3" preload="auto"></audio>
 </body>
 <script>
-const shot = document.getElementById("shot");
+    const shot = document.getElementById("shot");
 
-document.addEventListener("mousedown", () => {
-    document.body.classList.add("click");
-    shot.currentTime = 0;
-    shot.play();
-});
+    document.addEventListener("mousedown", () => {
+        document.body.classList.add("click");
+        shot.currentTime = 0;
+        shot.play();
+    });
 
-document.addEventListener("mouseup", () => {
-    document.body.classList.remove("click");
-});
+    document.addEventListener("mouseup", () => {
+        document.body.classList.remove("click");
+    });
 
 
     function handleOrientation(event) {
       const beta = event.beta;
       const gamma = event.gamma;
 
-      const hue = ((beta + 180) / 10) * 120;
-      const lightness = ((gamma + 90) / 180) * 1 + 15;
+      const hue = ((beta + 180) / 10) * 120;            //avant - arrière
+      const lightness = ((gamma + 90) / 180) * 1 + 15;  //gauche-droite
 
       document.body.style.backgroundColor =
         `hsl(${hue.toFixed(0)}, 80%, ${lightness.toFixed(0)}%)`;
