@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!--
+                         __________________________________________________________.                    
+               __  __*="" ╰-------┳--------------------╮---------------------------|     == |HOLEMM:>►  
+     ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                    
+    !"         _     _==""(C_)                                                                          
+    !    _.=""' "=__/                                                                                   
+    ╰==""                                                                                               
+-->
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -10,24 +18,25 @@
           src: url(twk-continental-compact-bold.woff2);
         }
         body{
-            padding: 2rem;
+            padding: 5rem;
         }
         .repet{
           font-family: "Continental Compact Bold" ;
-          font-size: 3em;
+          font-size: 10em;
+          text-transform: uppercase;
         } 
         #dessous{
             line-height: 0.2em;
             margin: 0;
             padding: 0;
-            color: rgb(0, 111, 11);
+            color: rgb(150, 150, 150);
             z-index: 1;
         }
         #entre{
             line-height: 0.05em;
             margin: 0;
             padding: 0;
-            color: rgb(0, 179, 48);
+            color: rgb(75, 75, 75);
             z-index: 2;
         }
         #dessus{
@@ -35,38 +44,66 @@
             margin: 0;
             padding: 0;
             margin-top: 0.15em;
-            color: rgb(21, 255, 0);
+            color: rgb(0, 0, 0);
             z-index: 3;
         }
+        .oneshot{
+          position: relative;
+          width: 100%;
+          height: 40px;          /* ajuste selon ton besoin */
+          background: #fff;
+          overflow: hidden;       /* pour couper comme sur l'image */
+        }
+         .oneshot2{
+          position: relative;
+          width: 100%;
+          height: 60px;          
+          background: #fff;
+          overflow: hidden;       
+        }
+          .oneshot3{
+          position: relative;
+          width: 100%;
+          height: 125px;          
+          background: #fff;
+          overflow: hidden;       
+        }
 
-        #v2dessous{
-            z-index: -30;
-            color: rgb(255, 0, 204);
-            background-color: rgb(184, 245, 2);
-            margin-bottom: -1em;
-        }
-        #v2entre{
-            z-index: -20;
-            color: rgb(255, 0, 204);
-            background-color: rgb(255, 145, 0);
-            margin-bottom: -1em;
-        }
-        #v2dessus{
-            color: rgb(255, 0, 204);
-            background-color: burlywood;
-            margin-bottom: -1em;
-            z-index: 30;
-            border-top: 1px solid rebeccapurple;
+
+        /* les 2 derrière */
+        .back{ z-index: 1; }
+        .back-1{ transform: translateY(-110px); }
+        .back-2{ transform: translateY(-110px); }
+        .back-3{ transform: translateY(-110px); }
+
+        /* le texte devant */
+        .front{ z-index: 2; }
+        .layer{
+          position: absolute;
+          top: 100px;             /* position verticale du "front" */
+          font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif;
+            font-family: "Continental Compact Bold" ;
+                  font-size: 10em;
+          letter-spacing: -2px;
+          text-transform: uppercase;
+          color: #000;
+          white-space: nowrap;
         }
     </style>
 </head>
 <body>
-    <p class="repet" id="dessous">One shot</p>
-    <p class="repet" id="entre">One shot</p>
-    <p class="repet" id="dessus">One shot</p>   
+    <p class="repet" id="dessous">"One shot"</p>
+    <p class="repet" id="entre">"One shot"</p>
+    <p class="repet" id="dessus">"One shot"</p>   
     <br><br><br><br><br>
-    <div class="repet" id="v2dessous">One shot</div>
-    <div class="repet" id="v2entre">One shot</div>
-    <div class="repet" id="v2dessus">One shot</div>
+    <div class="oneshot">
+        <div class="layer back back-1">"ONE SHOT"</div>
+    </div>    
+    <div class="oneshot2">
+        <div class="layer back back-2">"ONE SHOT"</div>
+    </div>    
+    <div class="oneshot3">
+        <div class="layer back back-3">"ONE SHOT"</div>
+    </div>
 </body>
 </html>
