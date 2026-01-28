@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma tests</title>
+    <style>
+        @font-face {
+          font-family: "Continental Compact Bold" ;
+          src: url(twk-continental-compact-bold.woff2);
+        }
+        body{
+            padding: 2rem;
+        }
+        .repet{
+          font-family: "Continental Compact Bold" ;
+          font-size: 3em;
+        } 
+        #dessous{
+            line-height: 0.2em;
+            margin: 0;
+            padding: 0;
+            color: rgb(0, 111, 11);
+            z-index: 1;
+        }
+        #entre{
+            line-height: 0.05em;
+            margin: 0;
+            padding: 0;
+            color: rgb(0, 179, 48);
+            z-index: 2;
+        }
+        #dessus{
+            line-height: 0.1em;
+            margin: 0;
+            padding: 0;
+            margin-top: 0.15em;
+            color: rgb(21, 255, 0);
+            z-index: 3;
+        }
+
+        #v2dessous{
+            z-index: -30;
+            color: rgb(255, 0, 204);
+            background-color: rgb(184, 245, 2);
+            margin-bottom: -1em;
+        }
+        #v2entre{
+            z-index: -20;
+            color: rgb(255, 0, 204);
+            background-color: rgb(255, 145, 0);
+            margin-bottom: -1em;
+        }
+        #v2dessus{
+            color: rgb(255, 0, 204);
+            background-color: burlywood;
+            margin-bottom: -1em;
+            z-index: 30;
+            border-top: 1px solid rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <p class="repet" id="dessous">One shot</p>
+    <p class="repet" id="entre">One shot</p>
+    <p class="repet" id="dessus">One shot</p>   
+    <br><br><br><br><br>
+    <div class="repet" id="v2dessous">One shot</div>
+    <div class="repet" id="v2entre">One shot</div>
+    <div class="repet" id="v2dessus">One shot</div>
+</body>
+</html>
