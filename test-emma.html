@@ -20,9 +20,12 @@
         *{
             padding: 0;
             margin: 0;
+            font-size: 1.01em;
         }
         body{
           font-family: "Continental Compact Bold" ;
+          padding: 0;
+          margin: 0;
         }
         .repet{
           font-family: "Continental Compact Bold" ;
@@ -57,6 +60,7 @@
             width: 100%;
             height: 5px;          /* ajuste selon ton besoin */
             background: #fff;
+            background: none;
             overflow: hidden;       /* pour couper comme sur l'image */
         }
          .oneshot2{
@@ -64,6 +68,7 @@
             width: 100%;
             height: 10px;
             background: #fff;
+            background: none;
             overflow: hidden;
         }
         .oneshot3{
@@ -71,13 +76,14 @@
             width: 100%;
             height: 25px;
             background: #fff;
+            background: none;
             overflow: hidden;
         }
         /* les 2 derrière */
         .back{ z-index: 1; }
-        .back-1{ transform: translateY(-107px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
-        .back-2{ transform: translateY(-107px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
-        .back-3{ transform: translateY(-107px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+        .back-1{ transform: translateY(-110px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+        .back-2{ transform: translateY(-110px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+        .back-3{ transform: translateY(-110px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
 
         /* le texte devant */
         .front{ z-index: 2; }
@@ -94,9 +100,10 @@
             white-space: nowrap;
         }
         .hero{
-            height: 80vh;
+            height: 87vh;
             margin: 0;
             padding: 0;
+            padding-top: 2em;
         }
         header{
             padding: 3em;
@@ -104,6 +111,7 @@
         }
         h1{
             margin-right: 2em;
+            font-size: 3em;
         }
         nav{
             position: fixed;
@@ -117,8 +125,14 @@
         }
         section{
             border: 1px solid black;
-            padding: 3em;
-            height: 80vh;
+            padding: 1em;
+            height: 85vh;
+            font-size: 1.2em;
+            padding-top: 5em;
+        }
+        #annexes{
+            font-size: 1.3em;
+            height: 100%;
         }
         .cnt{
             display: grid;
@@ -127,6 +141,149 @@
         img{
             border: 1px solid salmon;
         }
+        .replique{margin-left: 1em;}
+        .didascalie{font-style: italic;}
+        *::selection{
+            color: rgba(0, 0, 0, 0);
+            rotate: -90deg;
+        color:rgb(255, 0, 0);
+        text-shadow:
+        1px 0.1px 1px #7b0000,
+        1px 0.2px 1px #8a0000,
+        1px 0.3px 1px #bc0000,
+        1px 0.4px 1px #d50000,
+        1px 0.5px 1px #ff0000;
+        } 
+        body::-webkit-scrollbar {
+            width: 0.5em;
+        }
+        body::-webkit-scrollbar-track {
+            background: rgba(180, 8, 8, 0.5);
+        }
+        body::-webkit-scrollbar-thumb {
+            background: rgba(180, 8, 8, 0.9);
+        }
+        body::-webkit-scrollbar-thumb:hover {
+            background: rgba(180, 8, 8, 1);
+        }
+        h2{
+            font-size: 2em;
+        }
+        @media screen and (max-width:850px){
+            .cnt{
+                grid-template-columns: 1fr;
+            }
+            .image{
+                height: 40vh;
+            }
+        }
+        /*==================================*/
+        .timeline-wrapper {
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .timeline-items {
+            width: 90vw;
+            width: 90%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            z-index: 1;
+            position: fixed;
+            padding: 1em;
+        }
+
+        .timeline-wrapper li a {
+            color: #B40808;
+            text-decoration: none;
+            font-size: 1.5em;
+            padding: 0.3em 0.7em;
+            border-radius: 4px;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: fixed;
+        }
+
+.timeline-items li a:hover {
+  color: #fff;
+  color: black;
+}
+
+.timeline-items li a.active {
+  background-color: #B40808;
+  color: #fff;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+/*
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px 0;
+  }
+
+  .timeline-line {
+    display: none;
+  }
+
+  .timeline-items {
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .timeline-items li a {
+    font-size: 0.8em;
+    padding: 6px 10px;
+  }
+}*/
+
+/*option mobile
+        .timeline-wrapper {
+          position: static;
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-between;
+          margin: 20px 0;
+          height: auto;
+        }
+
+        .timeline-line {
+          display: none;
+        }
+
+        .timeline-items {
+          flex-direction: row;
+          gap: 15px;
+          justify-content: center;
+        }
+
+        .timeline-items li a {
+          font-size: 0.8em;
+          padding: 4px 8px;
+        }
+        .linksalome{
+            /* width: 100%; 
+            margin: 2em;
+        }*/
     </style>
 </head>
 <body>
@@ -134,28 +291,43 @@
     <!-- <p class="repet" id="dessous">"One shot"</p>
     <p class="repet" id="entre">"One shot"</p>
     <p class="repet" id="dessus">"One shot"</p>    -->
+    <nav class="timeline-wrapper">
+        <ul class="timeline-items">
+            <li><a class="linksalome" href="#">HERO</a></li>
+            <li><a class="linksalome" href="#avant">1</a></li>
+            <li><a class="linksalome" href="#face">2</a></li>
+            <li><a class="linksalome" href="#explication">3</a></li>
+            <li><a class="linksalome" href="#tir">4</a></li>
+            <li><a class="linksalome" href="#apres">5</a></li>
+            <li><a class="linksalome" href="#rappel">6</a></li>
+             <li><a class="linksalome" href="#annexes">🫣</a></li>
+        </ul>
+    </nav>
 
+        <!-- <div class="timeline-wrapper">
+            <div class="timeline-items"><a class="linksalome" href="#">HERO</a></div>
+            <div class="timeline-items"><a class="linksalome" href="#avant">1</a></div>
+            <div class="timeline-items"><a class="linksalome" href="#face">2</a></div>
+            <div class="timeline-items"><a class="linksalome" href="#explication">3</a></div>
+            <div class="timeline-items"><a class="linksalome" href="#tir">4</a></div>
+            <div class="timeline-items"><a class="linksalome" href="#apres">5</a></div>
+            <div class="timeline-items"><a class="linksalome" href="#rappel">6</a></div>
+            <div class="timeline-items"><a class="linksalome" href="#annexes">Annexes</a></div>
+        </div> -->
     <section class="hero">
             <header>
-        <nav>
-            <ul>
-                <h1>The Deer Hunter</h1>
-                <li>1. Avant la chasse : poser la règle</li>
-                <li>2. Face au cerf : correction du geste</li>
-                <li>3. Explication morale : humaniser l’animal</li>
-                <li>4. Le tir : suspension du langage</li>
-                <li>5. Après le tir : constat, pas triomphe</li>
-                <li>6. Rappel implicite : la règle gravée</li>
-            </ul>
-        </nav>
+                                <h1>The Deer Hunter</h1>
+
+
     </header>
     </section>
-    <section>
+    <section id="avant">
         <div class="cnt">
-            <div>
+            <div class="image">
                 <img src="" alt="une img" width="100%" height="100%">
             </div>
             <div>
+                <h2>1. Avant la chasse : poser la règle</h2>
                 <div class="oneshot">
                     <div class="layer back back-1">"ONE SHOT"</div>
                 </div>    
@@ -165,89 +337,184 @@
                 <div class="oneshot3">
                     <div class="layer back back-3">"ONE SHOT"</div>
                 </div>
-                Michael :
-                « One shot. »
-                Stan (light, almost mocking) :
-                « One shot? »
-                Michael (no smile) :
-                « One shot. »            
+                <p>Michael :</p>
+                <p class="replique">« One shot. »</p>
+                <p>Stan (light, almost mocking) :</p>
+                <p class="replique">« One shot? »</p>
+                <p>Michael (no smile) :</p>
+                <p class="replique">« One shot. »</p>          
             </div>
         </div>
     </section>
-    <section>
+    <section id="face">
         <div class="cnt">
-            <div>
+            <div class="image">
                 <img src="" alt="une img" width="100%" height="100%">
             </div>
             <div>
-                2. Face au cerf : correction du geste
-                Nick (too fast, excited) :
-                « I got him. I got him. »
-                Michael (holding him back) :
-                « You can’t take him like that. »
-                Nick :
-                « Why not? »
-                Michael :
-                « You’ve got to do it clean. »            
+                <h2>2. Face au cerf : correction du geste</h2>
+                <!-- <div class="oneshot">
+                    <div class="layer back back-1">"I GOT HIM"</div>
+                </div>     -->
+                <div class="oneshot2">
+                    <div class="layer back back-2">"I GOT HIM"</div>
+                </div>    
+                <div class="oneshot3">
+                    <div class="layer back back-3">"I GOT HIM"</div>
+                </div>                <p>Nick (too fast, excited) :</p>
+                <p class="replique">« I got him. I got him. »</p>
+                <p>Michael (holding him back) :</p>
+                <p class="replique">« You can’t take him like that. »</p>
+                <p>Nick :</p>
+                <p class="replique">« Why not? »</p>
+                <p>Michael :</p>
+                <p class="replique">« You’ve got to do it clean. »</p>           
             </div>
         </div>
     </section>
-    <section>
+    <section id="explication">
         <div class="cnt">
-            <div>
+            <div class="image">
                 <img src="" alt="une img" width="100%" height="100%">
             </div>
             <div>
-                3. Explication morale : humaniser l’animal
-                Nick :
-                « He’s right there. »
-                Michael :
-                « If he hears the shot, he won’t be hurt. »
-                (Silence. Michael adjusts his breathing.)
+                <h2>3. Explication morale : humaniser l’animal</h2>
+                <p>Nick :</p>
+                <p class="replique">« He’s right there. »</p>
+                <p>Michael :</p>
+                <p class="replique">« If he hears the shot, he won’t be hurt. »</p>
+                <p class="didascalie">(Silence. Michael adjusts his breathing.)</p>
             </div>
         </div>
 
     </section>
-    <section>
+    <section id="tir">
         <div class="cnt">
-            <div>
+            <div class="image">
                 <img src="" alt="une img" width="100%" height="100%">
             </div>
             <div>
-                4. Le tir : suspension du langage
-                (Michael aims for a long time. Gunshot.)
-                (The deer falls.)
-                (No immediate dialogue.)
+                <h2>4. Le tir : suspension du langage</h2>
+                <p>(Michael aims for a long time. Gunshot.)</p>
+                <p class="didascalie">(The deer falls.)</p>
+                <p class="didascalie">(No immediate dialogue.)</p>
             </div>
         </div>
-
     </section>
-    <section>
+    <section id="apres">
         <div class="cnt">
-            <div>
+            <div class="image">
                 <img src="" alt="une img" width="100%" height="100%">
             </div>
             <div>
-                5. Après le tir : constat, pas triomphe
-                Nick (low voice) :
-                « It’s a good shot. »
-                Michael (fixed gaze) :
-                (does not answer / barely nods, depending on versions)            </div>
+                <h2>5. Après le tir : constat, pas triomphe</h2>
+                <p>Nick (low voice) :</p>
+                <p class="replique">« It’s a good shot. »</p>
+                <p>Michael (fixed gaze) :</p>
+                <p class="didascalie">(does not answer / barely nods, depending on versions)</p>
+            </div>
         </div>
-
     </section>
-    <section>
+
+    <section id="rappel">
         <div class="cnt">
-            <div>
+            <div class="image">
                 <img src="" alt="une img" width="100%" height="100%">
             </div>
             <div>
-                6. Rappel implicite : la règle gravée
-                Michael (later, on the way down) :
-                « One shot. »
-                (No one answers.)            
+                <p>Michael (later, on the way down) :</p>
+                <p class="replique">« One shot. »</p>
+                <p class="didascalie">(No one answers.)</p>          
             </div>
         </div>
+    </section>
+    <section id="annexes">
+        <p>Vous pouvez voir/télécharger un film un peu longuet en cliquant sur <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685" target="_blank">ce lien</a>.</p>
+        <h2>ANALYSE</h2>
+        <p>Dans le film <em>The Deer Hunter</em> de Michael Cimino (1978), le passage directement centré sur la chasse au cerf se situe au début du récit, avant le départ des personnages pour la guerre du Vietnam.</p>
+        <p>Ce passage joue un rôle fondamental dans la construction symbolique et morale du film.</p>
+        <h3>Le passage clé : la chasse au cerf dans les montagnes de Pennsylvanie</h3>
+        <p>La séquence de chasse intervient après la longue scène du mariage, dans la première partie du film. Michael, Nick et leurs amis quittent la ville industrielle pour se rendre dans les montagnes de Pennsylvanie afin de chasser le cerf.</p>
+        <p>Ce déplacement marque un changement de rythme, d’espace et de rapport au monde.</p>
+        <h3>Localisation dans le film</h3>
+        <p>La scène se situe dans la première heure du film.</p>
+        <p>Elle intervient après l’exposition sociale et communautaire des personnages et avant toute représentation de la guerre.</p>
+        <h3>Déroulement de la scène</h3>
+        <p>Michael impose une règle stricte : un seul tir.</p>
+        <p>La chasse est filmée comme un rituel lent et silencieux, presque spirituel.</p>
+        <p>Michael observe longuement le cerf, ajuste son geste, hésite, puis tire une seule balle.</p>
+        <p>Après le tir, il s’approche de l’animal avec gravité, sans exaltation ni triomphe.</p>
+        <h3>Enjeux thématiques : le cerf et la chasse</h3>
+        <h4>Le cerf</h4>
+        <p>Il incarne la nature, la noblesse et une forme d’innocence. Il s’oppose symboliquement à la violence industrielle, mécanique et absurde de la guerre à venir.</p>
+        <h4>La chasse</h4>
+        <p>Elle est présentée comme un acte codifié, maîtrisé et respectueux. Elle repose sur la retenue, la précision et la responsabilité du geste. Elle contraste radicalement avec la violence chaotique et arbitraire du Vietnam, notamment la roulette russe.</p>
+        <h4>La règle du « one shot »</h4>
+        <p>Elle condense une éthique du geste faite de contrôle, de responsabilité et de conscience de la mort donnée. Elle devient plus tard un miroir inversé de la guerre, où la mort est répétée, aléatoire et dénuée de sens.</p>
+        <h3>Lecture symbolique globale</h3>
+        <p>Cette séquence établit clairement un avant, un monde structuré par des rituels, une maîtrise du corps et une relation encore signifiante à la mort.</p>
+        <p>Elle annonce un après, marqué par la perte de repères, la déshumanisation et l’effondrement du sens moral sous l’effet de la guerre.</p>
+        <p>Le cerf fonctionne ainsi comme une figure sacrificielle, préfigurant la transformation puis la destruction des personnages eux-mêmes.</p>
+        <p>Ce passage doit être compris comme une scène fondatrice. Il ne parle pas seulement de chasse, mais pose les bases morales et symboliques que le film s’attachera ensuite à déconstruire.</p>
     </section>
 </body>
+<script>
+function scrollToEpisodes() {
+  const section = document.getElementById("episodes");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  } else {
+    console.warn("âš ï¸ Section #episodes introuvable.");
+  }
+}
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".timeline-items a");
+
+if (navLinks.length) {
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (pageYOffset >= sectionTop - 200) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+}
+
+    function handleOrientation(event) {
+      const beta = event.beta;
+      const gamma = event.gamma;
+      
+      const hue = ((beta + 180) / 150) * 270+35;
+      const lightness = ((gamma + 90) / 180) * 196;
+
+      document.body.style.backgroundColor =
+        `hsl(${hue.toFixed(0)}, 380%, ${lightness.toFixed(0)}%)`;
+    }
+
+    function startOrientation() {
+      window.addEventListener("deviceorientation", handleOrientation);
+    }
+
+    if (
+      typeof DeviceOrientationEvent.requestPermission === "function"
+    ) {
+      DeviceOrientationEvent.requestPermission()
+        .then(permission => {
+        })
+        .catch(console.error);
+    } else {
+      startOrientation();
+    }
+</script>
 </html>
