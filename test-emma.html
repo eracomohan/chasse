@@ -17,8 +17,12 @@
           font-family: "Continental Compact Bold" ;
           src: url(twk-continental-compact-bold.woff2);
         }
+        *{
+            padding: 0;
+            margin: 0;
+        }
         body{
-            padding: 5rem;
+          font-family: "Continental Compact Bold" ;
         }
         .repet{
           font-family: "Continental Compact Bold" ;
@@ -47,63 +51,203 @@
             color: rgb(0, 0, 0);
             z-index: 3;
         }
+/*===================================================================================*/
         .oneshot{
-          position: relative;
-          width: 100%;
-          height: 40px;          /* ajuste selon ton besoin */
-          background: #fff;
-          overflow: hidden;       /* pour couper comme sur l'image */
+            position: relative;
+            width: 100%;
+            height: 5px;          /* ajuste selon ton besoin */
+            background: #fff;
+            overflow: hidden;       /* pour couper comme sur l'image */
         }
          .oneshot2{
-          position: relative;
-          width: 100%;
-          height: 60px;          
-          background: #fff;
-          overflow: hidden;       
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background: #fff;
+            overflow: hidden;
         }
-          .oneshot3{
-          position: relative;
-          width: 100%;
-          height: 125px;          
-          background: #fff;
-          overflow: hidden;       
+        .oneshot3{
+            position: relative;
+            width: 100%;
+            height: 25px;
+            background: #fff;
+            overflow: hidden;
         }
-
-
         /* les 2 derrière */
         .back{ z-index: 1; }
-        .back-1{ transform: translateY(-110px); }
-        .back-2{ transform: translateY(-110px); }
-        .back-3{ transform: translateY(-110px); }
+        .back-1{ transform: translateY(-107px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+        .back-2{ transform: translateY(-107px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+        .back-3{ transform: translateY(-107px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
 
         /* le texte devant */
         .front{ z-index: 2; }
         .layer{
-          position: absolute;
-          top: 100px;             /* position verticale du "front" */
-          font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif;
+            position: absolute;
+            top: 100px;             /* position verticale du "front" */
+            /* font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif; */
             font-family: "Continental Compact Bold" ;
-                  font-size: 10em;
-          letter-spacing: -2px;
-          text-transform: uppercase;
-          color: #000;
-          white-space: nowrap;
+            /* font-size: 10em; */
+            font-size: 2em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #000;
+            white-space: nowrap;
+        }
+        .hero{
+            height: 80vh;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            padding: 3em;
+            padding-top: 1em;
+        }
+        h1{
+            margin-right: 2em;
+        }
+        nav{
+            position: fixed;
+        }
+        ul{
+            display: flex;
+            justify-content: space-around;
+        }
+        li{
+            margin-right: 2em;
+        }
+        section{
+            border: 1px solid black;
+            padding: 3em;
+            height: 80vh;
+        }
+        .cnt{
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+        }
+        img{
+            border: 1px solid salmon;
         }
     </style>
 </head>
 <body>
-    <p class="repet" id="dessous">"One shot"</p>
+
+    <!-- <p class="repet" id="dessous">"One shot"</p>
     <p class="repet" id="entre">"One shot"</p>
-    <p class="repet" id="dessus">"One shot"</p>   
-    <br><br><br><br><br>
-    <div class="oneshot">
-        <div class="layer back back-1">"ONE SHOT"</div>
-    </div>    
-    <div class="oneshot2">
-        <div class="layer back back-2">"ONE SHOT"</div>
-    </div>    
-    <div class="oneshot3">
-        <div class="layer back back-3">"ONE SHOT"</div>
-    </div>
+    <p class="repet" id="dessus">"One shot"</p>    -->
+
+    <section class="hero">
+            <header>
+        <nav>
+            <ul>
+                <h1>The Deer Hunter</h1>
+                <li>1. Avant la chasse : poser la règle</li>
+                <li>2. Face au cerf : correction du geste</li>
+                <li>3. Explication morale : humaniser l’animal</li>
+                <li>4. Le tir : suspension du langage</li>
+                <li>5. Après le tir : constat, pas triomphe</li>
+                <li>6. Rappel implicite : la règle gravée</li>
+            </ul>
+        </nav>
+    </header>
+    </section>
+    <section>
+        <div class="cnt">
+            <div>
+                <img src="" alt="une img" width="100%" height="100%">
+            </div>
+            <div>
+                <div class="oneshot">
+                    <div class="layer back back-1">"ONE SHOT"</div>
+                </div>    
+                <div class="oneshot2">
+                    <div class="layer back back-2">"ONE SHOT"</div>
+                </div>    
+                <div class="oneshot3">
+                    <div class="layer back back-3">"ONE SHOT"</div>
+                </div>
+                Michael :
+                « One shot. »
+                Stan (light, almost mocking) :
+                « One shot? »
+                Michael (no smile) :
+                « One shot. »            
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="cnt">
+            <div>
+                <img src="" alt="une img" width="100%" height="100%">
+            </div>
+            <div>
+                2. Face au cerf : correction du geste
+                Nick (too fast, excited) :
+                « I got him. I got him. »
+                Michael (holding him back) :
+                « You can’t take him like that. »
+                Nick :
+                « Why not? »
+                Michael :
+                « You’ve got to do it clean. »            
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="cnt">
+            <div>
+                <img src="" alt="une img" width="100%" height="100%">
+            </div>
+            <div>
+                3. Explication morale : humaniser l’animal
+                Nick :
+                « He’s right there. »
+                Michael :
+                « If he hears the shot, he won’t be hurt. »
+                (Silence. Michael adjusts his breathing.)
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <div class="cnt">
+            <div>
+                <img src="" alt="une img" width="100%" height="100%">
+            </div>
+            <div>
+                4. Le tir : suspension du langage
+                (Michael aims for a long time. Gunshot.)
+                (The deer falls.)
+                (No immediate dialogue.)
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <div class="cnt">
+            <div>
+                <img src="" alt="une img" width="100%" height="100%">
+            </div>
+            <div>
+                5. Après le tir : constat, pas triomphe
+                Nick (low voice) :
+                « It’s a good shot. »
+                Michael (fixed gaze) :
+                (does not answer / barely nods, depending on versions)            </div>
+        </div>
+
+    </section>
+    <section>
+        <div class="cnt">
+            <div>
+                <img src="" alt="une img" width="100%" height="100%">
+            </div>
+            <div>
+                6. Rappel implicite : la règle gravée
+                Michael (later, on the way down) :
+                « One shot. »
+                (No one answers.)            
+            </div>
+        </div>
+    </section>
 </body>
 </html>
