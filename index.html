@@ -46,6 +46,45 @@
         h2, h3{margin-top: 1em;}
         h4{margin-top: 0.5em;}
         p{margin-bottom: 0.5em;}
+        .oneshot{
+          position: relative;
+          width: 100%;
+          height: 40px;          /* ajuste selon ton besoin */
+          background: #fff;
+          background: none;
+          overflow: hidden;       /* pour couper comme sur l'image */
+        }
+        .oneshot2{
+          position: relative;
+          width: 100%;
+          height: 60px;          
+          background: #fff;
+          background: none;
+          overflow: hidden;       
+        }
+        .oneshot3{
+          position: relative;
+          width: 100%;
+          height: 125px;          
+          background: #fff;
+          background: none;
+          overflow: hidden;       
+        }
+        .back{ z-index: 1; }
+        .back-1{ transform: translateY(-110px); }
+        .back-2{ transform: translateY(-110px); }
+        .back-3{ transform: translateY(-110px); }
+        .layer{
+          position: absolute;
+          top: 100px;             /* position verticale du "front" */
+          font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif;
+            font-family: "Continental Compact Bold" ;
+                  font-size: 10em;
+          letter-spacing: -2px;
+          text-transform: uppercase;
+          color: #000;
+          white-space: nowrap;
+        }
     </style>
 </head>
 <body>
@@ -89,7 +128,16 @@
     <p class="didascalie">(No one answers.)</p>
     <h1>Annexes</h1>
     <p>Vous pouvez voir/télécharger un film un peu longuet en cliquant sur <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685" target="_blank">ce lien</a>.</p>
-    <p>Des tests des tests d'Emma<a href="test-emma.html">ici</a>.</p>
+    <p>Des tests des tests d'Emma <a href="test-emma.html">ici</a>.</p>        
+    <div class="oneshot">
+        <div class="layer back back-1">"ONE SHOT"</div>
+    </div>    
+    <div class="oneshot2">
+        <div class="layer back back-2">"ONE SHOT"</div>
+    </div>    
+    <div class="oneshot3">
+        <div class="layer back back-3">"ONE SHOT"</div>
+    </div>
     <h2>ANALYSE</h2>
     <p>Dans le film <em>The Deer Hunter</em> de Michael Cimino (1978), le passage directement centré sur la chasse au cerf se situe au début du récit, avant le départ des personnages pour la guerre du Vietnam.</p>
     <p>Ce passage joue un rôle fondamental dans la construction symbolique et morale du film.</p>
