@@ -135,12 +135,12 @@
     function handleOrientation(event) {
       const beta = event.beta;
       const gamma = event.gamma;
-
-      const hue = ((beta + 180) / 10) * 120;            //avant - arrière
-      const lightness = ((gamma + 90) / 180) * 1 + 15;  //gauche-droite
+      
+      const hue = ((beta + 180) / 150) * 270+35;
+      const lightness = ((gamma + 90) / 180) * 50 + 15;
 
       document.body.style.backgroundColor =
-        `hsl(${hue.toFixed(0)}, 80%, ${lightness.toFixed(0)}%)`;
+        `hsl(${hue.toFixed(0)}, 380%, ${lightness.toFixed(0)}%)`;
     }
 
     function startOrientation() {
