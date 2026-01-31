@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- 
+                         __________________________________________________________.                    
+               __  __*="" ╰-------┳--------------------╮---------------------------|     == |HOLEMM:>►  
+     ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                    
+    !"         _     _==""(C_)                                                                          
+    !    _.=""' "=__/                                                                                   
+    ╰==""                                                                                               
+-->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>holo</title>
+    <style>
+        body{
+            margin: 0;
+            background: #222;
+            overflow: hidden;
+        }
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            transition: opacity 0.2s ease;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <img class="img" src="img/2A3A9717.JPG" alt="">
+    <img class="img" src="img/2A3A9718.JPG" alt="">
+    <img class="img" src="img/2A3A9719.JPG" alt="">
+    <img class="img" src="img/2A3A9720.JPG" alt="">
+    <script>
+        const images = document.querySelectorAll(".img");
+
+        const minAngle = -90;
+        const maxAngle = 90;
+
+        const steps = images.length - 1;
+
+        window.addEventListener("deviceorientation", (evt) => {
+            const angle = evt.gamma;
+        
+            const t = clamp(invLerp(minAngle, maxAngle, angle), 0, 1);
+        
+            const scaled = t * steps;
+            const index = Math.floor(scaled);
+            const localT = scaled - index;
+        
+            images.forEach(img => img.style.opacity = 0);
+        
+            if (images[index]) {
+                images[index].style.opacity = 1 - localT;
+            }
+            if (images[index + 1]) {
+                images[index + 1].style.opacity = localT;
+            }
+        });
+
+        function invLerp(a, b, v) {
+            return (v - a) / (b - a);
+        }
+
+        function clamp(v, min, max) {
+            return Math.min(max, Math.max(min, v));
+        }
+    </script>
+</body>
+</html>
