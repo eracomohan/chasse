@@ -5,304 +5,17 @@
      ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                    
     !"         _     _==""(C_)                                                                          
     !    _.=""' "=__/                                                                                   
-    ╰==""                                                                                               
+    ╰==""       
 -->
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emma tests</title>
+    <link rel="stylesheet" href="test-emma.css">
+    <script src="test-emma.js"></script>
     <style>
-        @font-face {
-          font-family: "Continental Compact Bold" ;
-          src: url(twk-continental-compact-bold.woff2);
-        }        
-        @font-face {
-          font-family: "Continental Regular" ;
-          src: url(twk-continental-regular.woff2);
-        }
-        *{
-            padding: 0;
-            margin: 0;
-            font-size: 1.01em;
-        }
-        body{
-          font-family: "Continental Regular" ;
-          padding: 0;
-          margin: 0;
-        }
-        .repet{
-          font-family: "Continental Compact Bold" ;
-          font-size: 10em;
-          text-transform: uppercase;
-        } 
-        #dessous{
-            line-height: 0.2em;
-            margin: 0;
-            padding: 0;
-            color: rgb(150, 150, 150);
-            z-index: 1;
-        }
-        #entre{
-            line-height: 0.05em;
-            margin: 0;
-            padding: 0;
-            color: rgb(75, 75, 75);
-            z-index: 2;
-        }
-        #dessus{
-            line-height: 0.1em;
-            margin: 0;
-            padding: 0;
-            margin-top: 0.15em;
-            color: rgb(0, 0, 0);
-            z-index: 3;
-        }
-/*===================================================================================*/
-        .oneshot{
-            position: relative;
-            width: 100%;
-            height: 40px;          /* ajuste selon ton besoin */
-            background: #fff;
-            background: none;
-            overflow: hidden;       /* pour couper comme sur l'image */
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            text-align: center;
-        }
-         .oneshot2{
-            position: relative;
-            width: 100%;
-            height: 60px;
-            background: #fff;
-            background: none;
-            overflow: hidden;
-            justify-content: center;
-        }
-        .oneshot3{
-            position: relative;
-            width: 100%;
-            height: 170px;
-            background: #fff;
-            background: none;
-            overflow: hidden;
-            justify-content: center;
-        }
-        /* les 2 derrière */
-        .back{ z-index: 1;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            text-align: center; }
-        .back-1{ 
-            transform: translateY(-140px);
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            text-align: center; 
-        }   /*LES 3 VALEURS RESTENT LES MÊMES*/
-        .back-2{ transform: translateY(-140px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
-        .back-3{ transform: translateY(-140px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
 
-        /* le texte devant */
-        .front{ z-index: 2;
-            text-align: center;        }
-        .layer{
-            position: absolute;
-            top: 100px;             /* position verticale du "front" */
-            /* font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif; */
-            font-family: "Continental Compact Bold" ;
-            /* font-size: 10em; */
-            font-size: 10em;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #000;
-            white-space: nowrap;
-            text-align: center;
-        }
-        .hero{
-            height: 87vh;
-            margin: 0;
-            padding: 0;
-            padding-top: 2em;
-        }
-        header{
-            padding: 3em;
-            padding-top: 1em;
-        }
-        h1{
-            margin-right: 2em;
-            font-size: 3em;
-            font-family: "Continental Compact Bold" ;
-            text-transform: uppercase;
-            line-height: 1.3em;
-        }
-        h2{
-            margin-bottom: 1em;
-            color: rgb(180, 8, 8);
-        }
-        .hunter{
-            font-size: 2em;
-        }
-        nav{
-            position: fixed;
-        }
-        ul{
-            display: flex;
-            justify-content: space-around;
-        }
-        li{
-            margin-right: 2em;
-        }
-        section{
-            border: 1px solid black;
-            padding: 1em;
-            height: 85vh;
-            font-size: 1.2em;
-            padding-top: 5em;
-        }
-        .repetition{
-            justify-content: center;
-            margin-left: 5%;
-            *{
-                text-align: center;
-            }
-        }
-        .texte{
-            justify-content: center;
-            text-align: left;/*NE CHANGE PAS LES ONE SHOT*/
-            padding: 1em;
-        }
-        .replique{
-            text-transform: uppercase;
-            font-family: "Continental Compact Bold" ;
-            text-align: center;
-            font-size: 2em;
-        }
-        #annexes{
-            font-size: 1.3em;
-            height: 100%;
-        }
-        .cnt{
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-        }
-        img{
-            border: 1px solid salmon;
-            background-color: darkblue;
-        }
-        .image{
-            background-color: darkgrey;
-            height: 100%;
-        }
-        .didascalie{font-style: italic;}
-        *::selection{
-            color: rgba(0, 0, 0, 0);
-            rotate: -90deg;
-        color:rgb(255, 0, 0);
-        text-shadow:
-        1px 0.1px 1px #7b0000,
-        1px 0.2px 1px #8a0000,
-        1px 0.3px 1px #bc0000,
-        1px 0.4px 1px #d50000,
-        1px 0.5px 1px #ff0000;
-        } 
-        body::-webkit-scrollbar {
-            width: 0.5em;
-        }
-        body::-webkit-scrollbar-track {
-            background: rgba(180, 8, 8, 0.5);
-        }
-        body::-webkit-scrollbar-thumb {
-            background: rgba(180, 8, 8, 0.9);
-        }
-        body::-webkit-scrollbar-thumb:hover {
-            background: rgba(180, 8, 8, 1);
-        }
-        h2{
-            font-size: 2em;
-        }
-        @media screen and (max-width:850px){
-            .cnt{
-                grid-template-columns: 1fr;
-            }
-            .image{
-                height: 40vh;
-            }
-            .oneshot{
-                height: 20px;
-            }
-            .oneshot2{
-                height: 30px;
-            }
-            .oneshot3{
-                height: 50px;
-            }
-            .layer{
-                font-size: 3em;
-            }
-            h2{
-                margin-bottom: 0.5em;
-                font-size: 1.2em;
-            }
-            .replique{
-                font-size: 1.3em;
-            }
-            .back-1{ transform: translateY(-110px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
-            .back-2{ transform: translateY(-110px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
-            .back-3{ transform: translateY(-110px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
-            }
-        /*==================================*/
-        .timeline-wrapper {
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            /* justify-content: center; */
-        }
-
-        .timeline-items {
-            list-style: none;
-            /* display: flex; */
-            /* gap: 2em; */
-                    width: 100%;
-            margin: 0;
-            padding: 1em;
-        }
-        .timeline-wrapper li{
-            margin: 0;
-        }
-
-        .timeline-wrapper li a {
-            position: relative; /* ← surtout PAS fixed */
-            color: #B40808;
-            text-decoration: none;
-            font-size: 1.5em;
-            padding: 0.3em 0.7em;
-            margin: 0;
-            border-radius: 4px;
-          font-family: "Continental Compact Bold" ;
-        }
-
-        .timeline-items li a:hover {
-          color: #fff;
-          color: black;
-        }
-
-        .timeline-items li a.active {
-          background-color: #B40808;
-          color: #fff;
-        }
-
-
-        html {
-          scroll-behavior: smooth;
-        }
     </style>
 </head>
 <body>
@@ -325,68 +38,74 @@
 
     <section class="hero">
         <header>
-            <h1>The Deer <br><span class="hunter">Hunter</span></h1>
+            <h1 class="block">The Deer <br><span class="hunter">Hunter</span></h1>
         </header>
+        <!-- <img src="img/2A3A9813.JPG" alt="" width="50%" height="auto"> -->
     </section>
     <section id="avant">
         <div class="cnt">
-            <div class="image">
-                <img src="" alt="une img" width="100%" height="100%">
+            <div class="image block">
+                <img src="img/2A3A9662.JPG" alt="une img" width="100%" height="auto">
             </div>
             <div class="texte">
-                <h2>1. Avant la chasse : poser la règle</h2>
-                <div class="repetition">
+                <h2 class="block">1. Avant la chasse : poser la règle</h2>
+                <div class="repetition block" >
                     <div class="oneshot">
                         <div class="layer back back-1">"ONE SHOT"</div>
                     </div>    
-                    <div class="oneshot2">
+                    <div class="oneshot2 block" >
                         <div class="layer back back-2">"ONE SHOT"</div>
                     </div>    
-                    <div class="oneshot3">
+                    <div class="oneshot3 block" >
                         <div class="layer back back-3">"ONE SHOT"</div>
                     </div>
                 </div>
-                <p>Michael :</p>
-                <p class="replique">« One shot. »</p>
-                <p>Stan (light, almost mocking) :</p>
-                <p class="replique">« One shot? »</p>
-                <p>Michael (no smile) :</p>
-                <p class="replique">« One shot. »</p>          
+                <div class="block">
+                    <p>Michael :</p>
+                    <p class="replique">« One shot. »</p>
+                    <p>Stan (light, almost mocking) :</p>
+                    <p class="replique">« One shot? »</p>
+                    <p>Michael (no smile) :</p>
+                    <p class="replique">« One shot. »</p> 
+                </div>         
             </div class="texte">
         </div>
     </section>
     <section id="face">
         <div class="cnt">
-            <div class="image">
-                <img src="" alt="une img" width="100%" height="100%">
+            <div class="image block">
+                <img src="img/2A3A9813.JPG" alt="une img" width="100%" height="auto">
             </div>
             <div class="texte">
-                <h2>2. Face au cerf : correction du geste</h2>
+                <h2 class="block">2. Face au cerf : correction du geste</h2>
                 <!-- <div class="oneshot">
                     <div class="layer back back-1">"I GOT HIM"</div>
                 </div>     -->
-                <div class="oneshot2">
+                <div class="oneshot2 block">
                     <div class="layer back back-2">"I GOT HIM"</div>
                 </div>    
-                <div class="oneshot3">
+                <div class="oneshot3 block">
                     <div class="layer back back-3">"I GOT HIM"</div>
-                </div>                <p>Nick (too fast, excited) :</p>
-                <p class="replique">« I got him. I got him. »</p>
-                <p>Michael (holding him back) :</p>
-                <p class="replique">« You can’t take him like that. »</p>
-                <p>Nick :</p>
-                <p class="replique">« Why not? »</p>
-                <p>Michael :</p>
-                <p class="replique">« You’ve got to do it clean. »</p>           
+                </div>
+                <div class="block">
+                    <p>Nick (too fast, excited) :</p>
+                    <p class="replique">« I got him. I got him. »</p>
+                    <p>Michael (holding him back) :</p>
+                    <p class="replique">« You can’t take him like that. »</p>
+                    <p>Nick :</p>
+                    <p class="replique">« Why not? »</p>
+                    <p>Michael :</p>
+                    <p class="replique">« You’ve got to do it clean. »</p> 
+                </div>
             </div>
         </div>
     </section>
     <section id="explication">
         <div class="cnt">
-            <div class="image">
-                <img src="" alt="une img" width="100%" height="100%">
+            <div class="image block">
+                <img src="img/2A3A9700.JPG" alt="une img" width="100%" height="100%">
             </div>
-            <div class="texte">
+            <div class="texte block">
                 <h2>3. Explication morale : humaniser l’animal</h2>
                 <p>Nick :</p>
                 <p class="replique">« He’s right there. »</p>
@@ -399,10 +118,10 @@
     </section>
     <section id="tir">
         <div class="cnt">
-            <div class="image">
-                <img src="" alt="une img" width="100%" height="100%">
+            <div class="image block">
+                <img src="img/2A3A9713.JPG" alt="une img" class="img-verticale">
             </div>
-            <div class="texte">
+            <div class="texte block">
                 <h2>4. Le tir : suspension du langage</h2>
                 <p>(Michael aims for a long time. Gunshot.)</p>
                 <p class="didascalie">(The deer falls.)</p>
@@ -412,10 +131,10 @@
     </section>
     <section id="apres">
         <div class="cnt">
-            <div class="image">
-                <img src="" alt="une img" width="100%" height="100%">
+            <div class="image block">
+                <img src="img/2A3A9802.JPG" alt="une img" class="img-verticale">
             </div>
-            <div class="texte">
+            <div class="texte block">
                 <h2>5. Après le tir : constat, pas triomphe</h2>
                 <p>Nick (low voice) :</p>
                 <p class="replique">« It’s a good shot. »</p>
@@ -427,19 +146,21 @@
 
     <section id="rappel">
         <div class="cnt">
-            <div class="image">
-                <img src="" alt="une img" width="100%" height="100%">
+            <div class="image block">
+                <img src="img/2A3A9756.JPG" alt="une img" width="100%" height="100%">
             </div>
-            <div class="texte">
+            <div class="texte block">
                 <p>Michael (later, on the way down) :</p>
                 <p class="replique">« One shot. »</p>
                 <p class="didascalie">(No one answers.)</p>          
             </div>
         </div>
     </section>
+
+
     <section id="annexes">
         <p>Vous pouvez voir/télécharger un film un peu longuet en cliquant sur <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685" target="_blank">ce lien</a>.</p>
-        <h2>ANALYSE</h2>
+        <h2 style="margin-top: 1em;">ANALYSE</h2>
         <p>Dans le film <em>The Deer Hunter</em> de Michael Cimino (1978), le passage directement centré sur la chasse au cerf se situe au début du récit, avant le départ des personnages pour la guerre du Vietnam.</p>
         <p>Ce passage joue un rôle fondamental dans la construction symbolique et morale du film.</p>
         <h3>Le passage clé : la chasse au cerf dans les montagnes de Pennsylvanie</h3>
@@ -468,62 +189,36 @@
     </section>
 </body>
 <script>
-    function scrollToEpisodes() {
-      const section = document.getElementById("episodes");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      } else {
-        console.warn("âš ï¸ Section #episodes introuvable.");
+function scrollToEpisodes() {
+  const section = document.getElementById("episodes");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  } else {
+    console.warn("âš ï¸ Section #episodes introuvable.");
+  }
+}
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".timeline-items a");
+
+if (navLinks.length) {
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (pageYOffset >= sectionTop - 200) {
+        current = section.getAttribute("id");
       }
-    }
+    });
 
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".timeline-items a");
-
-    if (navLinks.length) {
-      window.addEventListener("scroll", () => {
-        let current = "";
-
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        navLinks.forEach(link => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-          }
-        });
-      });
-    }
-
-    function handleOrientation(event) {
-      const beta = event.beta;
-      const gamma = event.gamma;
-      
-      const hue = ((beta + 180) / 150) * 270+35;
-      const lightness = ((gamma + 90) / 180) * 196;
-
-      document.body.style.backgroundColor =
-        `hsl(${hue.toFixed(0)}, 380%, ${lightness.toFixed(0)}%)`;
-    }
-
-    function startOrientation() {
-      window.addEventListener("deviceorientation", handleOrientation);
-    }
-
-    if (
-      typeof DeviceOrientationEvent.requestPermission === "function"
-    ) {
-      DeviceOrientationEvent.requestPermission()
-        .then(permission => {
-        })
-        .catch(console.error);
-    } else {
-      startOrientation();
-    }
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+}
 </script>
 </html>
