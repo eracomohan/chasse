@@ -14,13 +14,13 @@
     <title>Chasse</title>
     <style>
         @font-face {
-          font-family: "Continental Compact Bold" ;
-          src: url(twk-continental-compact-bold.woff2);
+            font-family: "Continental Compact Bold" ;
+            src: url(twk-continental-compact-bold.woff2);
         } 
         *{
             cursor: url("mire-blanche.png") 16 16, auto;
             margin: 0;
-          font-family: "Continental Compact Bold" ;
+            font-family: "Continental Compact Bold" ;
         }
         *::selection{
             color: rgba(0, 0, 0, 0);
@@ -93,11 +93,11 @@
           text-align: center;      
         }
         .back{ z-index: 1; }
-        .back-1{ transform: translateY(-30px); }
-        .back-2{ transform: translateY(-30px); }
-        .back-3{ transform: translateY(-30px); }
-        .back-4{ transform: translateY(-30px); }
-        .back-5{ transform: translateY(-30px); }
+        .back-1{ transform: translateY(-37px); }
+        .back-2{ transform: translateY(-37px); }
+        .back-3{ transform: translateY(-37px); }
+        .back-4{ transform: translateY(-37px); }
+        .back-5{ transform: translateY(-37px); }
         .layer{
             /* position: absolute; */
             top: 100px;
@@ -105,24 +105,32 @@
             font-size: 10em;
             letter-spacing: -2px;
             text-transform: uppercase;
-            color: #000;
+            color: #fff;
             white-space: nowrap;
             text-align: center;
-        }    main{ 
+        }    
+        main{ 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding-top: 20vh;
         }
+        p{
+            font-size: 2em;
+            margin-top: 1em;
+            letter-spacing: 0.05em;
+        }
         button{
             margin-top: 3em;
-            padding: 1em 2em;
-            color: darkblue;
-            border: 1px solid darkblue;
-            background-color: beige;
+            padding: 0.5em 1em;
+            border: 1px solid black;
+            background-color: ivory;
+            background-color: rgba(255, 255, 255, 0.47);
+            letter-spacing: 0.02em;
             transition: 230ms ease-in-out;
             border-radius: 5px;
+            font-size: 1.5em;
         }
         button:hover, a:hover{
             cursor: pointer;
@@ -130,16 +138,20 @@
             transition: 230ms ease-in-out;
         }
         button:active{
-            color: beige;
+            color: ivory;
             background-color: darkblue;
         }
         a{
-          text-decoration: none;
-          font-weight: bolder;
-          color: darkblue;
+            text-decoration: none;
+            font-weight: bolder;
+            color: black;
+            cursor: pointer;
         }
         a:active{
-            color: beige;
+            color: ivory;
+        }
+        .cerf:hover{
+            cursor: url("mire-blanche.png") 16 16, auto;
         }
         </style>
 </head>
@@ -150,6 +162,7 @@
     <div class="oneshot3"><div class="layer back back-3">ERROR 404</div></div>
     <div class="oneshot4"><div class="layer back back-4">ERROR 404</div></div>
     <div class="oneshot5"><div class="layer back back-5">ERROR 404</div></div>
+    <p>Cette page n'existe pas <a href="index.html" class="cerf">🦌</a></p>
     <button><a href="https://youtu.be/dQw4w9WgXcQ?si=T_M6ssZ20DKhT4ZT">CLIQUEZ ICI</a></button>
 </main>
 
@@ -174,7 +187,7 @@
       const beta = event.beta;
       const gamma = event.gamma;
 
-      const hue = ((beta + 180) / 150) * 70+35;
+      const hue = ((beta + 180) / 150) * 270+35;
       const lightness = ((gamma + 90) / 180) * 50 + 15;
 
       document.body.style.backgroundColor =
@@ -197,4 +210,3 @@
     }
 </script>
 </html>
-
