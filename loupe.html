@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+                         __________________________________________________________.                    
+               __  __*="" ╰-------┳--------------------╮---------------------------|     == |HOLEMM:>►  
+     ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                    
+    !"         _     _==""(C_)                                                                          
+    !    _.=""' "=__/                                                                                   
+    ╰==""                                                                                               
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursor Loupe</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #F1ECE9;
+      cursor: none; /* on cache le curseur natif */
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* IMAGE DE FOND */
+    .background img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* CURSOR / LOUPE */
+    #cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10;
+
+      --x: 50%;
+      --y: 50%;
+      --r: 10vw;
+    }
+
+    #cursor img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      clip-path: circle(var(--r) at var(--x) var(--y));
+      -webkit-clip-path: circle(var(--r) at var(--x) var(--y));
+
+      transition: clip-path 0.05s linear;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- IMAGE DE BASE -->
+    <picture class="background">
+      <!-- <source srcset="https://www.salecharacter.com/cms-media/SC_Trial_Mobile_Cover_Front_52d1d40203.svg" media="(max-width: 768px)"> -->
+      <!-- <img src="https://www.salecharacter.com/cms-media/SC_Trial_Desktop_Cover_Front_f662a6e02e.svg" alt=""> -->
+       <img src="img/2A3A9813.png" alt="">
+    </picture>
+    <!-- <div style="--x:15%;--y:15%;--r:15vw;transform-origin:15% 15%;clip-path:circle(var(--r, 15vw) at 15% 15%);-webkit-clip-path:circle(var(--r, 15vw) at 15% 15%);" class="bg-black animate-pulse-clip absolute scale-[1.0055] inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-300"></div> -->
+    <!-- IMAGE QUI SUIT LE CURSEUR -->
+    <picture id="cursor">
+      <!-- <source srcset="https://www.salecharacter.com/cms-media/SC_Trial_Mobile_Cover_Hover_68383ef8f7.svg" media="(max-width: 768px)"> -->
+      <!-- <img src="https://www.salecharacter.com/cms-media/SC_Trial_Desktop_Cover_Hover_236e28b3df.svg" alt=""> -->
+       <img src="img/2A3A9813.JPG" alt="">
+    </picture>
+
+  </div>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+
+      cursor.style.setProperty('--x', x + '%');
+      cursor.style.setProperty('--y', y + '%');
+    });
+  </script>
+
+</body>
+</html>
