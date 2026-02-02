@@ -44,62 +44,61 @@
             height: 100vh;
             color: white;
             background-color: black;
-            /* display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center; */
         }
         .oneshot{
-          /* position: relative; */
-          width: 100%;
-          height: 30px;          /* ajuste selon ton besoin */
-          background: #fff;
-          background: none;
-          overflow: hidden;       /* pour couper comme sur l'image */
+            width: 100%;
+            height: 20px;          /* ajuste selon ton besoin */
+            background: #fff;
+            background: none;
+            overflow: hidden;       /* pour couper comme sur l'image */
+            animation: blink linear infinite 1.5s;
         }
         .oneshot2{
-          /* position: relative; */
-          width: 100%;
-          height: 40px;          
-          background: #fff;
-          background: none;
-          overflow: hidden;       
+            /* position: relative; */
+            width: 100%;
+            height: 30px;          
+            background: #fff;
+            background: none;
+            overflow: hidden;
+            animation: blink2 linear infinite 1.5s;
         }
         .oneshot3{
-          /* position: relative; */
-          width: 100%;
-          height: 50px;          
-          background: #fff;
-          background: none;
-          overflow: hidden; 
-          text-align: center;      
+            /* position: relative; */
+            width: 100%;
+            height: 45px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            text-align: center;
+            animation: blink3 linear infinite 1.5s;
         }
         .oneshot4{
-          /* position: relative; */
-          width: 100%;
-          height: 60px;          
-          background: #fff;
-          background: none;
-          overflow: hidden; 
-          text-align: center;      
+            /* position: relative; */
+            width: 100%;
+            height: 60px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            text-align: center;
+            animation: blink4 linear infinite 1.5s;
         }
         .oneshot5{
-          /* position: relative; */
-          width: 100%;
-          height: 125px;          
-          background: #fff;
-          background: none;
-          overflow: hidden; 
-          text-align: center;      
+            /* position: relative; */
+            width: 100%;
+            height: 125px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            text-align: center;
+            animation: blink5 linear infinite 1.5s;
         }
         .back{ z-index: 1; }
-        .back-1{ transform: translateY(-37px); }
-        .back-2{ transform: translateY(-37px); }
+        .back-1{ transform: translateY(-36px); }
+        .back-2{ transform: translateY(-38px); }
         .back-3{ transform: translateY(-37px); }
         .back-4{ transform: translateY(-37px); }
         .back-5{ transform: translateY(-37px); }
         .layer{
-            /* position: absolute; */
             top: 100px;
             font-family: "Continental Compact Bold" ;
             font-size: 10em;
@@ -139,7 +138,8 @@
         }
         button:active{
             color: ivory;
-            background-color: darkblue;
+            background-color: black;
+            border: 1px solid ivory;
         }
         a{
             text-decoration: none;
@@ -149,25 +149,54 @@
         }
         a:active{
             color: ivory;
+            cursor: url("coupdefeu.png") 16 16, auto;
         }
         .cerf:hover{
             cursor: url("mire-blanche.png") 16 16, auto;
         }
-        </style>
+        @keyframes blink{
+        	10%{opacity: 1.0;}
+            11%{opacity: 0.0;}
+            20%{opacity: 0.0;}
+            21%{opacity: 1.0;}
+        }
+        @keyframes blink2{
+        	10%{opacity: 1.0;}
+            11%{opacity: 0.0;}
+            30%{opacity: 0.0;}
+            31%{opacity: 1.0;}
+        }
+        @keyframes blink3{
+        	10%{opacity: 1.0;}
+            11%{opacity: 0.0;}
+            40%{opacity: 0.0;}
+            41%{opacity: 1.0;}
+        }
+        @keyframes blink4{
+        	10%{opacity: 1.0;}
+            11%{opacity: 0.0;}
+            50%{opacity: 0.0;}
+            51%{opacity: 1.0;}
+        }
+        @keyframes blink5{
+        	10%{opacity: 1.0;}
+            11%{opacity: 0.0;}
+            60%{opacity: 0.0;}
+            61%{opacity: 1.0;}
+        }
+    </style>
 </head>
 <body>
-<main>
-    <div class="oneshot"><div class="layer back back-1">ERROR 404</div></div>    
-    <div class="oneshot2"><div class="layer back back-2">ERROR 404</div></div>    
-    <div class="oneshot3"><div class="layer back back-3">ERROR 404</div></div>
-    <div class="oneshot4"><div class="layer back back-4">ERROR 404</div></div>
-    <div class="oneshot5"><div class="layer back back-5">ERROR 404</div></div>
-    <p>Cette page n'existe pas <a href="index.html" class="cerf">🦌</a></p>
-    <button><a href="https://youtu.be/dQw4w9WgXcQ?si=T_M6ssZ20DKhT4ZT">CLIQUEZ ICI</a></button>
-</main>
-
+    <main>
+        <div class="oneshot"><div class="layer back back-1">ERROR 404</div></div>    
+        <div class="oneshot2"><div class="layer back back-2">ERROR 404</div></div>    
+        <div class="oneshot3"><div class="layer back back-3">ERROR 404</div></div>
+        <div class="oneshot4"><div class="layer back back-4">ERROR 404</div></div>
+        <div class="oneshot5"><div class="layer back back-5">ERROR 404</div></div>
+        <p>Cette page n'existe pas <a href="index.html" class="cerf">🦌</a></p>
+        <button><a href="https://youtu.be/dQw4w9WgXcQ?si=T_M6ssZ20DKhT4ZT">CLIQUEZ ICI</a></button>
+    </main>
     <audio id="shot" src="rifle_mixdown.mp3" preload="auto"></audio>
-
 </body>
 <script>
     const shot = document.getElementById("shot");
@@ -181,7 +210,6 @@
     document.addEventListener("mouseup", () => {
         document.body.classList.remove("click");
     });
-
 
     function handleOrientation(event) {
       const beta = event.beta;
