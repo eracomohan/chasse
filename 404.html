@@ -46,12 +46,13 @@
             background-color: black;
         }
         .oneshot{
+            /* position: relative; */
             width: 100%;
-            height: 20px;          /* ajuste selon ton besoin */
+            height: 20px;
             background: #fff;
             background: none;
-            overflow: hidden;       /* pour couper comme sur l'image */
-            animation: blink linear infinite 1.5s;
+            overflow: hidden;
+            animation: blink linear infinite 2s;
         }
         .oneshot2{
             /* position: relative; */
@@ -60,37 +61,34 @@
             background: #fff;
             background: none;
             overflow: hidden;
-            animation: blink2 linear infinite 1.5s;
+            animation: blink2 linear infinite 2s;
         }
         .oneshot3{
-            /* position: relative; */
             width: 100%;
             height: 45px;          
             background: #fff;
             background: none;
             overflow: hidden; 
             text-align: center;
-            animation: blink3 linear infinite 1.5s;
+            animation: blink3 linear infinite 2s;
         }
         .oneshot4{
-            /* position: relative; */
             width: 100%;
             height: 60px;          
             background: #fff;
             background: none;
             overflow: hidden; 
             text-align: center;
-            animation: blink4 linear infinite 1.5s;
+            animation: blink4 linear infinite 2s;
         }
         .oneshot5{
-            /* position: relative; */
             width: 100%;
             height: 125px;          
             background: #fff;
             background: none;
             overflow: hidden; 
             text-align: center;
-            animation: blink5 linear infinite 1.5s;
+            animation: blink5 linear infinite 2s;
         }
         .back{ z-index: 1; }
         .back-1{ transform: translateY(-36px); }
@@ -155,34 +153,34 @@
             cursor: url("mire-blanche.png") 16 16, auto;
         }
         @keyframes blink{
-        	10%{opacity: 1.0;}
-            11%{opacity: 0.0;}
-            20%{opacity: 0.0;}
-            21%{opacity: 1.0;}
+        	  0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            59%{opacity: 0.0;}
+            60%{opacity: 1.0;}
         }
         @keyframes blink2{
-        	10%{opacity: 1.0;}
-            11%{opacity: 0.0;}
-            30%{opacity: 0.0;}
-            31%{opacity: 1.0;}
+        	  0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            61%{opacity: 0.0;}
+            62%{opacity: 1.0;}
         }
         @keyframes blink3{
-        	10%{opacity: 1.0;}
-            11%{opacity: 0.0;}
-            40%{opacity: 0.0;}
-            41%{opacity: 1.0;}
+        	  0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            63%{opacity: 0.0;}
+            64%{opacity: 1.0;}
         }
         @keyframes blink4{
-        	10%{opacity: 1.0;}
-            11%{opacity: 0.0;}
-            50%{opacity: 0.0;}
-            51%{opacity: 1.0;}
+        	  0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            65%{opacity: 0.0;}
+            66%{opacity: 1.0;}
         }
         @keyframes blink5{
-        	10%{opacity: 1.0;}
-            11%{opacity: 0.0;}
-            60%{opacity: 0.0;}
-            61%{opacity: 1.0;}
+        	  0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            67%{opacity: 0.0;}
+            68%{opacity: 1.0;}
         }
     </style>
 </head>
@@ -238,3 +236,4 @@
     }
 </script>
 </html>
+
