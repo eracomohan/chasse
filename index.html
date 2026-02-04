@@ -12,8 +12,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chasse – The Deer hunter</title>
-
+    <link rel="icon" type="image/icon" href="img/favicon.ico"/>
+    <link rel="icon" type="image/svg" href="img/favicon.svg"/>
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fake-font-variable.css">
         <!-- <link rel="preload" href="https://www.basedesign.com/_next/static/css/87dce4012579858dac06.css" as="style"/>
         <link rel="stylesheet" href="https://www.basedesign.com/_next/static/css/87dce4012579858dac06.css" data-n-g=""/>
         <link rel="preload" href="https://www.basedesign.com/_next/static/css/dd93291d2af540cde7dc.css" as="style"/>
@@ -53,7 +56,7 @@
       </h1>
     </section>
     <section class="etape-1">
-      <!-- entre deux arbres -->
+      <!-- entre deux arbres HOVER FLOU -->
         <img class="one" src="img/2A3A9674.JPG" alt="">
         <img class="one" src="img/2A3A9797.JPG" alt="">
         <img class="one" src="img/2A3A9799.JPG" alt="">
@@ -82,7 +85,7 @@
                 </div>
     </section>
     <section class="etape-3">
-<!-- TEXTE ONLY -->
+<!-- texte only COMME BASEDESIGN, MAIS EN MIEUX -->
         <p>You can’t take him like that.</p>
         <p>Why not?</p>
         <p>You’ve got to do it clean.</p>
@@ -109,13 +112,14 @@
         <p>He’s right there.</p>
     </section>
     <section class="etape-5">
-      <!-- dessus nuit -->
+      <!-- dessus nuit PAN PAN -->
         <img src="img/2A3A9804.JPG" alt="">
         <img src="img/2A3A9805.JPG" alt="">
         <p></p>
         <p>If he hears the shot, he won’t be hurt</p>
     </section>
     <section class="etape-6">
+      <!-- SLIDER -->
         <div class="carousel">
             <div class="group">
                 <div class="card">
@@ -243,6 +247,7 @@
         <img class="scr" src="img/2A3A9703.JPG" alt=""> -->
     </section>
     <section class="etape-7">
+      <!-- grossissement -->
         <p>Michael aims for a long time</p>
         <p>Gunshot</p>
         <p>The deer falls</p>
@@ -265,21 +270,26 @@
         <img src="img/2A3A9826.JPG" alt="">
         <img src="img/2A3A9753.JPG" alt="">
     </section>
-    <section class="etape-11">
-      <div class="viewport">
-        <div id="text" class="text">
-          One Shot
-        </div>
-      </div>        
-    </section>
+      <!-- <div class="spacer">
+    Scroll pour entrer dans la section
+  </div> -->
+    <section class="etape-11 typo-section" id="typoSection">
+    <div class="sticky">
+      <div id="text">
+        ONE SHOT
+      </div>
+      <!-- <div id="hud">
+        Antarctica Thin
+      </div> -->
+    </div>
+  </section>      
     <footer>
         <!-- <p>Vous pouvez voir/télécharger un film un peu longuet en cliquant sur <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685" target="_blank">ce lien</a>.</p> -->
         <p>HOLEMM&copy;2026</p>
     </footer>
 </body>
 <!-- <script src="app.js"></script> -->
-<script>
-/*LOUPE*/
+<script>/*LOUPE*/
     const cursor = document.getElementById('cursor');
 
     function updatePosition(x, y) {
@@ -323,31 +333,42 @@
     });
     */
 </script>
-<script>
-  // FONT SCROLL
-const text = document.getElementById("text");
-const hud = document.getElementById("hud");
+  <script>/*FONT SCROLL – FAKE FONT VARIABLE*/
 
-const minWeight = 100;
-const maxWeight = 900;
+    const section = document.getElementById("typoSection");
+    const text = document.getElementById("text");
+    const hud = document.getElementById("hud");
 
-function updateWeight() {
-    const scrollTop = section.scrollY;
-    const maxScroll =
-        document.documentElement.scrollHeight - section.innerHeight;
+    const fonts = [
+      { name: "Thin", family: "Antarctica Thin" },
+      { name: "Light", family: "Antarctica Light" },
+      { name: "Regular", family: "Antarctica Regular" },
+      { name: "Medium", family: "Antarctica Medium" },
+      { name: "Bold", family: "Antarctica Bold" },
+      { name: "Black", family: "Antarctica Black" },
+      { name: "Bold", family: "Antarctica Bold" },
+      { name: "Medium", family: "Antarctica Medium" },
+      { name: "Regular", family: "Antarctica Regular" },
+      { name: "Light", family: "Antarctica Light" },
+      { name: "Thin", family: "Antarctica Thin" },
+    ];
 
-    const progress = scrollTop / maxScroll;
+    let currentIndex = -1;
 
-    const weight =
-        minWeight + progress * (maxWeight - minWeight);
+    window.addEventListener("scroll", () => {
+      const rect = section.getBoundingClientRect();
+      const maxScroll = rect.height - window.innerHeight;
 
-    const roundedWeight = Math.round(weight);
+      if (rect.top <= 0 && Math.abs(rect.top) <= maxScroll) {
+        const progress = Math.abs(rect.top) / maxScroll;
+        const index = Math.round(progress * (fonts.length - 1));
 
-    text.style.fontVariationSettings = `"wght" ${roundedWeight}`;
-    hud.textContent = `Graisse : ${roundedWeight}`;
-}
-
-window.addEventListener("scroll", updateWeight);
-updateWeight();
-</script>
+        if (index !== currentIndex) {
+          currentIndex = index;
+          text.style.fontFamily = fonts[index].family;
+          hud.textContent = `Antarctica ${fonts[index].name}`;
+        }
+      }
+    });
+  </script>
 </html>
