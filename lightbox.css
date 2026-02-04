@@ -21,7 +21,7 @@
             height: 4em;
             width: 6em;
             /* padding: 1em; */
-            background: cornflowerblue;
+            background: rgba(0, 0, 0, 0);
             font-size: 3em;
             border-radius: .2em;
             text-align: center;
