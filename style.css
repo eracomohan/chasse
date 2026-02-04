@@ -1,15 +1,10 @@
-        /* *{
-            cursor: url("mire-blanche.png") 16 16, auto;
-            margin: 0;
-            font-family: Helvetica, sans-serif;
-        } */
         @font-face {
-            font-family: "Antartica Regular" ;
-            src: url(Antarctica-Regular.woff2);
+            font-family: "Antartica Bold" ;
+            src: url(Antartica/Antarctica-Bold.woff2);
         } 
         *{
             margin: 0;
-            font-family: "Antartica Regular" ;
+            font-family: "Antartica Bold" ;
         }
         *::selection{
             color: rgba(0, 0, 0, 0);
