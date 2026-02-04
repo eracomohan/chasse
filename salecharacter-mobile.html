@@ -22,7 +22,7 @@
       cursor: none; /* on cache le curseur natif */
     }
 
-    .container {
+    .container-loupe {
       position: relative;
       width: 100vw;
       height: 100vh;
@@ -30,7 +30,7 @@
     }
 
     /* IMAGE DE FOND */
-    .background img {
+    .background-loupe img {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -85,20 +85,20 @@
 
 <body>
 
-  <div class="container">
+  <div class="container-loupe">
 
     <!-- IMAGE DE BASE -->
-    <picture class="background">
+    <picture class="background-loupe">
       <!-- <source srcset="https://www.salecharacter.com/cms-media/SC_Trial_Mobile_Cover_Front_52d1d40203.svg" media="(max-width: 768px)"> -->
       <!-- <img src="https://www.salecharacter.com/cms-media/SC_Trial_Desktop_Cover_Front_f662a6e02e.svg" alt=""> -->
-       <img src="img/2A3A9813.png" alt="">
+       <img class="loupe" src="img/2A3A9813.png" alt="">
     </picture>
     <!-- <div style="--x:15%;--y:15%;--r:15vw;transform-origin:15% 15%;clip-path:circle(var(--r, 15vw) at 15% 15%);-webkit-clip-path:circle(var(--r, 15vw) at 15% 15%);" class="bg-black animate-pulse-clip absolute scale-[1.0055] inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-300"></div> -->
     <!-- IMAGE QUI SUIT LE CURSEUR -->
     <picture id="cursor">
       <!-- <source srcset="https://www.salecharacter.com/cms-media/SC_Trial_Mobile_Cover_Hover_68383ef8f7.svg" media="(max-width: 768px)"> -->
       <!-- <img src="https://www.salecharacter.com/cms-media/SC_Trial_Desktop_Cover_Hover_236e28b3df.svg" alt=""> -->
-       <img src="img/2A3A9813.JPG" alt="">
+       <img class="loupe" src="img/2A3A9813.JPG" alt="">
     </picture>
 
   </div>
