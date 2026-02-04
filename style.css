@@ -428,11 +428,11 @@
 }
 @font-face{
     font-family: "Antartica Extra Condensed Bold Italic" ;
-    src: url(Antarctica/Antarctica-ExtraCondBoldIta.woff2) format("woff2");
+    src: url("Antarctica/Antarctica-ExtraCondBoldIta.woff2") format("woff2");
 }
 @font-face{
     font-family: "Antartica Extra Condensed Bold" ;
-    src: url(Antarctica/Antarctica-ExtraCondensedBold.woff2) format("woff2");
+    src: url("Antarctica/Antarctica-ExtraCondensedBold.woff2") format("woff2");
 }
 @font-face{
     font-family: "Antartica Extra Condensed Thin" ;
@@ -1054,9 +1054,10 @@
     font-family: "Antartica Extra Condensed Extra Light Italic Contrast" ;
     src: url("Antarctica/Antarctica-XCnXLtItContrast.woff2") format("woff2");
 }
+
         *{
             margin: 0;
-            font-family: "Antartica Bold" ;
+    font-family: "Antartica Bold" ;
         }
         *::selection{
             color: rgba(0, 0, 0, 0);
@@ -1093,7 +1094,7 @@
         }
 
 section{
-    height: 100vh;
+    /* height: 100vh; */
     border-bottom: 1px solid gold;
     padding: 1em;
 }
@@ -1101,7 +1102,255 @@ img{
     height: 30%;
     width: auto;
 }
+
+/* HERO ====================================================================================================*/
+.hero{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+}        
+.hero-oneshot{
+            /* position: relative; */
+            width: 100%;
+            height: 20px;          /* ajuste selon ton besoin */
+            background: #fff;
+            background: none;
+            overflow: hidden;       /* pour couper comme sur l'image */
+            animation: blink linear infinite 2s;
+        }
+        .hero-oneshot2{
+            /* position: relative; */
+            width: 100%;
+            height: 30px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            animation: blink2 linear infinite 2s;
+
+        }
+        .hero-oneshot3{
+            /* position: relative; */
+            width: 100%;
+            height: 40px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            text-align: center;
+            animation: blink3 linear infinite 2s; 
+        }
+        .hero-oneshot4{
+            /* position: relative; */
+            width: 100%;
+            height: 50px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            text-align: center;
+            animation: blink4 linear infinite 2s;
+
+        }
+        .hero-oneshot5{
+            /* position: relative; */
+            width: 100%;
+            height: 125px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            text-align: center;
+            animation: blink5 linear infinite 2s;
+        }
+.hunter-oneshot{
+            /* position: relative; */
+            width: 100%;
+            height: 20px;          /* ajuste selon ton besoin */
+            background: #fff;
+            background: none;
+            overflow: hidden;       /* pour couper comme sur l'image */
+            animation: blink linear infinite 2s;
+        }
+        .hunter-oneshot2{
+            /* position: relative; */
+            width: 100%;
+            height: 30px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            animation: blink2 linear infinite 2s;
+
+        }
+        .hunter-oneshot3{
+            /* position: relative; */
+            width: 100%;
+            height: 40px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            text-align: center;
+            animation: blink3 linear infinite 2s; 
+        }
+        .hunter-oneshot4{
+            /* position: relative; */
+            width: 100%;
+            height: 50px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            text-align: center;
+            animation: blink4 linear infinite 2s;
+
+        }
+        .hunter-oneshot5{
+            /* position: relative; */
+            width: 100%;
+            height: 125px;          
+            background: #fff;
+            background: none;
+            overflow: hidden; 
+            text-align: center;
+            animation: blink5 linear infinite 2s;
+        }
+
+        .hero-back{ z-index: 1; }
+        .hero-back-1{ transform: translateY(-36px); }
+        .hero-back-2{ transform: translateY(-36px); }
+        .hero-back-3{ transform: translateY(-36px); }
+        .hero-back-4{ transform: translateY(-36px); }
+        .hero-back-5{ transform: translateY(-36px); }
+        .hunter-back-1{ transform: translateY(-140px); }
+        .hunter-back-2{ transform: translateY(-130px); }
+        .hunter-back-3{ transform: translateY(-120px); }
+        .hunter-back-4{ transform: translateY(-110px); }
+        .hunter-back-5{ transform: translateY(-36px); }        
+        .hero-layer{
+            /* position: absolute; */
+            top: 100px;
+            font-family: "Antartica Ultra Condensed Semi Bold" ;
+            font-size: 10em;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            color: #000;
+            white-space: nowrap;
+            text-align: center;
+        }
+        .hunter-layer{
+            /* position: absolute; */
+            top: 100px;
+            font-family: "Antartica Ultra Condensed Semi Bold" ;
+            font-size: 10em;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            color: #000;
+            white-space: nowrap;
+            text-align: center;
+        }
+        .deer{ 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hunter{ 
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes blink{
+        	0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            59%{opacity: 0.0;}
+            60%{opacity: 1.0;}
+
+
+        }
+        @keyframes blink2{
+        	0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            61%{opacity: 0.0;}
+            62%{opacity: 1.0;}
+
+
+        }
+        @keyframes blink3{
+        	0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            63%{opacity: 0.0;}
+            64%{opacity: 1.0;}
+
+
+        }
+        @keyframes blink4{
+        	0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            65%{opacity: 0.0;}
+            66%{opacity: 1.0;}
+
+
+        }
+        @keyframes blink5{
+        	0%{opacity: 1.0;}
+            1%{opacity: 0.0;}
+            67%{opacity: 0.0;}
+            68%{opacity: 1.0;}
+
+        }
+@media screen and (max-width:710px) {
+    .hunter-layer{
+        font-size: 5em;
+    }
+    .hero-layer{
+        font-size: 5em;
+    }
+.hero-oneshot{
+            height: 10px;          /* ajuste selon ton besoin */
+        }
+        .hero-oneshot2{
+            height: 15px;         
+        }
+        .hero-oneshot3{
+            height: 20px;          
+        }
+        .hero-oneshot4{
+            height: 25px;          
+        }
+        .hero-oneshot5{
+            height: 63px;          
+        }
+.hunter-oneshot{
+            height: 10px;          /* ajuste selon ton besoin */
+        }
+        .hunter-oneshot2{
+            height: 15px;         
+        }
+        .hunter-oneshot3{
+            height: 20px;          
+        }
+        .hunter-oneshot4{
+            height: 25px;          
+        }
+        .hunter-oneshot5{
+            height: 63px;          
+        }
+        .hero-back-1{ transform: translateY(-18px); }
+        .hero-back-2{ transform: translateY(-18px); }
+        .hero-back-3{ transform: translateY(-18px); }
+        .hero-back-4{ transform: translateY(-18px); }
+        .hero-back-5{ transform: translateY(-18px); }
+        .hunter-back-1{ transform: translateY(-70px); }
+        .hunter-back-2{ transform: translateY(-65px); }
+        .hunter-back-3{ transform: translateY(-60px); }
+        .hunter-back-4{ transform: translateY(-55px); }
+        .hunter-back-5{ transform: translateY(-18px); } 
+
+
+}
+
+
 /* SECTION 1 =============================================================================================*/
+.etape-1{
+    height: 100vh;
+}
 .one{
     filter: blur(5px);
     transition: 450ms;
@@ -1113,7 +1362,7 @@ img{
     transition: 450ms;
 }
 
-.oneshot{
+        .oneshot{
             position: relative;
             width: 100%;
             height: 40px;          /* ajuste selon ton besoin */
@@ -1166,7 +1415,7 @@ img{
             position: absolute;
             top: 100px;             /* position verticale du "front" */
             /* font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif; */
-            font-family: "Antartica Bold" ;
+    font-family: "Antartica Bold" ;
             /* font-size: 10em; */
             font-size: 10em;
             letter-spacing: 2px;
@@ -1192,15 +1441,85 @@ img{
             animation-timeline: view();
             animation-range: entry 0% cover 40%;
         }
+@media screen and (max-width:710px) {
+
+    .layer{
+        font-size: 5em;
+    }
+.oneshot{
+            height: 10px;          /* ajuste selon ton besoin */
+        }
+        .oneshot2{
+            height: 15px;         
+        }
+        .oneshot3{
+            height: 20px;          
+        }
+        .oneshot4{
+            height: 25px;          
+        }
+        .oneshot5{
+            height: 63px;          
+        }
+        .back-1{ transform: translateY(-36px); }
+        .back-2{ transform: translateY(-36px); }
+        .back-3{ transform: translateY(-36px); }
+        .back-4{ transform: translateY(-36px); }
+        .back-5{ transform: translateY(-36px); }
+}
+
+
 /* SECTION 2 =============================================================================================*/
+.etape-2{
+    height: 100vh;
+}
+.got1{
+    filter: blur(5px);
+    transition: 450ms;
+    margin: 1em;
+}
+.got2{
+    filter: blur(5px);
+    transition: 450ms;
+    margin: 1em;
+    z-index: 2;
+    transform: translateX(-60%);
+    /* transform: translateY(50%); */
+}
+.got3{
+    filter: blur(5px);
+    transition: 450ms;
+    margin: 1em;
+    z-index: 3;
+    transform: translateX(-120%);
+    /* transform: translateX(-0%);
+    transform: translateY(0%); */
+}
+.got1:hover{
+    filter: blur(0px);
+    z-index: 40;
+}
+.got2:hover{
+    filter: blur(0px);
+    z-index: 2;
+}
+.got3:hover{
+    filter: blur(0px);
+    z-index: 2;
+}
+
+
 
 /* SECTION 3 =============================================================================================*/
-
+.etape-3{
+    height: 100%;
+}
 
 
 /* SECTION 4 =============================================================================================*/
 .etape-4{
     padding: 0;
+    height: 100vh;
 }   
 .container-loupe {
       position: relative;
@@ -1264,9 +1583,19 @@ img{
     */
 
 /* SECTION 5 =============================================================================================*/
+.etape-5{
+    height: 100vh;
+}
 /* SECTION 6 =============================================================================================*/
+.etape-6{
+    height: 50vh;
+}
 /* SECTION 7 =============================================================================================*/
+.etape-7{
+    height: auto;
+}
 .ShrinkingText_root__3cIPn {
+    /* font-family: BaseGrotesk,sans-serif; */
     font-weight: 300;
     font-size: 20px;
     line-height: 24px;
@@ -1329,43 +1658,67 @@ img{
     cursor: default
 }
 
-
-
-
-
-
-
-
-
+.gunshot{
+    margin-top: 100em;
+}
 /* SECTION 8 =============================================================================================*/
-        /* body{
-            margin: 0;
-            background: #222;
-            overflow: hidden;
-        }         */
-/* .etape-8{
-            margin: 0;
-            background: #222;
-            overflow: hidden;
-        } */
-        /* .holo {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 90%;
-            max-height: 90%;
-            transition: opacity 0.2s ease;
-            opacity: 0;
-        }  */
+.etape-8{
+    height: 100vh;
+}
+/* 
+    position: relative;
+    width: 100%;
+    background: #222;
+    overflow: hidden;
+}
+
+.holo-img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+} */
+
 /* SECTION 9 =============================================================================================*/
+.etape-9{
+    height: 100vh;
+}
 /* SECTION 10 =============================================================================================*/
+.etape-10{
+    height: 100vh;
+}
+.images {
+  position: sticky;
+  top: 0;
+  height: 50vh;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  height: 90%;
+
+  width: auto;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.image.active {
+  opacity: 1;
+}
+
 /* SECTION 11 =============================================================================================*/
-        /*@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');*/
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .etape-11{
-        /*font-family: "Inter", sans-serif;*/
+        font-family: "Inter", sans-serif;
         box-sizing: border-box;
+        height: 100vh;
     }
 
 /* Texte fixé au centre */
