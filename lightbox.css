@@ -1,0 +1,450 @@
+        .carousel{
+            margin: 100px auto;
+            width: 90%;
+            /* border: 1px solid red; */
+            display: flex;
+            overflow-x: auto;/*CHANGE EN VERTICAL*/
+        }
+        .carousel::-webkit-scrollbar{
+            display: none;
+        }
+        .group{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            animation: spin 1.5s infinite linear;
+            padding-right: 1em;
+            flex: 0 0 5em;
+        }
+        .card{
+            height: 4em;
+            width: 6em;
+            /* padding: 1em; */
+            background: cornflowerblue;
+            font-size: 3em;
+            border-radius: .2em;
+            text-align: center;
+            align-content: center;
+
+        }
+        @keyframes spin{
+            from{translate: 0;}
+            to{translate: -100%;}/*CHANGER POUR LE SENS*/
+        }
+        a{
+            height: 4em;
+            width: 6em;
+            height: 100%;
+            width: 100%;
+        }
+        img{
+            height: 4em;
+            width: 6em;
+            height: 100%;
+            width: 100%;
+        }
+
+    .lb-loader, .lightbox {
+        text-align: center;
+        line-height:0
+    }
+
+    body.lb-disable-scrolling {
+        overflow:hidden
+    }
+
+    .lightboxOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background-color: #000;
+        opacity: .8;
+        display:none
+    }
+
+    .lightbox {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 10000;
+        font-weight: 400;
+        outline:0
+    }
+
+    .lightbox .lb-image {
+        display: block;
+        height: auto;
+        max-width: inherit;
+        max-height: none;
+        border-radius: 3px;
+        border:4px solid #fff
+    }
+
+    .lightbox a img {
+        border:none
+    }
+
+    .lb-outerContainer {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+        border-radius: 4px;
+        background-color:#fff
+    }
+
+    .lb-loader, .lb-nav {
+        position: absolute;
+        left:0
+    }
+
+    .lb-outerContainer:after {
+        content: "";
+        display: table;
+        clear:both
+    }
+
+    .lb-loader {
+        top: 43%;
+        height: 25%;
+        width:100%
+    }
+
+    .lb-cancel {
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin: 0 auto;
+        background:url(img/loading.gif) no-repeat
+    }
+
+    .lb-nav {
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index:10
+    }
+
+    .lb-container > .nav {
+        left:0
+    }
+
+    .lb-nav a {
+        outline: 0;
+        background-image: url(data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==)
+    }
+
+    .lb-next, .lb-prev {
+        height: 100%;
+        cursor: pointer;
+        display:block
+    }
+
+    .lb-nav a.lb-prev {
+        width: 34%;
+        left: 0;
+        float: left;
+        background: url(img/prev.webp) left 48% no-repeat;
+        opacity: 0;
+        -webkit-transition: opacity .6s;
+        -moz-transition: opacity .6s;
+        -o-transition: opacity .6s;
+        transition:opacity .6s
+    }
+
+    .lb-nav a.lb-prev:hover {
+        opacity:1
+    }
+
+    .lb-nav a.lb-next {
+        width: 64%;
+        right: 0;
+        float: right;
+        background: url(img/next.webp) right 48% no-repeat;
+        opacity: 0;
+        -webkit-transition: opacity .6s;
+        -moz-transition: opacity .6s;
+        -o-transition: opacity .6s;
+        transition:opacity .6s
+    }
+
+    .lb-nav a.lb-next:hover {
+        opacity:1
+    }
+
+    .lb-dataContainer {
+        margin: 0 auto;
+        padding-top: 5px;
+        width: 100%;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius:4px
+    }
+
+    .lb-dataContainer:after {
+        content: "";
+        display: table;
+        clear:both
+    }
+
+    .lb-data {
+        padding: 0 4px;
+        color:#ccc
+    }
+
+    .lb-data .lb-details {
+        width: 85%;
+        float: left;
+        text-align: left;
+        line-height:1.1em
+    }
+
+    .lb-data .lb-caption {
+        font-size: 13px;
+        font-weight: 700;
+        line-height:1em
+    }
+
+    .lb-data .lb-caption a {
+        color:#4ae
+    }
+
+    .lb-data .lb-number {
+        display: block;
+        clear: left;
+        padding-bottom: 1em;
+        font-size: 12px;
+        color:#999
+    }
+
+    .lb-data .lb-close {
+        display: block;
+        float: right;
+        width: 30px;
+        height: 30px;
+        background: url(img/close.webp) top right no-repeat;
+        text-align: right;
+        outline: 0;
+        opacity: .7;
+        -webkit-transition: opacity .2s;
+        -moz-transition: opacity .2s;
+        -o-transition: opacity .2s;
+        transition:opacity .2s
+    }
+
+    .lb-data .lb-close:hover {
+        cursor: pointer;
+        opacity: 1
+    }/*lightbox2-2.11.5/dist/css/lightbox.css*/
+
+    body.lb-disable-scrolling {
+        overflow: hidden;
+    }
+
+    .lightboxOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background-color: black;
+        opacity: 0.8;
+        display: none;
+    }
+
+    .lightbox {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 10000;
+        text-align: center;
+        line-height: 0;
+        font-weight: normal;
+        outline: none;
+    }
+
+    .lightbox .lb-image {
+        display: block;
+        height: auto;
+        max-width: inherit;
+        max-height: none;
+        border-radius: 3px;
+        border: 4px solid white;
+    }
+
+    .lightbox a img {
+        border: none;
+    }
+
+    .lb-outerContainer {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+        border-radius: 4px;
+        background-color: white;
+    }
+
+    .lb-outerContainer:after {
+        content: "";
+        display: table;
+        clear: both;
+    }/*ICI IL Y A LES .LB */
+
+    .lb-loader {
+        position: absolute;
+        top: 43%;
+        left: 0;
+        height: 25%;
+        width: 100%;
+        text-align: center;
+        line-height: 0;
+    }
+
+    .lb-cancel {
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin: 0 auto;
+        background: url(img/loading.gif) no-repeat;
+    }
+
+    .lb-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .lb-container > .nav {
+        left: 0;
+    }
+
+    .lb-nav a {
+        outline: none;
+        background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+    }
+
+    .lb-prev, .lb-next {
+        height: 100%;
+        cursor: pointer;
+        display: block;
+    }
+
+    .lb-nav a.lb-prev {
+        width: 34%;
+        left: 0;
+        float: left;
+        background: url(img/prev.webp) left 48% no-repeat;
+        opacity: 0;
+        -webkit-transition: opacity 0.6s;
+        -moz-transition: opacity 0.6s;
+        -o-transition: opacity 0.6s;
+        transition: opacity 0.6s;
+    }
+
+    .lb-nav a.lb-prev:hover {
+        opacity: 1;
+    }
+
+    .lb-nav a.lb-next {
+        width: 64%;
+        right: 0;
+        float: right;
+        background: url(img/next.webp) right 48% no-repeat;
+        opacity: 0;
+        -webkit-transition: opacity 0.6s;
+        -moz-transition: opacity 0.6s;
+        -o-transition: opacity 0.6s;
+        transition: opacity 0.6s;
+    }
+
+    .lb-nav a.lb-next:hover {
+        opacity: 1;
+    }/*LES PETITES INFORMATIONS AVEC LA CROIX*/
+
+    .lb-dataContainer {
+        margin: 0 auto;
+        padding-top: 5px;
+        width: 100%;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+
+    .lb-dataContainer:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .lb-data {
+        padding: 0 4px;
+        color: #fafafa;
+    }
+
+    .lb-data .lb-details {
+        width: 85%;
+        float: left;
+        text-align: left;
+        line-height: 1.1em;
+    }
+
+    .lb-data .lb-caption {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1em;
+    }
+
+    .lb-data .lb-caption a {
+        color: #4ae;
+    }/*LP NUMBER, C'EST IMAGE N SUR N DON CA SERT A RIEN */
+
+    .lb-data .lb-number {
+        display: block;
+        clear: left;
+        padding-bottom: 1em;
+        font-size: 12px;
+        color: #999999;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        /*JE SUPPRIME LP.NUMBER*/
+        opacity: 0;
+    }
+
+    .lb-data .lb-close {
+        display: block;
+        float: right;
+        width: 30px;
+        height: 30px;
+        background: url(img/close.webp) top right no-repeat;
+        text-align: right;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        transition: opacity 0.2s;
+    }
+
+    .lb-data .lb-close:hover {
+        cursor: pointer;
+        opacity: 1;
+    }/*C MOI QUI CODE MAINTENANT*/ 
+.gallery{
+    height: 4em;
+}
+            a{
+            /* height: 4em;
+            width: 6em; */
+            height: 100%;
+            width: 100%;
+                height: 4em;
+
+        }
+        .slideshow{
+            /* height: 4em;
+            width: 6em; */
+            height: 100%;
+            width: 100%;
+        }

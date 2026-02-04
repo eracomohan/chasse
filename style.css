@@ -1,0 +1,350 @@
+        /* *{
+            cursor: url("mire-blanche.png") 16 16, auto;
+            margin: 0;
+            font-family: Helvetica, sans-serif;
+        } */
+        @font-face {
+            font-family: "Antartica Regular" ;
+            src: url(Antarctica/Antarctica-Regular.woff2);
+        } 
+        *{
+            margin: 0;
+            font-family: "Antartica Regular" ;
+        }
+        *::selection{
+            color: rgba(0, 0, 0, 0);
+            rotate: -90deg;
+        color:rgb(255, 0, 0);
+        text-shadow:
+        1px 0.1px 1px #7b0000,
+        1px 0.2px 1px #8a0000,
+        1px 0.3px 1px #bc0000,
+        1px 0.4px 1px #d50000,
+        1px 0.5px 1px #ff0000;
+        } 
+        /* .click body,
+        .click *,
+        body.click *,
+        .click *,
+        .click {
+            cursor: url("coupdefeu.png") 16 16, auto;
+        } */
+        body{
+            height: 100vh;
+            /* padding: 1em; */
+            color: black;
+            background-color: white;
+        }
+        h1{margin-top: 1.5em;}
+        .replique{margin-left: 1em;}
+        .didascalie{font-style: italic;}
+        h2, h3{margin-top: 1em;}
+        h4{margin-top: 0.5em;}
+        p{
+            margin-bottom: 0.5em;
+            font-size: 2em;
+        }
+
+section{
+    height: 100vh;
+    border-bottom: 1px solid gold;
+    padding: 1em;
+}
+img{
+    height: 30%;
+    width: auto;
+}
+/* SECTION 1 =============================================================================================*/
+.one{
+    filter: blur(5px);
+    transition: 450ms;
+    margin: 1em;
+}
+.one:hover{
+    filter: blur(5px);
+    filter: none;
+    transition: 450ms;
+}
+
+.oneshot{
+            position: relative;
+            width: 100%;
+            height: 40px;          /* ajuste selon ton besoin */
+            background: #fff;
+            background: none;
+            overflow: hidden;       /* pour couper comme sur l'image */
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            text-align: center;
+        }
+         .oneshot2{
+            position: relative;
+            width: 100%;
+            height: 60px;
+            background: #fff;
+            background: none;
+            overflow: hidden;
+            justify-content: center;
+        }
+        .oneshot3{
+            position: relative;
+            width: 100%;
+            height: 170px;
+            background: #fff;
+            background: none;
+            overflow: hidden;
+            justify-content: center;
+        }
+        /* les 2 derrière */
+        .back{ z-index: 1;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            text-align: center; }
+        .back-1{ 
+            transform: translateY(-130px);
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            text-align: center; 
+        }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+        .back-2{ transform: translateY(-130px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+        .back-3{ transform: translateY(-130px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+
+        /* le texte devant */
+        .front{ z-index: 2;
+            text-align: center;        }
+        .layer{
+            position: absolute;
+            top: 100px;             /* position verticale du "front" */
+            /* font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif; */
+            font-family: "Antartica Regular" ;
+            /* font-size: 10em; */
+            font-size: 10em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #000;
+            white-space: nowrap;
+            text-align: center;
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                clip-path: inset(0 0 100% 0);
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                clip-path: inset(0 0 0 0);
+                transform: translateY(0);
+            }
+        }
+        .block{
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+/* SECTION 2 =============================================================================================*/
+
+/* SECTION 3 =============================================================================================*/
+
+
+
+/* SECTION 4 =============================================================================================*/
+.etape-4{
+    padding: 0;
+}   
+.container-loupe {
+      position: relative;
+      height: 90vh;
+      width: auto;
+      overflow: hidden;
+    }
+
+    /* IMAGE DE FOND */
+    .background-loupe img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* CURSOR / LOUPE */
+    #cursor {
+      /* position: fixed; */
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      width: 100%;
+      height: 100%;      /* margin: 1em; */
+      pointer-events: none;
+      z-index: 10;
+
+      --x: 50%;
+      --y: 50%;
+      --r: 10vw;
+    }
+
+    #cursor img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      clip-path: circle(var(--r) at var(--x) var(--y));
+      -webkit-clip-path: circle(var(--r) at var(--x) var(--y));
+
+      transition: clip-path 0.05s linear;
+    }
+    #cursor {
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    @media (pointer: fine) {
+        #cursor {
+            opacity: 1; /* toujours visible à la souris */
+        }
+    }
+    /*
+    @media (pointer: coarse) {
+        #cursor {
+            --r: 28vw;
+        }
+    }
+    */
+
+/* SECTION 5 =============================================================================================*/
+/* SECTION 6 =============================================================================================*/
+/* SECTION 7 =============================================================================================*/
+.ShrinkingText_root__3cIPn {
+    font-family: BaseGrotesk,sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: .01em;
+    position: relative;
+    width: 100%;
+    will-change: transform
+}
+
+.ShrinkingText_line__1TUTh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    will-change: width
+}
+
+.ShrinkingText_calcSpan__20QqJ {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden
+}
+
+@media screen and (max-width: 1179px) and (min-width:834px) {
+    .ShrinkingText_root__3cIPn {
+        font-weight:300;
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: 0
+    }
+}
+
+@media screen and (min-width: 1180px) {
+    .ShrinkingText_root__3cIPn {
+        font-weight:300;
+        font-size: 60px;
+        line-height: 70px;
+        letter-spacing: 0
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .ShrinkingText_root__3cIPn {
+        font-weight:300;
+        font-size: 70px;
+        line-height: 80px;
+        letter-spacing: 0
+    }
+}
+
+.ArrowLink_link__1oKR- {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px 0;
+    position: relative;
+    z-index: 1;
+    mix-blend-mode: difference;
+    cursor: default
+}
+
+
+
+
+
+
+
+
+
+/* SECTION 8 =============================================================================================*/
+        /* body{
+            margin: 0;
+            background: #222;
+            overflow: hidden;
+        }         */
+/* .etape-8{
+            margin: 0;
+            background: #222;
+            overflow: hidden;
+        } */
+        /* .holo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            transition: opacity 0.2s ease;
+            opacity: 0;
+        }  */
+/* SECTION 9 =============================================================================================*/
+/* SECTION 10 =============================================================================================*/
+/* SECTION 11 =============================================================================================*/
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.etape-11{
+        font-family: "Inter", sans-serif;
+        box-sizing: border-box;
+    }
+
+/* Texte fixé au centre */
+    .viewport {
+      /* position: fixed; */
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .text {
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      line-height: 1.1;
+      font-variation-settings: "wght" 100;
+      transition: font-variation-settings 0.05s linear;
+    }
+
+    /* Indicateur */
+    .hud {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
