@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Antarctica – Test de graisse au scroll</title>
+
+  <style>
+    /* =============================
+       FONTS (version statique)
+       ============================= */
+
+    @font-face {
+      font-family: "Antarctica Thin";
+      src: url("Antarctica/Antarctica-Thin.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "Antarctica Light";
+      src: url("Antarctica/Antarctica-Light.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "Antarctica Regular";
+      src: url("Antarctica/Antarctica-Regular.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "Antarctica Medium";
+      src: url("Antarctica/Antarctica-Medium.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "Antarctica Bold";
+      src: url("Antarctica/Antarctica-Bold.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "Antarctica Black";
+      src: url("Antarctica/Antarctica-Black.woff2") format("woff2");
+    }
+
+    /* =============================
+       BASE
+       ============================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f7f7f7;
+      color: #111;
+    }
+
+    /* =============================
+       SECTION TYPO
+       ============================= */
+
+    .typo-section {
+      height: 300vh; /* durée du scroll */
+      background: #f7f7f7;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #text {
+      font-size: clamp(3rem, 6vw, 6rem);
+      line-height: 1.1;
+      font-family: "Antarctica Thin";
+      transition: font-family 0.15s ease;
+      text-align: center;
+    }
+
+    #hud {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    /* =============================
+       CONTENU AVANT / APRÈS
+       ============================= */
+
+    .spacer {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="spacer">
+    Scroll pour entrer dans la section
+  </div>
+
+  <section class="typo-section" id="typoSection">
+    <div class="sticky">
+      <div id="text">
+        Ceci est un test de graisse Antarctica
+      </div>
+      <div id="hud">
+        Antarctica Thin
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer">
+    Fin de la section
+  </div>
+
+  <script>
+    const section = document.getElementById("typoSection");
+    const text = document.getElementById("text");
+    const hud = document.getElementById("hud");
+
+    const fonts = [
+      { name: "Ultra Condensed Hairline", family: "Antarctica Ultra Condensed Hairline" },
+      { name: "Ultra Condensed Thin", family: "Antarctica Ultra Condensed Thin" },
+      { name: "Extra Condensed Extra Light", family: "Antarctica Extra Condensed Extra Light" },
+      { name: "Extra Condensed Light", family: "Antarctica Extra Condensed Light" },
+      { name: "Condensed Book", family: "Antarctica Condensed Book" },
+      { name: "Condensed Regular", family: "Antarctica Condensed Regular" },
+      { name: "Medium", family: "Antarctica Medium" },
+      { name: "Semi Bold", family: "Antarctica Semi Bold" },
+      { name: "Expanded Bold", family: "Antarctica Expanded Bold" },
+      { name: "Expanded Extra Bold", family: "Antarctica Expanded Extra Bold" },
+      { name: "Ultra Expanded Black", family: "Antarctica Ultra Expanded Black" },
+      { name: "Ultra Expanded Extra Black", family: "Antarctica Ultra Expanded Extra Black" },
+      { name: "Black", family: "Antarctica Black" },
+      { name: "Extra Bold", family: "Antarctica Extra Bold" },
+      { name: "Bold", family: "Antarctica Bold" },
+      { name: "Semi Bold", family: "Antarctica Semi Bold" },
+      { name: "Medium", family: "Antarctica Medium" },
+      { name: "Regular", family: "Antarctica Regular" },
+      { name: "Book", family: "Antarctica Book" },
+      { name: "Light", family: "Antarctica Light" },
+      { name: "Extra Light", family: "Antarctica Extra Light" },
+      { name: "Thin", family: "Antarctica Thin" },
+      { name: "Hairline", family: "Antarctica Hairline" },
+    ];
+
+    let currentIndex = -1;
+
+    window.addEventListener("scroll", () => {
+      const rect = section.getBoundingClientRect();
+      const maxScroll = rect.height - window.innerHeight;
+
+      if (rect.top <= 0 && Math.abs(rect.top) <= maxScroll) {
+        const progress = Math.abs(rect.top) / maxScroll;
+        const index = Math.round(progress * (fonts.length - 1));
+
+        if (index !== currentIndex) {
+          currentIndex = index;
+          text.style.fontFamily = fonts[index].family;
+          hud.textContent = `Antarctica ${fonts[index].name}`;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test variable font au scroll</title>
+
+  <!- Police variable ->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900">
+  <style>
+    @font-face{
+    font-family: "Antartica Black" ;
+    src: url(Antarctica/Antarctica-Black.woff2);
+}
+@font-face{
+    font-family: "Antartica Black Contrast" ;
+    src: url(Antarctica/Antarctica-BlackContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-BlackItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Black Italic" ;
+    src: url(Antarctica/Antarctica-BlackItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Bold" ;
+    src: url(Antarctica/Antarctica-Bold.woff2);
+}
+@font-face{
+    font-family: "Antartica Bold Contrast" ;
+    src: url(Antarctica/Antarctica-BoldContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Bold Italic" ;
+    src: url(Antarctica/Antarctica-BoldItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-BoldItalicContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-CnBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-CnBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Hairline Contrast" ;
+    src: url(Antarctica/Antarctica-CnHairlineContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Hairline Italic Contrast" ;
+    src: url(Antarctica/Antarctica-CnHairlineItContra.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-CnLtItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Semi bold Contrast" ;
+    src: url(Antarctica/Antarctica-CnSmBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Thin Italic Contrast" ;
+    src: url(Antarctica/Antarctica-CnThItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Bold Contrast" ;
+    src: url(Antarctica/Antarctica-CnXBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-CnXBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-CnXLtItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Black Contrast" ;
+    src: url(Antarctica/Antarctica-CondBlackContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Black Italic" ;
+    src: url(Antarctica/Antarctica-CondBlackIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Bold Contrast" ;
+    src: url(Antarctica/Antarctica-CondBoldContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Bold Italic" ;
+    src: url(Antarctica/Antarctica-CondBoldIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Black" ;
+    src: url(Antarctica/Antarctica-CondensedBlack.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Bold" ;
+    src: url(Antarctica/Antarctica-CondensedBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Black" ;
+    src: url(Antarctica/Antarctica-CondensedExtraBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Hairline" ;
+    src: url(Antarctica/Antarctica-CondensedHairline.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Light" ;
+    src: url(Antarctica/Antarctica-CondensedLight.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Medium" ;
+    src: url(Antarctica/Antarctica-CondensedMedium.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Regular" ;
+    src: url(Antarctica/Antarctica-CondensedRegular.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Semi Bold" ;
+    src: url(Antarctica/Antarctica-CondensedSemiBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Thin" ;
+    src: url(Antarctica/Antarctica-CondensedThin.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Bold Contrast" ;
+    src: url(Antarctica/Antarctica-CondExtBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Bold Italic" ;
+    src: url(Antarctica/Antarctica-CondExtBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Black" ;
+    src: url(Antarctica/Antarctica-CondExtBlk.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Black Contrast" ;
+    src: url(Antarctica/Antarctica-CondExtBlkContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Black Italic" ;
+    src: url(Antarctica/Antarctica-CondExtBlkIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Light" ;
+    src: url(Antarctica/Antarctica-CondExtLt.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Light Contrast" ;
+    src: url(Antarctica/Antarctica-CondExtLtContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Extra Light Italic" ;
+    src: url(Antarctica/Antarctica-CondExtLtIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Hairline Italic" ;
+    src: url(Antarctica/Antarctica-CondHairlineIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Light Contrast" ;
+    src: url(Antarctica/Antarctica-CondLightContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Light Contrast" ;
+    src: url(Antarctica/Antarctica-CondLightIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Medium Contrast" ;
+    src: url(Antarctica/Antarctica-CondMedContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Medium Italic" ;
+    src: url(Antarctica/Antarctica-CondMedIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Medium Italic Contrast" ;
+    src: url(Antarctica/Antarctica-CondMedItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Regular Contrast" ;
+    src: url(Antarctica/Antarctica-CondRegContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Regular Italic" ;
+    src: url(Antarctica/Antarctica-CondRegIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Regular Italic Contrast" ;
+    src: url(Antarctica/Antarctica-CondRegItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Semi Bold Contrast" ;
+    src: url(Antarctica/Antarctica-CondSemBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Semi Bold Italic" ;
+    src: url(Antarctica/Antarctica-CondSemBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Thin Contrast" ;
+    src: url(Antarctica/Antarctica-CondThinContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Condensed Thin Italic" ;
+    src: url(Antarctica/Antarctica-CondThinIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Hairline Contrast" ;
+    src: url(Antarctica/Antarctica-ExHairlineContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Hairline Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExHairlineItContra.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Light Contrast" ;
+    src: url(Antarctica/Antarctica-ExLtItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Black" ;
+    src: url(Antarctica/Antarctica-ExpandedBlack.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Bold" ;
+    src: url(Antarctica/Antarctica-ExpandedBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Bold Italic" ;
+    src: url(Antarctica/Antarctica-ExpandedBoldItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Black" ;
+    src: url(Antarctica/Antarctica-ExpandedExtraBlack.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Bold" ;
+    src: url(Antarctica/Antarctica-ExpandedExtraBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Light" ;
+    src: url(Antarctica/Antarctica-ExpandedExtraLight.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Hairline" ;
+    src: url(Antarctica/Antarctica-ExpandedHairline.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Light" ;
+    src: url(Antarctica/Antarctica-ExpandedLight.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Medium" ;
+    src: url(Antarctica/Antarctica-ExpandedMedium.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Regular" ;
+    src: url(Antarctica/Antarctica-ExpandedRegular.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Semi Bold" ;
+    src: url(Antarctica/Antarctica-ExpandedSemiBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Thin" ;
+    src: url(Antarctica/Antarctica-ExpandedThin.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Thin Italic" ;
+    src: url(Antarctica/Antarctica-ExpandedThinItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Black Contrast" ;
+    src: url(Antarctica/Antarctica-ExpBlackContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Black Italic" ;
+    src: url(Antarctica/Antarctica-ExpBlackIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Bold Contrast" ;
+    src: url(Antarctica/Antarctica-ExpBoldContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExpBoldItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExpExBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExpExBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExpExLtItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Bold Contrast" ;
+    src: url(Antarctica/Antarctica-ExpExtBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Bold Italic" ;
+    src: url(Antarctica/Antarctica-ExpExtBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Black Contrast" ;
+    src: url(Antarctica/Antarctica-ExpExtBlkContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Black Italic" ;
+    src: url(Antarctica/Antarctica-ExpExtBlkIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Light Contrast" ;
+    src: url(Antarctica/Antarctica-ExpExtLtContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Extra Light Italic" ;
+    src: url(Antarctica/Antarctica-ExpExtLtIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Hairling Italic" ;
+    src: url(Antarctica/Antarctica-ExpHairlineIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Light Contrast" ;
+    src: url(Antarctica/Antarctica-ExpLightContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Light Italic" ;
+    src: url(Antarctica/Antarctica-ExpLightIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Medium Contrast" ;
+    src: url(Antarctica/Antarctica-ExpMedContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Medium Italic" ;
+    src: url(Antarctica/Antarctica-ExpMedIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Medium Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExpMedItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Regular" ;
+    src: url(Antarctica/Antarctica-ExpRegContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Regular Italic" ;
+    src: url(Antarctica/Antarctica-ExpRegIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Regular Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExpRegItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Semi Bold Contrast" ;
+    src: url(Antarctica/Antarctica-ExpSemBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Semi Bold Italic" ;
+    src: url(Antarctica/Antarctica-ExpSemBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Thin Contrast" ;
+    src: url(Antarctica/Antarctica-ExpThinContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Thin Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExpThinItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Expanded Semi Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExSmBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExtBdItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExtBlkItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExtLtItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Black" ;
+    src: url(Antarctica/Antarctica-ExtraBlack.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Black Contrast" ;
+    src: url(Antarctica/Antarctica-ExtraBlackContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Black Italic" ;
+    src: url(Antarctica/Antarctica-ExtraBlackItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Bold" ;
+    src: url(Antarctica/Antarctica-ExtraBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ExtraBoldContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Bold Italic" ;
+    src: url(Antarctica/Antarctica-ExtraBoldItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondBlack.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Black Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondBlackIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Bold Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondBoldIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Bold" ;
+    src: url(Antarctica/Antarctica-ExtraCondensedBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Thin" ;
+    src: url(Antarctica/Antarctica-ExtraCondensedThin.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Bold" ;
+    src: url(Antarctica/Antarctica-ExtraCondExtBd.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Bold Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondExtBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Black" ;
+    src: url(Antarctica/Antarctica-ExtraCondExtBlk.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Black Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondExtBlkIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Light" ;
+    src: url(Antarctica/Antarctica-ExtraCondExtLt.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Light Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondExtLtIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Hairline" ;
+    src: url(Antarctica/Antarctica-ExtraCondHairline.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Light" ;
+    src: url(Antarctica/Antarctica-ExtraCondLight.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Light Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondLightIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Medium" ;
+    src: url(Antarctica/Antarctica-ExtraCondMed.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Medium Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondMedIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Regular" ;
+    src: url(Antarctica/Antarctica-ExtraCondReg.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Regular Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondRegIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Semi Bold" ;
+    src: url(Antarctica/Antarctica-ExtraCondSemBd.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Semi Bold Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondSemBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Thin Italic" ;
+    src: url(Antarctica/Antarctica-ExtraCondThinIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Light" ;
+    src: url(Antarctica/Antarctica-ExtraLight.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Light Contrast" ;
+    src: url(Antarctica/Antarctica-ExtraLightContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Light Italic" ;
+    src: url(Antarctica/Antarctica-ExtraLightItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Hairline" ;
+    src: url(Antarctica/Antarctica-Hairline.woff2);
+}
+@font-face{
+    font-family: "Antartica Hairline Contrast" ;
+    src: url(Antarctica/Antarctica-HairlineContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Hairline Italic" ;
+    src: url(Antarctica/Antarctica-HairlineItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Hairline Italic Contrast" ;
+    src: url(Antarctica/Antarctica-HairlineItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Light" ;
+    src: url(Antarctica/Antarctica-Light.woff2);
+}
+@font-face{
+    font-family: "Antartica Light Contrast" ;
+    src: url(Antarctica/Antarctica-LightContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-LightItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Light Italic" ;
+    src: url(Antarctica/Antarctica-LightItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Medium Italic Contrast" ;
+    src: url(Antarctica/Antarctica-MedItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Medium" ;
+    src: url(Antarctica/Antarctica-Medium.woff2);
+}
+@font-face{
+    font-family: "Antartica Medium Contrast" ;
+    src: url(Antarctica/Antarctica-MediumContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Medium Italic" ;
+    src: url(Antarctica/Antarctica-MediumItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Regular Italic Contrast" ;
+    src: url(Antarctica/Antarctica-RegItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Regular" ;
+    src: url(Antarctica/Antarctica-Regular.woff2);
+}
+@font-face{
+    font-family: "Antartica Regular Contrast" ;
+    src: url(Antarctica/Antarctica-RegularContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Regular Italic" ;
+    src: url(Antarctica/Antarctica-RegularItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Semi Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-SemBdItaContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Semi Bold" ;
+    src: url(Antarctica/Antarctica-SemiBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Semi Bold Contrast" ;
+    src: url(Antarctica/Antarctica-SemiBoldContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Semi Bold Italic" ;
+    src: url(Antarctica/Antarctica-SemiBoldItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Thin" ;
+    src: url(Antarctica/Antarctica-Thin.woff2);
+}
+@font-face{
+    font-family: "Antartica Thin Contrast" ;
+    src: url(Antarctica/Antarctica-ThinContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Thin Italic" ;
+    src: url(Antarctica/Antarctica-ThinItalic.woff2);
+}
+@font-face{
+    font-family: "Antartica Thin Italic Contrast" ;
+    src: url(Antarctica/Antarctica-ThinItalicContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Bold Contrast" ;
+    src: url(Antarctica/Antarctica-UCnBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Italic Bold Contrast" ;
+    src: url(Antarctica/Antarctica-UCnBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Black Contrast" ;
+    src: url(Antarctica/Antarctica-UCnBlkContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UCnBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Hairline Contrast" ;
+    src: url(Antarctica/Antarctica-UCnHairlineContras.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Hairline Italic" ;
+    src: url(Antarctica/Antarctica-UCnHairlineIt.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Hairline Contrast" ;
+    src: url(Antarctica/Antarctica-UCnHairlineItContr.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Light Contrast" ;
+    src: url(Antarctica/Antarctica-UCnLtContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UCnLtItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Medium Contrast" ;
+    src: url(Antarctica/Antarctica-UCnMdiumContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Medium Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UCnMdiumItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Regular Contrast" ;
+    src: url(Antarctica/Antarctica-UCnRgularContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Regular Italic" ;
+    src: url(Antarctica/Antarctica-UCnRgularIt.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Regular Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UCnRgularItContras.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Semi Bold Contrast" ;
+    src: url(Antarctica/Antarctica-UCnSmBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Semi Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UCnSmBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Thin Contrast" ;
+    src: url(Antarctica/Antarctica-UCnThContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Thin Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UCnThItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Bold Contrast" ;
+    src: url(Antarctica/Antarctica-UCnXBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UCnXBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Black Contrast" ;
+    src: url(Antarctica/Antarctica-UCnXBlkContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UCnXBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Light Contrast" ;
+    src: url(Antarctica/Antarctica-UCnXLtContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UCnXLtItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Hairline Contrast" ;
+    src: url(Antarctica/Antarctica-UEHairlineContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Hairline Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UEHairlineItContra.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UExBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Black Contrast" ;
+    src: url(Antarctica/Antarctica-UExBlkContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UExBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Light Contrast" ;
+    src: url(Antarctica/Antarctica-UExLtContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UExLtItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Medium Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UExMdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Regular Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UExRgItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Semi Bold Contrast" ;
+    src: url(Antarctica/Antarctica-UExSmBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Semi Bold Contrast" ;
+    src: url(Antarctica/Antarctica-UExSmBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Thin Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UExThItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Bold Contrast" ;
+    src: url(Antarctica/Antarctica-UExXBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UExXBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Black Contrast" ;
+    src: url(Antarctica/Antarctica-UExXBlkContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UExXBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Light Contrast" ;
+    src: url(Antarctica/Antarctica-UExXLtContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-UExXLtItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Black Italic" ;
+    src: url(Antarctica/Antarctica-UltExpBlackIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Bold Contrast" ;
+    src: url(Antarctica/Antarctica-UltExpBoldContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Bold Italic" ;
+    src: url(Antarctica/Antarctica-UltExpBoldIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Bold" ;
+    src: url(Antarctica/Antarctica-UltExpExtBd.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Bold Italic" ;
+    src: url(Antarctica/Antarctica-UltExpExtBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Black Italic" ;
+    src: url(Antarctica/Antarctica-UltExpExtBlk.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Black Italic" ;
+    src: url(Antarctica/Antarctica-UltExpExtBlkIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Light" ;
+    src: url(Antarctica/Antarctica-UltExpExtLt.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Extra Light Italic" ;
+    src: url(Antarctica/Antarctica-UltExpExtLtIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Hairline" ;
+    src: url(Antarctica/Antarctica-UltExpHairline.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Hairline Italic" ;
+    src: url(Antarctica/Antarctica-UltExpHairlineIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Light Italic" ;
+    src: url(Antarctica/Antarctica-UltExpLightIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Medium" ;
+    src: url(Antarctica/Antarctica-UltExpMed.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Medium Contrast" ;
+    src: url(Antarctica/Antarctica-UltExpMedContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Medium Italic" ;
+    src: url(Antarctica/Antarctica-UltExpMedIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Regular" ;
+    src: url(Antarctica/Antarctica-UltExpReg.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Regular Contrast" ;
+    src: url(Antarctica/Antarctica-UltExpRegContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Regular Italic" ;
+    src: url(Antarctica/Antarctica-UltExpRegIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Semi Bold" ;
+    src: url(Antarctica/Antarctica-UltExpSemBd.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Semi Bold Italic" ;
+    src: url(Antarctica/Antarctica-UltExpSemBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Thin Contrast" ;
+    src: url(Antarctica/Antarctica-UltExpThinContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Thin Italic" ;
+    src: url(Antarctica/Antarctica-UltExpThinIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Black" ;
+    src: url(Antarctica/Antarctica-UltraCondBlack.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Black Italic" ;
+    src: url(Antarctica/Antarctica-UltraCondBlackIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Bold Italic" ;
+    src: url(Antarctica/Antarctica-UltraCondBoldIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Bold" ;
+    src: url(Antarctica/Antarctica-UltraCondensedBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Thin" ;
+    src: url(Antarctica/Antarctica-UltraCondensedThin.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Bold" ;
+    src: url(Antarctica/Antarctica-UltraCondExtBd.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Bold Italic" ;
+    src: url(Antarctica/Antarctica-UltraCondExtBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Black" ;
+    src: url(Antarctica/Antarctica-UltraCondExtBlk.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Black Italic" ;
+    src: url(Antarctica/Antarctica-UltraCondExtBlkIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Light" ;
+    src: url(Antarctica/Antarctica-UltraCondExtLt.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Extra Light Italic" ;
+    src: url(Antarctica/Antarctica-UltraCondExtLtIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Hairline" ;
+    src: url(Antarctica/Antarctica-UltraCondHairline.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Light" ;
+    src: url(Antarctica/Antarctica-UltraCondLight.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Light Italic" ;
+    src: url(Antarctica/Antarctica-UltraCondLightIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Medium" ;
+    src: url(Antarctica/Antarctica-UltraCondMedium.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Medium Italic" ;
+    src: url(Antarctica/Antarctica-UltraCondMediumIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Regular" ;
+    src: url(Antarctica/Antarctica-UltraCondRegular.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Semi Bold" ;
+    src: url(Antarctica/Antarctica-UltraCondSemBd.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Semi Bold Italic" ;
+    src: url(Antarctica/Antarctica-UltraCondSemBdIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Condensed Thin Italic" ;
+    src: url(Antarctica/Antarctica-UltraCondThinIta.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Black" ;
+    src: url(Antarctica/Antarctica-UltraExpandedBlack.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Bold" ;
+    src: url(Antarctica/Antarctica-UltraExpandedBold.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Light" ;
+    src: url(Antarctica/Antarctica-UltraExpandedLight.woff2);
+}
+@font-face{
+    font-family: "Antartica Ultra Expanded Thin" ;
+    src: url(Antarctica/Antarctica-UltraExpandedThin.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Contrast" ;
+    src: url(Antarctica/Antarctica-XCnBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Black Contrast" ;
+    src: url(Antarctica/Antarctica-XCnBlkContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Black Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Hairline Contrast" ;
+    src: url(Antarctica/Antarctica-XCnHairlineContras.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Hairline Italic" ;
+    src: url(Antarctica/Antarctica-XCnHairlineIt.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Hairline Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnHairlineItContr.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Light Contrast" ;
+    src: url(Antarctica/Antarctica-XCnLtContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnLtItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Medium Contrast" ;
+    src: url(Antarctica/Antarctica-XCnMdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Medium Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnMdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Regular Contrast" ;
+    src: url(Antarctica/Antarctica-XCnRgContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica RegulExtra Condensed Regular Italic Contrastar" ;
+    src: url(Antarctica/Antarctica-XCnRgItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Semi Bold Contrast" ;
+    src: url(Antarctica/Antarctica-XCnSmBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Semi Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnSmBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Thin Contrast" ;
+    src: url(Antarctica/Antarctica-XCnThContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Thin Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnThItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Bold Contrast" ;
+    src: url(Antarctica/Antarctica-XCnXBdContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnXBdItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Black Contrast" ;
+    src: url(Antarctica/Antarctica-XCnXBlkContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Bold Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnXBlkItContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Light Contrast" ;
+    src: url(Antarctica/Antarctica-XCnXLtContrast.woff2);
+}
+@font-face{
+    font-family: "Antartica Extra Condensed Extra Light Italic Contrast" ;
+    src: url(Antarctica/Antarctica-XCnXLtItContrast.woff2);
+}
+    :root {
+      --min-weight: 100;
+      --max-weight: 900;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 400vh; /* crée du scroll */
+      font-family: "Inter", sans-serif;
+    font-family: "Antartica Regular" ;
+      background: #f7f7f7;
+      color: #111;
+    }
+
+    /* Texte fixé au centre */
+    .viewport {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .text {
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      line-height: 1.1;
+      font-variation-settings: "wght" 100;
+      transition: font-variation-settings 0.05s linear;
+    }
+
+    /* Indicateur */
+    .hud {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+    .typo-section {
+  height: 300vh; /* zone de scroll */
+  background: #f7f7f7;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#text {
+  font-family: "Antarctica Variable";
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-variation-settings: "wght" 100;
+}
+
+#hud {
+  margin-top: 1rem;
+  opacity: 0.6;
+}
+
+
+/*==================================*/
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.typo-section {
+  height: 300vh; /* durée du test */
+  background: #f7f7f7;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#text {
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 1.1;
+  font-family: "Antarctica Thin";
+  transition: font-family 0.15s ease;
+}
+
+#hud {
+  margin-top: 1rem;
+  opacity: 0.6;
+}
+
+  </style>
+</head>
+
+<body>
+<section class="typo-section" id="typoSection">
+  <div class="sticky">
+    <p id="text">Ceci est un test de typo Antarctica</p>
+    <div id="hud">Antarctica Thin</div>
+  </div>
+</section>
+<script>
+const section = document.getElementById("typoSection");
+const text = document.getElementById("text");
+const hud = document.getElementById("hud");
+
+const fonts = [
+  { name: "Thin", family: "Antarctica Thin" },
+  { name: "Light", family: "Antarctica Light" },
+  { name: "Regular", family: "Antarctica Regular" },
+  { name: "Medium", family: "Antarctica Medium" },
+  { name: "Bold", family: "Antarctica Bold" },
+  { name: "Black", family: "Antarctica Black" }
+];
+
+let currentIndex = -1;
+
+window.addEventListener("scroll", () => {
+  const rect = section.getBoundingClientRect();
+  const maxScroll = rect.height - window.innerHeight;
+
+  if (rect.top <= 0 && Math.abs(rect.top) <= maxScroll) {
+    const progress = Math.abs(rect.top) / maxScroll;
+    const index = Math.round(progress * (fonts.length - 1));
+
+    if (index !== currentIndex) {
+      currentIndex = index;
+      text.style.fontFamily = fonts[index].family;
+      hud.textContent = `Antarctica ${fonts[index].name}`;
+    }
+  }
+});
+</script>
+
+
+  <!- <script>
+    // const text = document.getElementById("text");
+    // const hud = document.getElementById("hud");
+
+    // const minWeight = 100;
+    // const maxWeight = 900;
+
+    // function updateWeight() {
+    //   const scrollTop = window.scrollY;
+    //   const maxScroll =
+    //     document.documentElement.scrollHeight - window.innerHeight;
+
+    //   const progress = scrollTop / maxScroll;
+
+    //   const weight =
+    //     minWeight + progress * (maxWeight - minWeight);
+
+    //   const roundedWeight = Math.round(weight);
+
+    //   text.style.fontVariationSettings = `"wght" ${roundedWeight}`;
+    //   hud.textContent = `Graisse : ${roundedWeight}`;
+    // }
+
+    // window.addEventListener("scroll", updateWeight);
+    // updateWeight();
+
+const section = document.getElementById("typoSection");
+const text = document.getElementById("text");
+const hud = document.getElementById("hud");
+
+const minWeight = 100;
+const maxWeight = 900;
+
+const fonts = [
+  "Antartica Thin",
+  "Antartica Light",
+  "Antartica Regular",
+  "Antartica Medium",
+  "Antartica Bold",
+  "Antartica Black"
+];
+
+const index = Math.floor(progress * (fonts.length - 1));
+text.style.fontFamily = fonts[index];
+
+window.addEventListener("scroll", () => {
+  const rect = section.getBoundingClientRect();
+  const sectionHeight = rect.height - window.innerHeight;
+
+  if (rect.top <= 0 && Math.abs(rect.top) <= sectionHeight) {
+    const progress = Math.abs(rect.top) / sectionHeight;
+    const weight =
+      minWeight + progress * (maxWeight - minWeight);
+
+    const rounded = Math.round(weight);
+
+    text.style.fontVariationSettings = `"wght" ${rounded}`;
+    hud.textContent = `Graisse : ${rounded}`;
+  }
+});
+
+  </script> --
+
+</body>
+</html> -->
