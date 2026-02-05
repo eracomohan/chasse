@@ -1054,10 +1054,20 @@
     font-family: "Antartica Extra Condensed Extra Light Italic Contrast" ;
     src: url("Antarctica/Antarctica-XCnXLtItContrast.woff2") format("woff2");
 }
-
+@font-face{
+    font-family: "Weiss Antiqua" ;
+    src: url("weiss_1F3202_0_0.woff") format("woff");
+}
+@font-face{
+    font-family: "Bradford LL Regular" ;
+    src: url("BradfordLLWeb-Regular.woff2") format("woff2");
+}
         *{
             margin: 0;
     font-family: "Antartica Bold" ;
+    font-family: "Weiss Antiqua" ;
+    font-family: "Bradford LL Regular" ;
+
         }
         *::selection{
             color: rgba(0, 0, 0, 0);
@@ -1092,7 +1102,6 @@
             margin-bottom: 0.5em;
             font-size: 2em;
         }
-
 section{
     /* height: 100vh; */
     border-bottom: 1px solid gold;
@@ -1593,7 +1602,17 @@ img{
 /* SECTION 7 =============================================================================================*/
 .etape-7{
     height: auto;
+  position: relative;
+  background: (255,255,255);
 }
+.etape-7 canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;        /* au premier plan */
+  pointer-events: none; /* laisse les clics passer */
+}
+
 .ShrinkingText_root__3cIPn {
     /* font-family: BaseGrotesk,sans-serif; */
     font-weight: 300;
@@ -1660,7 +1679,13 @@ img{
 
 .gunshot{
     margin-top: 100em;
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 10em;
+    color: red;
+    font-weight: bolder;
 }
+
 /* SECTION 8 =============================================================================================*/
 .etape-8{
     height: 100vh;
