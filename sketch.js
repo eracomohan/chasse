@@ -17,7 +17,7 @@ function setup() {
 
 function draw() {
   // ⚠️ Pas de background pour laisser les traces
-  // background(220); ← à activer si tu veux effacer à chaque frame
+background(255); //← à activer si tu veux effacer à chaque frame
 
   // Ligne horizontale qui suit la souris
   line(0, mouseY, width, mouseY);
