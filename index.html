@@ -43,7 +43,7 @@
     <script src="lightbox.js"></script>
     <script src="p5.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script> -->
-    <script src="sketch.js"></script>
+    <!-- <script src="sketch.js"></script> FAIT PLANTER LE FONT SCROLL-->
     <!-- <script src="font-scroll.js"></script> -->
         <style>
         img{
@@ -90,9 +90,9 @@
     </section>
     <section class="etape-2">
       <!-- fantome nuit -->
-        <img class="got1" src="img/2A3A9705.JPG" alt="">
-        <img class="got2" src="img/2A3A9707.JPG" alt="">
-        <img class="got3" src="img/2A3A9708.JPG" alt="">
+        <img src="img/2A3A9705.JPG" alt="">
+        <img src="img/2A3A9707.JPG" alt="">
+        <img src="img/2A3A9708.JPG" alt="">
                 <div class="oneshot2 block">
                     <div class="layer back back-2">I GOT HIM</div>
                 </div>    
@@ -275,11 +275,11 @@
         <img class="holo-img" src="img/2A3A9719.JPG" alt="">
         <img class="holo-img" src="img/2A3A9720.JPG" alt="">
     </section>
-    <section class="etape-9">
-<!-- pas nuit -->
+    <!-- <section class="etape-9">
+<!- pas nuit ->
         <img src="img/2A3A9817.JPG" alt="">
         <p>silence</p>
-    </section>
+    </section> -->
     <section class="etape-10">
 <!-- loupe FONDU FLOU -->
   <div class="images">
@@ -297,12 +297,8 @@
     <section class="etape-11 typo-section" id="typoSection">
     <div class="sticky">
       <div id="text">
-        ONE SHOT
+ONE SHOT
       </div>
-
-      <!-- <div id="hud">
-        Antarctica Thin
-      </div> -->
     </div>
   </section>      
     <footer>
@@ -355,48 +351,26 @@
     });
     */
 </script>
-  <script>/*FONT SCROLL – FAKE FONT VARIABLE*/
+
+
+<script>/*FONT SCROLL – FAKE FONT VARIABLE*/
 
     const section = document.getElementById("typoSection");
     const text = document.getElementById("text");
     const hud = document.getElementById("hud");
 
     const fonts = [
-      // { name: "Thin", family: "Antarctica Thin" },
-      // { name: "Light", family: "Antarctica Light" },
-      // { name: "Regular", family: "Antarctica Regular" },
-      // { name: "Medium", family: "Antarctica Medium" },
-      // { name: "Bold", family: "Antarctica Bold" },
-      // { name: "Black", family: "Antarctica Black" },
-      // { name: "Bold", family: "Antarctica Bold" },
-      // { name: "Medium", family: "Antarctica Medium" },
-      // { name: "Regular", family: "Antarctica Regular" },
-      // { name: "Light", family: "Antarctica Light" },
-      // { name: "Thin", family: "Antarctica Thin" },
-      { name: "Ultra Condensed Hairline", family: "Antartica Ultra Condensed Hairline" },
-      { name: "Ultra Condensed Thin", family: "Antartica Extra Condensed Thin Contrast" },
-      { name: "Extra Condensed Extra Light", family: "Antarctica Extra Condensed Extra Light" },
-      { name: "Extra Condensed Light", family: "Antarctica Extra Condensed Light" },
-      { name: "Condensed Book", family: "Antarctica Condensed Book" },
-      { name: "Condensed Regular", family: "Antarctica Condensed Regular" },
+      { name: "Thin", family: "Antarctica Thin" },
+      { name: "Light", family: "Antarctica Light" },
+      { name: "Regular", family: "Antarctica Regular" },
       { name: "Medium", family: "Antarctica Medium" },
-      { name: "Semi Bold", family: "Antarctica Semi Bold" },
-      { name: "Expanded Bold", family: "Antarctica Expanded Bold" },
-      { name: "Expanded Extra Bold", family: "Antartica Expanded Extra Bold Contrast" },
-      { name: "Ultra Expanded Black", family: "Antartica Ultra Expanded Black" },
-      { name: "Ultra Expanded Extra Black", family: "Antartica Expanded Extra Bold Contrast" },
-      { name: "Black", family: "Antarctica Expanded Bold" },
-      { name: "Extra Bold", family: "Antarctica Extra Bold" },
       { name: "Bold", family: "Antarctica Bold" },
-      { name: "Semi Bold", family: "Antarctica Semi Bold" },
+      { name: "Black", family: "Antarctica Black" },
+      { name: "Bold", family: "Antarctica Bold" },
       { name: "Medium", family: "Antarctica Medium" },
       { name: "Regular", family: "Antarctica Regular" },
-      { name: "Book", family: "Antarctica Book" },
       { name: "Light", family: "Antarctica Light" },
-      { name: "Extra Light", family: "Antarctica Extra Light" },
-      { name: "Thin", family: "Antartica Extra Condensed Thin Contrast" },
-      { name: "Hairline", family: "Antartica Ultra Condensed Hairline" },
-
+      { name: "Thin", family: "Antarctica Thin" },
     ];
 
     let currentIndex = -1;
@@ -416,7 +390,45 @@
         }
       }
     });
-  </script>
+</script>
+
+<script> /*SKETCH P5*/
+// let section;
+
+function setup() {
+ let section = document.querySelector(".etape-7");
+
+  let myCanvas = createCanvas(section.offsetWidth, section.offsetHeight);
+
+  myCanvas.parent(section);
+
+  noFill();
+  stroke(0);
+  strokeWeight(1);
+  frameRate(30);
+  pixelDensity(1);
+}
+
+function draw() {
+   background(255);
+
+  line(0, mouseY, width, mouseY);
+
+  line(mouseX, 0, mouseX, height);
+  stroke(255, 119, 0);
+  stroke(66, 225, 156);
+}
+
+function windowResized() {
+  resizeCanvas(section.offsetWidth, section.offsetHeight);
+}
+if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+  line(0, mouseY, width, mouseY);
+  line(mouseX, 0, mouseX, height);
+}
+</script>
+
+
 <script>/*IMAGE AVEC FONDU*/
   document.addEventListener("DOMContentLoaded", () => {
     const section = document.querySelector(".etape-10");
@@ -437,7 +449,5 @@ window.addEventListener('scroll', () => {
 });
 
 </script>
-<source>
-
 
 </html>
