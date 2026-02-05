@@ -1612,6 +1612,13 @@ img{
   z-index: -10;        /* au premier plan */
   pointer-events: none; /* laisse les clics passer */
 }
+.p5Canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;        /* au premier plan */
+  pointer-events: none; /* laisse les clics passer */
+}
 
 .ShrinkingText_root__3cIPn {
     /* font-family: BaseGrotesk,sans-serif; */
