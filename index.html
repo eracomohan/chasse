@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
                          __________________________________________________________.                    
-               __  __*="" ╰-------┳--------------------╮---------------------------|     == |HOLEMM:>►  
+               __  __*="" ╰-------┳--------------------╮---------------------------|     == |MMLEHO:>►  
      ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                    
     !"         _     _==""(C_)                                                                          
     !    _.=""' "=__/                                                                                   
@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fake-font-variable.css">
-        <!-- <link rel="preload" href="https://www.basedesign.com/_next/static/css/87dce4012579858dac06.css" as="style"/>
+    <!-- <link rel="preload" href="https://www.basedesign.com/_next/static/css/87dce4012579858dac06.css" as="style"/>
         <link rel="stylesheet" href="https://www.basedesign.com/_next/static/css/87dce4012579858dac06.css" data-n-g=""/>
         <link rel="preload" href="https://www.basedesign.com/_next/static/css/dd93291d2af540cde7dc.css" as="style"/>
         <link rel="stylesheet" href="https://www.basedesign.com/_next/static/css/dd93291d2af540cde7dc.css" data-n-p=""/>
@@ -42,6 +42,7 @@
     <script src="hologramme.js"></script>
     <script src="lightbox.js"></script>
     <script src="p5.js"></script>
+    <script src="script3d.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script> -->
     <!-- <script src="sketch.js"></script> FAIT PLANTER LE FONT SCROLL-->
     <!-- <script src="font-scroll.js"></script> -->
@@ -103,6 +104,11 @@
     <section class="etape-3">
 <!-- texte only COMME BASEDESIGN, MAIS EN MIEUX -->
         <p>You can’t take him like that.</p>
+        
+        <div class="wrapper-3d">
+          <p class="text-3d">Why not?</p>
+        </div>
+        <!--
         <div class="carouselY">
             <div class="groupY">
                 <div class="cardY">
@@ -136,7 +142,7 @@
 
                     </div>
                 </div>
-                <!-- <div class="card">6</div> -->
+                
             </div>
             <div class="groupY">
                 <div class="cardY">
@@ -170,9 +176,9 @@
 
                     </div>
                 </div>
-                <!-- <div class="card">6</div> -->
+                
             </div>
-            <!-- LA DIV EST FACULTATIVE -->
+            
             <div class="groupY">
                 <div class="cardY">
 	                <div class="gallery">
@@ -205,9 +211,9 @@
 
                     </div>
                 </div>
-                <!-- <div class="card">6</div> -->
+                
             </div>
-        </div>
+        </div>-->
         <p>You’ve got to do it clean.</p>
     </section>
     <section class="etape-4">
@@ -219,12 +225,19 @@
               <!-- <img src="https://www.salecharacter.com/cms-media/SC_Trial_Desktop_Cover_Front_f662a6e02e.svg" alt=""> -->
                <img class="loupe" src="img/2A3A9813.png" alt="">
             </picture>
-            <!-- <div style="--x:15%;--y:15%;--r:15vw;transform-origin:15% 15%;clip-path:circle(var(--r, 15vw) at 15% 15%);-webkit-clip-path:circle(var(--r, 15vw) at 15% 15%);" class="bg-black animate-pulse-clip absolute scale-[1.0055] inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-300"></div> -->
+            <div style="--x:15%;--y:15%;--r:15vw;transform-origin:15% 15%;clip-path:circle(var(--r, 15vw) at 15% 15%);-webkit-clip-path:circle(var(--r, 15vw) at 15% 15%);" class="bg-black animate-pulse-clip absolute scale-[1.0055] inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-300"></div>
             <!-- IMAGE QUI SUIT LE CURSEUR -->
             <picture id="cursor">
+              <!-- // Source - https://stackoverflow.com/a/50091726
+// Posted by Jakub Muda, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-02-06, License - CC BY-SA 3.0
+
+<glyph horiz-adv-x="222" unicode="l"><path d="m63.876 0.23623l-2.504 715.49 87.971 0.33072 2.504-715.49-87.971-0.33072z"/></glyph>
+ -->
+
               <!-- <source srcset="https://www.salecharacter.com/cms-media/SC_Trial_Mobile_Cover_Hover_68383ef8f7.svg" media="(max-width: 768px)"> -->
               <!-- <img src="https://www.salecharacter.com/cms-media/SC_Trial_Desktop_Cover_Hover_236e28b3df.svg" alt=""> -->
-               <img class="loupe" src="img/2A3A9813.JPG" alt="">
+               <img class="loupedef" class="loupe" src="img/2A3A9813.JPG" alt="">
             </picture>
 
           </div>
@@ -238,8 +251,8 @@
         <p></p>
         <p>If he hears the shot, he won’t be hurt</p>
     </section>
+      <!-- SLIDER 
     <section class="etape-6">
-      <!-- SLIDER -->
         <div class="carousel">
             <div class="group">
                 <div class="card">
@@ -278,7 +291,6 @@
                         </a>
                     </div>
                 </div>
-                <!-- <div class="card">6</div> -->
             </div>
             <div class="group">
                 <div class="card">
@@ -317,9 +329,7 @@
                         </a>
                     </div>
                 </div>
-                <!-- <div class="card">6</div> -->
             </div>
-            <!-- LA DIV EST FACULTATIVE -->
             <div class="group">
                 <div class="card">
 	                <div class="gallery">
@@ -357,21 +367,15 @@
                         </a>
                     </div>
                 </div>
-                <!-- <div class="card">6</div> -->
             </div>
         </div>
-        <!-- <img class="scr" src="img/2A3A9697.JPG" alt="">
+        <img class="scr" src="img/2A3A9697.JPG" alt="">
         <img class="scr" src="img/2A3A9698.JPG" alt="">
         <img class="scr" src="img/2A3A9700.JPG" alt="">
         <img class="scr" src="img/2A3A9702.JPG" alt="">
-        <img class="scr" src="img/2A3A9703.JPG" alt=""> -->
-    </section>
-    <section class="etape-7">
-      <!-- grossissement -->
-        <p>Michael aims for a long time</p>
-        <p class="gunshot">Gunshot</p>
-        <p>The deer falls</p>
-    </section>
+        <img class="scr" src="img/2A3A9703.JPG" alt=""> 
+    </section>-->
+
     <section class="etape-8">
       <!-- fuite nuit HOLOGRAMME + CURSOR POSITION -->
         <img class="holo-img" src="img/2A3A9717.JPG" alt="">
@@ -379,12 +383,7 @@
         <img class="holo-img" src="img/2A3A9719.JPG" alt="">
         <img class="holo-img" src="img/2A3A9720.JPG" alt="">
     </section>
-    <!-- <section class="etape-9">
-<!- pas nuit ->
-        <img src="img/2A3A9817.JPG" alt="">
-        <p>silence</p>
-    </section> -->
-    <section class="etape-10">
+<section class="etape-10">
 <!-- loupe FONDU FLOU -->
   <div class="images">
         <img src="img/2A3A9826.JPG" alt="" class="image active">
@@ -395,6 +394,17 @@
 
 
     </section>
+    <!-- <section class="etape-9">
+<!- pas nuit ->
+        <img src="img/2A3A9817.JPG" alt="">
+        <p>silence</p>
+    </section> -->
+    <section class="etape-7">
+      <!-- grossissement -->
+        <p>Michael aims for a long time</p>
+        <p class="gunshot">Gunshot</p>
+        <p>The deer falls</p>
+    </section>    
       <!-- <div class="spacer">
     Scroll pour entrer dans la section
   </div> -->
@@ -407,10 +417,10 @@ ONE SHOT
   </section>      
     <footer>
         <!-- <p>Vous pouvez voir/télécharger un film un peu longuet en cliquant sur <a href="https://kdrive.infomaniak.com/app/share/1528976/4e5768a4-4c05-459d-88c4-0f2cc2a77685" target="_blank">ce lien</a>.</p> -->
-        <!-- <p>HOLEMM&copy;2026</p> -->
+        <!-- <p>MMLEHO&copy;2026</p> -->
          <!-- <p>Et même, aile à chaud&nbsp;&copy;&nbsp;2026</p> -->
-          <p>Hé mais, mets le à chaud!&nbsp;&copy;&nbsp;2026</p>
-          <p>Hé mais, mets le <sup>H</sup> haut!&nbsp;&copy;&nbsp;2026</p>
+          <p class="mmleho">Hé mais, mets le à chaud!&nbsp;&copy;&nbsp;2026</p>
+          <p class="mmleho">Hé mais, mets le <sup>H</sup> haut!&nbsp;&copy;&nbsp;2026</p>
     </footer>
 </body>
 <!-- <script src="app.js"></script> -->
@@ -467,17 +477,19 @@ ONE SHOT
     const hud = document.getElementById("hud");
 
     const fonts = [
-      { name: "Thin", family: "Antarctica Thin" },
-      { name: "Light", family: "Antarctica Light" },
-      { name: "Regular", family: "Antarctica Regular" },
-      { name: "Medium", family: "Antarctica Medium" },
-      { name: "Bold", family: "Antarctica Bold" },
-      { name: "Black", family: "Antarctica Black" },
-      { name: "Bold", family: "Antarctica Bold" },
-      { name: "Medium", family: "Antarctica Medium" },
-      { name: "Regular", family: "Antarctica Regular" },
-      { name: "Light", family: "Antarctica Light" },
-      { name: "Thin", family: "Antarctica Thin" },
+      { name: "Thin", family: "Amazonia Extra Light Contrast" },
+      { name: "Light", family: "Amazonia Light Contrast" },
+      { name: "Regular", family: "Amazonia Regular Contrast" },
+      { name: "Medium", family: "Amazonia Medium Contrast" },
+      { name: "Bold", family: "Amazonia Semi Bold Contrast" },
+      { name: "Black", family: "Amazonia Bold Contrast" },
+      { name: "Bold", family: "Amazonia Black Contrast" },
+      { name: "Black", family: "Amazonia Bold Contrast" },
+      { name: "Bold", family: "Amazonia Semi Bold Contrast" },
+      { name: "Medium", family: "Amazonia Medium Contrast" },
+      { name: "Regular", family: "Amazonia Regular Contrast" },
+      { name: "Light", family: "Amazonia Light Contrast" },
+      { name: "Thin", family: "Amazonia Extra Light Contrast" },
     ];
 
     let currentIndex = -1;
