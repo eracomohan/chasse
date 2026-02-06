@@ -1581,6 +1581,9 @@ body::-webkit-scrollbar-thumb:hover {
             align-content: center;
             text-transform: uppercase;
         }
+                .carouselY::-webkit-scrollbar{
+            display: none;
+        }
         .carouselY:hover .groupY{
             animation-play-state: paused !important;
         }
@@ -1834,3 +1837,6 @@ body::-webkit-scrollbar-thumb:hover {
       font-size: 0.9rem;
       opacity: 0.6;
     }
+footer{
+    text-align: center;
+}
