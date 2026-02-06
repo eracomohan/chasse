@@ -1,0 +1,25 @@
+
+
+document.addEventListener("DOMContentLoaded", (e) => { 
+    
+    // console.log(wrapper3d, text3d);
+    const wrapper3d = document.querySelector(".wrapper-3d")
+const text3d = document.querySelector(".text-3d")
+
+text3d.addEventListener("mouseenter", (e)=>{
+        console.log(e.currentTarget);
+        const x = Math.random()
+        const y = Math.random()
+        const z = Math.random()
+        const a = Math.random()
+        text3d.style.transform=  `translate(-50%, -50%) rotate3d(${x}, ${y}, ${z}, ${a*30}deg)`;
+        text3d.style.top = Math.random() * 100 + "%";
+        text3d.style.left = Math.random() * 100 + "%";
+        
+    })
+    
+
+
+
+
+})
