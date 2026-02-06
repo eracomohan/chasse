@@ -1,3 +1,8 @@
+/*
+MMLEHO
+*/
+
+/* Antartica */
 @font-face{
     font-family: "Antartica Black" ;
     src: url("Antarctica/Antarctica-Black.woff2") format("woff2");
@@ -1061,20 +1066,387 @@
   font-stretch: 75% 125%;
   font-style: normal;
 }
+/* Amazonia */
+@font-face{
+    font-family:"Amazonia Black";
+    src: url("Amazonia/Amazonia-Black.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Black Contrast";
+    src: url("Amazonia/Amazonia-BlackContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Bold";
+    src: url("Amazonia/Amazonia-Bold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Bold Contrast";
+    src: url("Amazonia/Amazonia-BoldContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Black Contrast";
+    src: url("Amazonia/Amazonia-CondBlackContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Bold Contrast";
+    src: url("Amazonia/Amazonia-CondBoldContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Black";
+    src: url("Amazonia/Amazonia-CondensedBlack.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Bold";
+    src: url("Amazonia/Amazonia-CondensedBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Extra Bold";
+    src: url("Amazonia/Amazonia-CondensedExtraBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Extra Light";
+    src: url("Amazonia/Amazonia-CondensedExtraLight.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Light";
+    src: url("Amazonia/Amazonia-CondensedLight.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Medium";
+    src: url("Amazonia/Amazonia-CondensedMedium.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Regular";
+    src: url("Amazonia/Amazonia-CondensedRegular.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Semi Bold";
+    src: url("Amazonia/Amazonia-CondensedSemiBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Thin";
+    src: url("Amazonia/Amazonia-CondensedThin.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Extra Bold Contrast";
+    src: url("Amazonia/Amazonia-CondExtBdContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Extra Light Contrast";
+    src: url("Amazonia/Amazonia-CondExtLtContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Light Contrast";
+    src: url("Amazonia/Amazonia-CondLightContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Medium Contrast";
+    src: url("Amazonia/Amazonia-CondMedContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Regular Contrast";
+    src: url("Amazonia/Amazonia-CondRegContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Semi Bold Contrast";
+    src: url("Amazonia/Amazonia-CondSemBdContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Condensed Thin Contrast";
+    src: url("Amazonia/Amazonia-CondThinContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Black";
+    src: url("Amazonia/Amazonia-ExpandedBlack.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Bold";
+    src: url("Amazonia/Amazonia-ExpandedBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Bold Contrast";
+    src: url("Amazonia/Amazonia-ExpandedBoldContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Extra Bold";
+    src: url("Amazonia/Amazonia-ExpandedExtraBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Extra Light";
+    src: url("Amazonia/Amazonia-ExpandedExtraLight.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Light";
+    src: url("Amazonia/Amazonia-ExpandedLight.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Medium";
+    src: url("Amazonia/Amazonia-ExpandedMedium.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Regular";
+    src: url("Amazonia/Amazonia-ExpandedRegular.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Semi Bold";
+    src: url("Amazonia/Amazonia-ExpandedSemiBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Thin";
+    src: url("Amazonia/Amazonia-ExpandedThin.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Thin Contrast";
+    src: url("Amazonia/Amazonia-ExpandedThinContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Black Contrast";
+    src: url("Amazonia/Amazonia-ExpBlackContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Extra Bold Contrast";
+    src: url("Amazonia/Amazonia-ExpExtBdContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Extra Light Contrast";
+    src: url("Amazonia/Amazonia-ExpExtLtContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Light Contrast";
+    src: url("Amazonia/Amazonia-ExpLightContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Medium Contrast";
+    src: url("Amazonia/Amazonia-ExpMedContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded Regular Contrast";
+    src: url("Amazonia/Amazonia-ExpRegContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Expanded SemiBold Contrast";
+    src: url("Amazonia/Amazonia-ExpSemBdContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Bold";
+    src: url("Amazonia/Amazonia-ExtraBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Bold Contrast";
+    src: url("Amazonia/Amazonia-ExtraBoldContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Black";
+    src: url("Amazonia/Amazonia-ExtraCondensedBlack.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Bold";
+    src: url("Amazonia/Amazonia-ExtraCondensedBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Light";
+    src: url("Amazonia/Amazonia-ExtraCondensedLight.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Medium";
+    src: url("Amazonia/Amazonia-ExtraCondensedMedium.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Thin";
+    src: url("Amazonia/Amazonia-ExtraCondensedThin.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Extra Bold";
+    src: url("Amazonia/Amazonia-ExtraCondExtBd.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Extra Light";
+    src: url("Amazonia/Amazonia-ExtraCondExtLt.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Medium Contrast";
+    src: url("Amazonia/Amazonia-ExtraCondMedContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Regular";
+    src: url("Amazonia/Amazonia-ExtraCondReg.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Regular Contrast";
+    src: url("Amazonia/Amazonia-ExtraCondRegContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Semi Bold";
+    src: url("Amazonia/Amazonia-ExtraCondSemBd.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Light";
+    src: url("Amazonia/Amazonia-ExtraLight.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Light Contrast";
+    src: url("Amazonia/Amazonia-ExtraLightContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Light";
+    src: url("Amazonia/Amazonia-Light.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Light Contrast";
+    src: url("Amazonia/Amazonia-LightContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Medium";
+    src: url("Amazonia/Amazonia-Medium.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Medium Contrast";
+    src: url("Amazonia/Amazonia-MediumContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Regular";
+    src: url("Amazonia/Amazonia-Regular.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Regular Contrast";
+    src: url("Amazonia/Amazonia-RegularContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Semi Bold";
+    src: url("Amazonia/Amazonia-SemiBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Semi Bold Contrast";
+    src: url("Amazonia/Amazonia-SemiBoldContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Thin";
+    src: url("Amazonia/Amazonia-Thin.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Thin Contrast";
+    src: url("Amazonia/Amazonia-ThinContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Black Contrast";
+    src: url("Amazonia/Amazonia-UltExpBlackContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Bold Contrast";
+    src: url("Amazonia/Amazonia-UltExpBoldContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Black";
+    src: url("Amazonia/Amazonia-UltExpExtBd.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Extra Bold Contrast";
+    src: url("Amazonia/Amazonia-UltExpExtBdContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Extra Light";
+    src: url("Amazonia/Amazonia-UltExpExtLt.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Extra Light Contrast";
+    src: url("Amazonia/Amazonia-UltExpExtLtContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Light Contrast";
+    src: url("Amazonia/Amazonia-UltExpLightContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Medium Contrast";
+    src: url("Amazonia/Amazonia-UltExpMedContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Regular Contrast";
+    src: url("Amazonia/Amazonia-UltExpRegContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Semi Bold";
+    src: url("Amazonia/Amazonia-UltExpSemBd.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Semi Bold Contrast";
+    src: url("Amazonia/Amazonia-UltExpSemBdContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Thin Contrast";
+    src: url("Amazonia/Amazonia-UltExpThinContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Black";
+    src: url("Amazonia/Amazonia-UltraExpandedBlack.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Bold";
+    src: url("Amazonia/Amazonia-UltraExpandedBold.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Light";
+    src: url("Amazonia/Amazonia-UltraExpandedLight.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Medium";
+    src: url("Amazonia/Amazonia-UltraExpandedMedium.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Regular";
+    src: url("Amazonia/Amazonia-UltraExpandedRegular.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Ultra Expanded Thin";
+    src: url("Amazonia/Amazonia-UltraExpandedThin.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Bold Contrast";
+    src: url("Amazonia/Amazonia-XCnBdContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Black Contrast";
+    src: url("Amazonia/Amazonia-XCnBlkContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Light Contrast";
+    src: url("Amazonia/Amazonia-XCnLtContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Semi Bold Contrast";
+    src: url("Amazonia/Amazonia-XCnSmBdContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Thin Contrast";
+    src: url("Amazonia/Amazonia-XCnThContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Extra Bold Contrast";
+    src: url("Amazonia/Amazonia-XCnXBdContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Amazonia Extra Condensed Extra Light Contrast";
+    src: url("Amazonia/Amazonia-XCnXLtContrast.woff2") format("woff2");
+}
+@font-face{
+    font-family: "Amazonia Var";
+    src: url("Amazonia/Amazonia-VF.ttf");
+}
+
 @font-face{
     font-family: "Weiss Antiqua" ;
     src: url("weiss_1F3202_0_0.woff") format("woff");
 }
+
 @font-face{
     font-family: "Bradford LL Regular" ;
     src: url("BradfordLLWeb-Regular.woff2") format("woff2");
 }
-        *{
+*{
             margin: 0;
     font-family: "Antartica Bold" ;
     font-family: "Weiss Antiqua" ;
     font-family: "Bradford LL Regular" ;
-
+    font-family:"Amazonia Regular";
         }
         *::selection{
             color: rgba(0, 0, 0, 0);
@@ -1122,13 +1494,13 @@ body::-webkit-scrollbar {
     width: 0.5em;
 }
 body::-webkit-scrollbar-track {
-    background: rgba(180, 8, 8, 0.5);
+    background: rgba(66, 225, 156, 0.5);
 }
 body::-webkit-scrollbar-thumb {
-    background: rgba(180, 8, 8, 0.9);
+    background: rgba(66, 225, 156, 0.9);
 }
 body::-webkit-scrollbar-thumb:hover {
-    background: rgba(180, 8, 8, 1);
+    background: rgba(66, 225, 156, 1);
 }
 /* HERO ====================================================================================================*/
 .hero{
@@ -1180,7 +1552,7 @@ body::-webkit-scrollbar-thumb:hover {
         .hero-oneshot5{
             /* position: relative; */
             width: 100%;
-            height: 125px;          
+            height: 110px;          
             background: #fff;
             background: none;
             overflow: hidden; 
@@ -1230,7 +1602,7 @@ body::-webkit-scrollbar-thumb:hover {
         .hunter-oneshot5{
             /* position: relative; */
             width: 100%;
-            height: 125px;          
+            height: 110px;          
             background: #fff;
             background: none;
             overflow: hidden; 
@@ -1239,21 +1611,21 @@ body::-webkit-scrollbar-thumb:hover {
         }
 
         .hero-back{ z-index: 1; }
-        .hero-back-1{ transform: translateY(-36px); }
-        .hero-back-2{ transform: translateY(-36px); }
-        .hero-back-3{ transform: translateY(-36px); }
-        .hero-back-4{ transform: translateY(-36px); }
-        .hero-back-5{ transform: translateY(-36px); }
-        .hunter-back-1{ transform: translateY(-140px); }
-        .hunter-back-2{ transform: translateY(-130px); }
-        .hunter-back-3{ transform: translateY(-120px); }
-        .hunter-back-4{ transform: translateY(-110px); }
-        .hunter-back-5{ transform: translateY(-36px); }        
+        .hero-back-1{ transform: translateY(-10px); }
+        .hero-back-2{ transform: translateY(-10px); }
+        .hero-back-3{ transform: translateY(-10px); }
+        .hero-back-4{ transform: translateY(-10px); }
+        .hero-back-5{ transform: translateY(-10px); }
+        .hunter-back-1{ transform: translateY(-100px); }
+        .hunter-back-2{ transform: translateY(-90px); }
+        .hunter-back-3{ transform: translateY(-80px); }
+        .hunter-back-4{ transform: translateY(-70px); }
+        .hunter-back-5{ transform: translateY(-10px); }        
         .hero-layer{
             /* position: absolute; */
             top: 100px;
-            font-family: "Antartica Ultra Condensed Semi Bold" ;
-            font-size: 10em;
+    font-family:"Amazonia Extra Condensed Black";
+            font-size: 8em;
             letter-spacing: -2px;
             text-transform: uppercase;
             color: #000;
@@ -1263,8 +1635,8 @@ body::-webkit-scrollbar-thumb:hover {
         .hunter-layer{
             /* position: absolute; */
             top: 100px;
-            font-family: "Antartica Ultra Condensed Semi Bold" ;
-            font-size: 10em;
+    font-family:"Amazonia Extra Condensed Black";
+            font-size: 8em;
             letter-spacing: -2px;
             text-transform: uppercase;
             color: #000;
@@ -1452,7 +1824,7 @@ body::-webkit-scrollbar-thumb:hover {
             position: absolute;
             top: 100px;             /* position verticale du "front" */
             /* font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif; */
-    font-family: "Antartica Bold" ;
+    font-family:"Amazonia Extra Condensed Black";
             /* font-size: 10em; */
             font-size: 10em;
             letter-spacing: 2px;
@@ -1587,17 +1959,35 @@ body::-webkit-scrollbar-thumb:hover {
         .carouselY:hover .groupY{
             animation-play-state: paused !important;
         }
+        .wrapper-3d {
+            position:relative;
+            width: 100%;
+            min-height: 20vh;
+            & .text-3d {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate3d(1,1,1, 0deg);
+                transition: transform 150ms ease-in-out, top 350ms ease-in-out, left 350ms ease-in-out;
+                cursor: pointer;
+            }
+            /* & .text-3d:hover {
+                
+            } */
+        }
         @keyframes spin{
             from{translate: 0;}
             to{translate: -100%;}/*CHANGER POUR LE SENS*/
         }
+
+        
 
 /* SECTION 4 =============================================================================================*/
 .etape-4{
     padding: 0;
     height: 100vh;
 }   
-.container-loupe {
+    .container-loupe {
       position: relative;
       height: 90vh;
       width: auto;
@@ -1616,29 +2006,34 @@ body::-webkit-scrollbar-thumb:hover {
     /* CURSOR / LOUPE */
     #cursor {
       /* position: fixed; */
+      position: absolute;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
       width: 100%;
-      height: 100%;      /* margin: 1em; */
+      height: 100%;
+      
       pointer-events: none;
       z-index: 10;
 
       --x: 50%;
       --y: 50%;
-      --r: 10vw;
+      --r: 5vw;
+      clip-path: circle(var(--r) at var(--x) var(--y));
+      -webkit-clip-path: circle(var(--r) at var(--x) var(--y));
+        /* transform: scale(1.5); */
+      transition: clip-path 0.001s linear;
     }
 
     #cursor img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: top left;
       width: 100%;
       height: 100%;
       object-fit: cover;
-
-      clip-path: circle(var(--r) at var(--x) var(--y));
-      -webkit-clip-path: circle(var(--r) at var(--x) var(--y));
-
-      transition: clip-path 0.05s linear;
+        /* transform-origin: 50% 50%; */
+      
     }
     #cursor {
         opacity: 0;
@@ -1650,6 +2045,15 @@ body::-webkit-scrollbar-thumb:hover {
             opacity: 1; /* toujours visible à la souris */
         }
     }
+    #zoomed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* base image fills container */
+        height: 100%;
+        transform-origin: top left; /* important for zoom mapping */
+        pointer-events: none;
+    }
     /*
     @media (pointer: coarse) {
         #cursor {
@@ -1657,7 +2061,9 @@ body::-webkit-scrollbar-thumb:hover {
         }
     }
     */
-
+/* .loupedef{
+      transform: scale(1.3);
+} */
 /* SECTION 5 =============================================================================================*/
 .etape-5{
     height: 100vh;
@@ -1828,15 +2234,11 @@ body::-webkit-scrollbar-thumb:hover {
       transition: font-variation-settings 0.05s linear;
     }
 
-    /* Indicateur */
-    .hud {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.9rem;
-      opacity: 0.6;
-    }
 footer{
     text-align: center;
+    background-color: rgb(66, 225, 156);
+    padding: 1em;
+}
+.mmleho{
+    font-family:"Amazonia Extra Condensed Semi Bold";
 }
