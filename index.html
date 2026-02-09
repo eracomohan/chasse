@@ -4,8 +4,8 @@
                __  __*="" ╰-------┳--------------------╮---------------------------|     == |MMLEHO:>►  
      ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                    
     !"         _     _==""(C_)                                                                          
-    !    _.=""' "=__/                                                                                   
-    ╰==""                                                                                               
+    !     _=""' "=__/                                                                                   
+    ╰=="""                                                                                              
 -->
 <html lang="fr">
 <head>
@@ -42,6 +42,7 @@
     <script src="hologramme.js"></script>
     <script src="lightbox.js"></script>
     <script src="p5.js"></script>
+    <script src="holo-6.js"></script>
     <script src="script3d.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script> -->
     <!-- <script src="sketch.js"></script> FAIT PLANTER LE FONT SCROLL-->
@@ -214,7 +215,7 @@
                 
             </div>
         </div>-->
-        <p>You’ve got to do it clean.</p>
+        <p class="clean">You’ve got to do it clean.</p>
     </section>
     <section class="etape-4">
       <!-- pas – LOUPE -->
@@ -378,19 +379,21 @@
 
     <section class="etape-8">
       <!-- fuite nuit HOLOGRAMME + CURSOR POSITION -->
-        <img class="holo-img" src="img/2A3A9717.JPG" alt="">
-        <img class="holo-img" src="img/2A3A9718.JPG" alt="">
-        <img class="holo-img" src="img/2A3A9719.JPG" alt="">
-        <img class="holo-img" src="img/2A3A9720.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9717.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9718.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9719.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9720.JPG" alt="">
     </section>
 <section class="etape-10">
 <!-- loupe FONDU FLOU -->
   <div class="images">
-        <img src="img/2A3A9826.JPG" alt="" class="image active">
-        <img src="img/2A3A9753.JPG" alt="" class="image">
+        <img src="img/1.png" alt="" class="image active">
+        <img src="img/2.png" alt="" class="image">
 
   </div>
-            <p>It’s a good shot</p>
+            <!--
+  DONC ICI, Y A PAS DE TEXTE
+   <p>It’s a good shot</p> -->
 
 
     </section>
@@ -401,7 +404,7 @@
     </section> -->
     <section class="etape-7">
       <!-- grossissement -->
-        <p>Michael aims for a long time</p>
+        <!-- <p>Michael aims for a long time</p> -->
         <p class="gunshot">Gunshot</p>
         <p>The deer falls</p>
     </section>    
@@ -420,10 +423,11 @@ ONE SHOT
         <!-- <p>MMLEHO&copy;2026</p> -->
          <!-- <p>Et même, aile à chaud&nbsp;&copy;&nbsp;2026</p> -->
           <p class="mmleho">Hé mais, mets le à chaud!&nbsp;&copy;&nbsp;2026</p>
-          <p class="mmleho">Hé mais, mets le <sup>H</sup> haut!&nbsp;&copy;&nbsp;2026</p>
+          <!-- <p class="mmleho">Hé mais, mets le <sup>H</sup> haut!&nbsp;&copy;&nbsp;2026</p> -->
     </footer>
 </body>
 <!-- <script src="app.js"></script> -->
+
 <script>/*LOUPE*/
     const cursor = document.getElementById('cursor');
 
@@ -569,4 +573,60 @@ window.addEventListener('scroll', () => {
 
 </script>
 
+ <script>/* ETAPE-6: HOLOGRAMME */
+/*
+const images = document.querySelectorAll(".img-s6");
+const steps = images.length - 1;
+
+// état
+let targetT = 0;
+let currentT = 0;
+const smoothness = 0.1;
+
+// init
+images[0].style.opacity = 1;
+
+function updateImages(t) {
+    const scaled = t * steps;
+    const index = Math.floor(scaled);
+    const localT = scaled - index;
+
+    // reset simple et fiable
+    images.forEach(img => img.style.opacity = 0);
+
+    if (images[index]) {
+        images[index].style.opacity = 1 - localT;
+    }
+    if (images[index + 1]) {
+        images[index + 1].style.opacity = localT;
+    }
+}
+
+function animate() {
+    currentT += (targetT - currentT) * smoothness;
+    updateImages(currentT);
+    requestAnimationFrame(animate);
+}
+
+// desktop
+window.addEventListener("mousemove", e => {
+    targetT = clamp(e.clientX / window.innerHeight, 0, 1);
+});
+
+// mobile
+window.addEventListener("deviceorientation", e => {
+    const minAngle = -70;
+    const maxAngle = 70;
+    targetT = clamp((e.gamma - minAngle) / (maxAngle - minAngle), 0, 1);
+});
+
+function clamp(v, min, max) {
+    return Math.min(max, Math.max(min, v));
+}
+
+animate();
+*/
+
+
+</script>
 </html>
