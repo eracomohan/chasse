@@ -2,7 +2,7 @@
 MMLEHO
 */
 
-/* Antartica */
+/* Antartica 
 @font-face{
     font-family: "Antartica Black" ;
     src: url("Antarctica/Antarctica-Black.woff2") format("woff2");
@@ -1065,7 +1065,7 @@ MMLEHO
   font-weight: 100 900;
   font-stretch: 75% 125%;
   font-style: normal;
-}
+}*/
 /* Amazonia */
 @font-face{
     font-family:"Amazonia Black";
@@ -1876,8 +1876,6 @@ body::-webkit-scrollbar-thumb:hover {
         .back-4{ transform: translateY(-36px); }
         .back-5{ transform: translateY(-36px); }
 }
-
-
 /* SECTION 2 =============================================================================================*/
 .etape-2{
     height: 100vh;
@@ -1921,14 +1919,14 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* SECTION 3 =============================================================================================*/
 .etape-3{
-    height: auto;
+    height: 100vh;
 }
+/*
         .carouselY{
             margin: 100px auto;
             width: 100%;
-            /* border: 1px solid red; */
             display: flex;
-            overflow-x: auto;/*CHANGE EN VERTICAL*/
+            overflow-x: auto;
         }
         .carousel::-webkit-scrollbar{
             display: none;
@@ -1945,7 +1943,7 @@ body::-webkit-scrollbar-thumb:hover {
         .cardY{
             height: 3em;
             width: 12em;
-            /* padding: 1em; */
+            / padding: 1em; *
             background: rgba(0, 0, 0, 0);
             font-size: 3em;
             border-radius: .2em;
@@ -1959,16 +1957,17 @@ body::-webkit-scrollbar-thumb:hover {
         .carouselY:hover .groupY{
             animation-play-state: paused !important;
         }
+        */
         .wrapper-3d {
             position:relative;
             width: 100%;
-            min-height: 20vh;
+            min-height: 80vh;
             & .text-3d {
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -50%) rotate3d(1,1,1, 0deg);
-                transition: transform 150ms ease-in-out, top 350ms ease-in-out, left 350ms ease-in-out;
+                transform: translate(-50%, -50%) rotate3d(1,3,30, 0deg);
+                transition: transform 550ms ease-in-out, top 550ms ease-in-out, left 550ms ease-in-out;
                 cursor: pointer;
             }
             /* & .text-3d:hover {
@@ -1979,7 +1978,9 @@ body::-webkit-scrollbar-thumb:hover {
             from{translate: 0;}
             to{translate: -100%;}/*CHANGER POUR LE SENS*/
         }
-
+.clean{
+    bottom: 0;
+}
         
 
 /* SECTION 4 =============================================================================================*/
@@ -2077,6 +2078,7 @@ body::-webkit-scrollbar-thumb:hover {
     height: auto;
   position: relative;
   background: (255,255,255);
+  cursor: none;
 }
 .etape-7 canvas {
   position: absolute;
@@ -2155,33 +2157,41 @@ body::-webkit-scrollbar-thumb:hover {
     text-align: center;
     font-size: 5em;
     margin-bottom: 10em;
+    color: rgba(0, 0, 0, 0);
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+.gunshot:hover{
+    margin-top: 100em;
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 10em;
     color: red;
     font-weight: bolder;
     text-transform: uppercase;
 }
 
 /* SECTION 8 =============================================================================================*/
-.etape-8{
+ .etape-8{
     height: 100vh;
-}
-/* 
     position: relative;
     width: 100%;
-    background: #222;
+    height: 100vh; /* ou 100%, ou une hauteur fixe */
+    /* background: #222; */
     overflow: hidden;
-}
-
-.holo-img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90%;
-    opacity: 0;
-    transition: opacity 0.2s ease;
+} 
+        /* .img-s6 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            transition: opacity 0.2s ease;
+            opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.15s linear;
 } */
-
 /* SECTION 9 =============================================================================================*/
 .etape-9{
     height: 100vh;
@@ -2189,11 +2199,13 @@ body::-webkit-scrollbar-thumb:hover {
 /* SECTION 10 =============================================================================================*/
 .etape-10{
     height: 100vh;
+    /* display: flex;
+    justify-content: center; */
 }
 .images {
   position: sticky;
   top: 0;
-  height: 50vh;
+  height: 100vh;
 }
 
 .image {
