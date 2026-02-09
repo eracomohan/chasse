@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-<!-- 
-                         __________________________________________________________.                    
-               __  __*="" ╰-------┳--------------------╮---------------------------|     == |HOLEMM:>►  
-     ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                    
-    !"         _     _==""(C_)                                                                          
-    !    _.=""' "=__/                                                                                   
-    ╰==""                                                                                               
--->
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>holo</title>
     <style>
-        body{
+        /* body{
             margin: 0;
             background: #222;
             overflow: hidden;
-        }
-        img {
+        } */
+        .img-s6 {
             position: absolute;
             left: 50%;
             top: 50%;
@@ -27,15 +19,31 @@
             max-height: 90%;
             transition: opacity 0.2s ease;
             opacity: 0;
-        }
+    will-change: opacity;
+    transition: opacity 0.15s linear;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    opacity: 0;
+    transition: opacity 0.15s linear;
+    will-change: opacity;
+}
+
     </style>
 </head>
 <body>
-    <img class="img" src="img/2A3A9717.JPG" alt="">
-    <img class="img" src="img/2A3A9718.JPG" alt="">
-    <img class="img" src="img/2A3A9719.JPG" alt="">
-    <img class="img" src="img/2A3A9720.JPG" alt="">
-    <script>
+    <section>
+    <img class="img-s6" src="img/2A3A9717.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9718.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9719.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9720.JPG" alt="">
+    </section>
+
+    <!-- <script>
+        /*
         const images = document.querySelectorAll(".img");
 
         const minAngle = -70;
@@ -69,6 +77,96 @@
         function clamp(v, min, max) {
             return Math.min(max, Math.max(min, v));
         }
-    </script>
+        */
+const images = document.querySelectorAll(".img");
+const steps = images.length - 1;
+
+function updateFromT(t) {
+    const scaled = t * steps;
+    const index = Math.floor(scaled);
+    const localT = scaled - index;
+
+    images.forEach(img => img.style.opacity = 0);
+
+    if (images[index]) {
+        images[index].style.opacity = 1 - localT;
+    }
+    if (images[index + 1]) {
+        images[index + 1].style.opacity = localT;
+    }
+}
+
+// desktop
+window.addEventListener("mousemove", e => {
+    const t = clamp(e.clientY / window.innerHeight, 0, 1);
+    updateFromT(t);
+});
+
+// mobile
+window.addEventListener("deviceorientation", e => {
+    const minAngle = -70;
+    const maxAngle = 70;
+    const t = clamp((e.gamma - minAngle) / (maxAngle - minAngle), 0, 1);
+    updateFromT(t);
+});
+
+function clamp(v, min, max) {
+    return Math.min(max, Math.max(min, v));
+}
+
+    </script> -->
+<script>
+const images = document.querySelectorAll(".img-s6");
+const steps = images.length - 1;
+
+// état
+let targetT = 0;
+let currentT = 0;
+const smoothness = 0.1;
+
+// init
+images[0].style.opacity = 1;
+
+function updateImages(t) {
+    const scaled = t * steps;
+    const index = Math.floor(scaled);
+    const localT = scaled - index;
+
+    // reset simple et fiable
+    images.forEach(img => img.style.opacity = 0);
+
+    if (images[index]) {
+        images[index].style.opacity = 1 - localT;
+    }
+    if (images[index + 1]) {
+        images[index + 1].style.opacity = localT;
+    }
+}
+
+function animate() {
+    currentT += (targetT - currentT) * smoothness;
+    updateImages(currentT);
+    requestAnimationFrame(animate);
+}
+
+// desktop
+window.addEventListener("mousemove", e => {
+    targetT = clamp(e.clientX / window.innerHeight, 0, 1);
+});
+
+// mobile
+window.addEventListener("deviceorientation", e => {
+    const minAngle = -70;
+    const maxAngle = 70;
+    targetT = clamp((e.gamma - minAngle) / (maxAngle - minAngle), 0, 1);
+});
+
+function clamp(v, min, max) {
+    return Math.min(max, Math.max(min, v));
+}
+
+animate();
+</script>
+
 </body>
 </html>
