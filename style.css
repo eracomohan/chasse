@@ -1458,6 +1458,8 @@ MMLEHO
         1px 0.3px 1px #bc0000,
         1px 0.4px 1px #d50000,
         1px 0.5px 1px #ff0000;
+            background-color: white;
+            background: white;
         } 
         /* .click body,
         .click *,
@@ -1485,6 +1487,7 @@ section{
     /* height: 100vh; */
     border-bottom: 1px solid gold;
     padding: 1em;
+   position: relative;
 }
 img{
     height: 30%;
@@ -1517,6 +1520,10 @@ body::-webkit-scrollbar-thumb:hover {
             background: none;
             overflow: hidden;       /* pour couper comme sur l'image */
             /* animation: blink linear infinite 2s; */
+                animation-name: blink;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
         .hero-oneshot2{
             /* position: relative; */
@@ -1526,7 +1533,10 @@ body::-webkit-scrollbar-thumb:hover {
             background: none;
             overflow: hidden; 
             /* animation: blink2 linear infinite 2s; */
-
+                animation-name: blink2;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
         .hero-oneshot3{
             /* position: relative; */
@@ -1537,6 +1547,10 @@ body::-webkit-scrollbar-thumb:hover {
             overflow: hidden; 
             text-align: center;
             /* animation: blink3 linear infinite 2s;  */
+                            animation-name: blink3;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
         .hero-oneshot4{
             /* position: relative; */
@@ -1547,7 +1561,10 @@ body::-webkit-scrollbar-thumb:hover {
             overflow: hidden; 
             text-align: center;
             /* animation: blink4 linear infinite 2s; */
-
+                animation-name: blink4;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
         .hero-oneshot5{
             /* position: relative; */
@@ -1558,6 +1575,10 @@ body::-webkit-scrollbar-thumb:hover {
             overflow: hidden; 
             text-align: center;
             /* animation: blink5 linear infinite 2s; */
+                            animation-name: blink5;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
 .hunter-oneshot{
             /* position: relative; */
@@ -1567,6 +1588,10 @@ body::-webkit-scrollbar-thumb:hover {
             background: none;
             overflow: hidden;       /* pour couper comme sur l'image */
             /* animation: blink linear infinite 2s; */
+                            animation-name: blink;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
         .hunter-oneshot2{
             /* position: relative; */
@@ -1576,7 +1601,10 @@ body::-webkit-scrollbar-thumb:hover {
             background: none;
             overflow: hidden; 
             /* animation: blink2 linear infinite 2s; */
-
+                animation-name: blink2;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
         .hunter-oneshot3{
             /* position: relative; */
@@ -1587,6 +1615,10 @@ body::-webkit-scrollbar-thumb:hover {
             overflow: hidden; 
             text-align: center;
             /* animation: blink3 linear infinite 2s;  */
+                            animation-name: blink3;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
         .hunter-oneshot4{
             /* position: relative; */
@@ -1597,7 +1629,10 @@ body::-webkit-scrollbar-thumb:hover {
             overflow: hidden; 
             text-align: center;
             /* animation: blink4 linear infinite 2s; */
-
+                animation-name: blink4;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
         .hunter-oneshot5{
             /* position: relative; */
@@ -1608,6 +1643,10 @@ body::-webkit-scrollbar-thumb:hover {
             overflow: hidden; 
             text-align: center;
             /* animation: blink5 linear infinite 2s; */
+                animation-name: blink5;
+                animation-duration: 2s; /* Durée totale de l'animation */
+    animation-iteration-count: 1; /* Joue une seule fois */
+    animation-fill-mode: forwards;
         }
 
         .hero-back{ z-index: 1; }
@@ -1657,7 +1696,7 @@ body::-webkit-scrollbar-thumb:hover {
             justify-content: center;
             align-items: center;
         }
-        /*
+        
         @keyframes blink{
         	0%{opacity: 1.0;}
             1%{opacity: 0.0;}
@@ -1697,7 +1736,7 @@ body::-webkit-scrollbar-thumb:hover {
             68%{opacity: 1.0;}
 
         }
-            */
+            
 @media screen and (max-width:710px) {
     .deer{
         margin-top: -100px;
@@ -1759,74 +1798,135 @@ body::-webkit-scrollbar-thumb:hover {
 /* SECTION 1 =============================================================================================*/
 .etape-1{
     height: 100vh;
+    display: flex;
+    flex-direction: row;
 }
-.one{
-    filter: blur(5px);
-    transition: 450ms;
-    margin: 1em;
+/* .img-drawer{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
 }
-.one:hover{
-    filter: blur(5px);
-    filter: none;
-    transition: 450ms;
+.one-e1{
+    height: 98vh;
+    width: auto;
+    margin-left: 28px;
+} */
+/* section parente */
+.etape-1 {
+    position: relative; /* nécessaire pour le positionnement absolu du tiroir */
 }
 
-        .oneshot{
-            position: relative;
-            width: 100%;
-            height: 40px;          /* ajuste selon ton besoin */
-            background: #fff;
-            background: none;
-            overflow: hidden;       /* pour couper comme sur l'image */
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            text-align: center;
-        }
-         .oneshot2{
-            position: relative;
-            width: 100%;
-            height: 60px;
-            background: #fff;
-            background: none;
-            overflow: hidden;
-            justify-content: center;
-        }
-        .oneshot3{
-            position: relative;
-            width: 100%;
-            height: 170px;
-            background: #fff;
-            background: none;
-            overflow: hidden;
-            justify-content: center;
-        }
-        /* les 2 derrière */
-        .back{ z-index: 1;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            text-align: center; }
-        .back-1{ 
-            transform: translateY(-130px);
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            text-align: center; 
-        }   /*LES 3 VALEURS RESTENT LES MÊMES*/
-        .back-2{ transform: translateY(-130px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
-        .back-3{ transform: translateY(-130px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+/* tiroir */
+.drawer {
+    position: absolute;
+    top: 0;
+    right: 0;               /* positionné à droite de la section */
+    width: 50%;             /* largeur moitié écran quand fermé */
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row-reverse; /* images à gauche, poignée à droite */
+    overflow-x: auto;
+    overflow-y: hidden;
+    transition: width 0.5s ease;
+    z-index: 10;
+}
 
-        /* le texte devant */
-        .front{ z-index: 2;
-            text-align: center;        }
-        .layer{
-            position: absolute;
-            top: 100px;             /* position verticale du "front" */
-            /* font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif; */
+/* tiroir ouvert : prend toute la largeur de la section */
+.drawer.open {
+    width: 100%;
+}
+
+/* poignée */
+.handle {
+    width: 50px;
+    height: 100%;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* container des images */
+.img-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    height: 100%;
+}
+
+/* images */
+.one-e1 {
+    height: 98%;
+    width: auto;
+    flex-shrink: 0;
+    margin-right: 28px;
+}
+.drawer, .handle {
+    user-select: none; /* empêche la sélection de texte pendant le drag */
+    touch-action: pan-x; /* pour le touch sur mobile */
+}
+
+.oneshot{
+    position: relative;
+    width: 100%;
+    height: 0px;          
+    background: #fff;
+    overflow: hidden;       
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+ .oneshot2{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: #fff;
+    overflow: hidden;
+    justify-content: center;
+}
+.oneshot3{
+    position: relative;
+    width: 100%;
+    height: 17px;
+    background: #fff;
+    overflow: hidden;
+    justify-content: center;
+    margin-top: -6em;
+}
+
+/* les 2 derrière */
+.back{ z-index: 1;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center; }
+.back-1{ 
+    transform: translateY(-0px);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center; 
+}   /*LES 3 VALEURS RESTENT LES MÊMES*/
+.back-2{ transform: translateY(-110px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+.back-3{ transform: translateY(-110px); }   /*LES 3 VALEURS RESTENT LES MÊMES*/
+
+/* le texte devant */
+.front{ 
+    z-index: 2;
+    text-align: center;
+}
+.layer{
+    position: absolute;
+    top: 100px;             /* position verticale du "front" */
+    /* font: 900 140px/0.9 "Impact", "Arial Black", system-ui, sans-serif; */
     font-family:"Amazonia Extra Condensed Black";
             /* font-size: 10em; */
-            font-size: 10em;
+            font-size: 9em;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #000;
@@ -1849,6 +1949,8 @@ body::-webkit-scrollbar-thumb:hover {
             animation: appear linear;
             animation-timeline: view();
             animation-range: entry 0% cover 40%;
+            width: 100%;
+            padding-top: 10%;
         }
 @media screen and (max-width:710px) {
 
@@ -1877,44 +1979,70 @@ body::-webkit-scrollbar-thumb:hover {
         .back-5{ transform: translateY(-36px); }
 }
 /* SECTION 2 =============================================================================================*/
-.etape-2{
+section.holo1 {
+    /* height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden; */
+    display: grid;
+    place-items: center;
     height: 100vh;
-}
-.got1{
-    filter: blur(5px);
-    transition: 450ms;
-    margin: 1em;
-}
-.got2{
-    filter: blur(5px);
-    transition: 450ms;
-    margin: 1em;
-    z-index: 2;
-    transform: translateX(-60%);
-    /* transform: translateY(50%); */
-}
-.got3{
-    filter: blur(5px);
-    transition: 450ms;
-    margin: 1em;
-    z-index: 3;
-    transform: translateX(-120%);
-    /* transform: translateX(-0%);
-    transform: translateY(0%); */
-}
-.got1:hover{
-    filter: blur(0px);
-    z-index: 40;
-}
-.got2:hover{
-    filter: blur(0px);
-    z-index: 2;
-}
-.got3:hover{
-    filter: blur(0px);
-    z-index: 2;
+    overflow: hidden;
 }
 
+/* IMAGES */
+.images {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+
+.img-s2 {
+    position: absolute;
+    height: 90vh;
+    width: auto;
+    opacity: 0;
+    top: 0;
+}
+
+/* TEXTE BAS */
+.texts {
+    position: absolute;
+    bottom: 5vh;
+    left: 0;
+    width: 100%;
+    padding: 5 5vw;
+    pointer-events: none;
+    padding: 0;
+}
+
+/* TEXTE */
+.txt-s2 {
+    position: absolute;
+    color: black;
+    font-size: 1.5rem;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-top: -1em;
+}
+
+/* GAUCHE */
+.txt-s2.left {
+    left: 0;
+    text-align: left;
+}
+
+/* DROITE */
+.txt-s2.right {
+    right: 0;
+    text-align: right;
+}
 
 
 /* SECTION 3 =============================================================================================*/
@@ -2066,9 +2194,122 @@ body::-webkit-scrollbar-thumb:hover {
       transform: scale(1.3);
 } */
 /* SECTION 5 =============================================================================================*/
-.etape-5{
+/* .etape-5{
     height: 100vh;
+
 }
+.wrapper-e5{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-e5{
+    width: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.content1-e5{
+    display: flex;
+    flex-direction: row;
+}
+.content-e5{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    opacity: 0;
+    transition: 600ms;
+}
+
+.content-e5:hover{
+    opacity: 1;
+    .txt-e5{
+        opacity: 0;
+    }
+}
+.content-e5 p {
+    color: black;
+}
+.txt-e5{
+    width: 100%;
+}  */
+.etape-5 {
+    height: 100vh;
+    display: flex;
+}
+
+/* moitiés */
+.half {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* états superposés */
+.state {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease;
+}
+
+.state img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* texte */
+.state p {
+    position: absolute;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* visibilité */
+.default {
+    opacity: 1;
+}
+
+.hover {
+    opacity: 0;
+}
+
+/* HOVER UNIQUEMENT SUR LA PARTIE DROITE */
+/* .right:hover ~ .left .default,
+.right:hover .default {
+    opacity: 0;
+}
+
+.right:hover ~ .left .hover,
+.right:hover .hover {
+    opacity: 1;
+} */
+.left:hover .default,
+.left:hover ~ .right .default {
+    opacity: 0;
+}
+
+.left:hover .hover,
+.left:hover ~ .right .hover {
+    opacity: 1;
+}
+
+
+
 /* SECTION 6 =============================================================================================*/
 .etape-6{
     height: 50vh;
@@ -2153,45 +2394,39 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .gunshot{
-    margin-top: 100em;
+    margin-top: 50em;
     text-align: center;
     font-size: 5em;
-    margin-bottom: 10em;
-    color: rgba(0, 0, 0, 0);
-    font-weight: bolder;
+    font-size: 15em;
+    color: rgba(0, 0, 0, 1);
     text-transform: uppercase;
 }
 .gunshot:hover{
-    margin-top: 100em;
+    margin-top: 50em;
     text-align: center;
-    font-size: 5em;
-    margin-bottom: 10em;
+    font-size: 15em;
     color: red;
-    font-weight: bolder;
     text-transform: uppercase;
 }
 
 /* SECTION 8 =============================================================================================*/
- .etape-8{
+ /* .etape-8{
+    display: grid;
+    place-items: center;
     height: 100vh;
-    position: relative;
-    width: 100%;
-    height: 100vh; /* ou 100%, ou une hauteur fixe */
-    /* background: #222; */
     overflow: hidden;
-} 
-        /* .img-s6 {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 90%;
-            max-height: 90%;
-            transition: opacity 0.2s ease;
-            opacity: 0;
-    will-change: opacity;
-    transition: opacity 0.15s linear;
-} */
+}  */
+.holo {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.img-s6 {
+    grid-area: 1 / 1;
+    height: 90vh;
+    width: auto;
+}
 /* SECTION 9 =============================================================================================*/
 .etape-9{
     height: 100vh;
@@ -2227,6 +2462,7 @@ body::-webkit-scrollbar-thumb:hover {
 .etape-11{
         /*font-family: "Inter", sans-serif;*/
         box-sizing: border-box;
+        color: rgb(66, 225, 156);
     }
 
 /* Texte fixé au centre */
