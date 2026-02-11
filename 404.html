@@ -14,13 +14,14 @@
     <title>🦌 – 404</title>
     <style>
 @font-face{
-    font-family: "Antartica Ultra Condensed Semi Bold Contrast" ;
-    src: url("Antarctica/Antarctica-UCnSmBdContrast.woff2") format("woff2");
+    font-family:"Amazonia Bold Contrast";
+    src: url("Amazonia/Amazonia-BoldContrast.woff2") format("woff2");
 }
         *{
             cursor: url("mire-blanche.png") 16 16, auto;
             margin: 0;
-    font-family: "Antartica Ultra Condensed Semi Bold Contrast" ;
+    font-family:"Amazonia Bold Contrast";
+
         }
         *::selection{
             color: rgba(0, 0, 0, 0);
@@ -46,6 +47,7 @@
             background-color: black;
         }
         .oneshot{
+            /* position: relative; */
             width: 100%;
             height: 20px;          /* ajuste selon ton besoin */
             background: #fff;
@@ -54,6 +56,7 @@
             animation: blink linear infinite 2s;
         }
         .oneshot2{
+            /* position: relative; */
             width: 100%;
             height: 30px;          
             background: #fff;
@@ -92,14 +95,15 @@
             animation: blink5 linear infinite 2s;
         }
         .back{ z-index: 1; }
-        .back-1{ transform: translateY(-24px); }
-        .back-2{ transform: translateY(-24px); }
-        .back-3{ transform: translateY(-24px); }
-        .back-4{ transform: translateY(-24px); }
-        .back-5{ transform: translateY(-24px); }
+        .back-1{ transform: translateY(-4px); }
+        .back-2{ transform: translateY(-4px); }
+        .back-3{ transform: translateY(-4px); }
+        .back-4{ transform: translateY(-4px); }
+        .back-5{ transform: translateY(-4px); }
         .layer{
+            /* position: absolute; */
             top: 100px;
-    font-family: "Antartica Ultra Condensed Semi Bold Contrast" ;
+            font-family:"Amazonia Bold Contrast";
             font-size: 7em;
             letter-spacing: -2px;
             text-transform: uppercase;
@@ -153,46 +157,75 @@
         .cerf:hover{
             cursor: url("mire-blanche.png") 16 16, auto;
         }
-
         @keyframes blink{
         	0%{opacity: 1.0;}
             1%{opacity: 0.0;}
             59%{opacity: 0.0;}
             60%{opacity: 1.0;}
-
-
         }
         @keyframes blink2{
         	0%{opacity: 1.0;}
             1%{opacity: 0.0;}
             61%{opacity: 0.0;}
             62%{opacity: 1.0;}
-
-
         }
         @keyframes blink3{
         	0%{opacity: 1.0;}
             1%{opacity: 0.0;}
             63%{opacity: 0.0;}
             64%{opacity: 1.0;}
-
-
         }
         @keyframes blink4{
         	0%{opacity: 1.0;}
             1%{opacity: 0.0;}
             65%{opacity: 0.0;}
             66%{opacity: 1.0;}
-
-
         }
         @keyframes blink5{
         	0%{opacity: 1.0;}
             1%{opacity: 0.0;}
             67%{opacity: 0.0;}
             68%{opacity: 1.0;}
-
         }
+         @media screen and (max-width:800px){
+        .layer{
+            /* position: absolute; */
+            top: 100px;
+            font-family:"Amazonia Bold Contrast";
+            font-size: 5em;
+            }
+         }
+         @media screen and (max-width:550px){
+        .layer{
+            /* position: absolute; */
+            top: 100px;
+            font-family:"Amazonia Bold Contrast";
+            font-size: 3em;
+            }
+        .back-1{ transform: translateY(-1px); }
+        .back-2{ transform: translateY(-1px); }
+        .back-3{ transform: translateY(-1px); }
+        .back-4{ transform: translateY(-1px); }
+        .back-5{ transform: translateY(-1px); }
+        .oneshot{
+            height: 10px;          /* ajuste selon ton besoin */
+        }
+        .oneshot2{
+            height: 15px;          
+        }
+        .oneshot3{
+            height: 20px;          
+        }
+        .oneshot4{
+            height: 30px;          
+        }
+        .oneshot5{
+            height: 125px;          
+        }
+        p {
+            font-size: 1.5em;
+        }
+    }    
     </style>
 </head>
 <body>
@@ -250,4 +283,3 @@
     }
 </script>
 </html>
-
