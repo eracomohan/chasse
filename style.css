@@ -2258,6 +2258,7 @@ section.holo1 {
 .etape-4{
     padding: 0;
     height: 100vh;
+    cursor: none;
 }   
     .container-loupe {
       position: relative;
