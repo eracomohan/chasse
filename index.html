@@ -97,18 +97,15 @@
     <section class="etape-4">
           <div class="container-loupe">
             <picture class="background-loupe">
-              <!-- <img src="https://www.salecharacter.com/cms-media/SC_Trial_Desktop_Cover_Front_f662a6e02e.svg" alt=""> -->
                <img class="loupe" src="img/derriere.png" alt="">
             </picture>
-            <div style="--x:15%;--y:15%;--r:15vw;transform-origin:15% 15%;clip-path:circle(var(--r, 15vw) at 15% 15%);-webkit-clip-path:circle(var(--r, 15vw) at 15% 15%);" class="bg-black animate-pulse-clip absolute scale-[1.0055] inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-300"></div>
-            <!-- IMAGE QUI SUIT LE CURSEUR -->
+
             <picture id="cursor">
-              <!-- <img src="https://www.salecharacter.com/cms-media/SC_Trial_Desktop_Cover_Hover_236e28b3df.svg" alt=""> -->
-               <img class="loupedef" class="loupe" src="img/devant.png" alt="">
+               <img class="loupedef loupe" src="img/devant.png" alt="">
             </picture>
+
           </div>
     </section>
-
     <section class="holo">
     <img class="img-s6" src="img/2A3A9717.JPG" alt="">
     <img class="img-s6" src="img/2A3A9718.JPG" alt="">
@@ -332,7 +329,7 @@ holo1.addEventListener("touchmove", e => {
 animate();
 </script>
 
-<script>/*LOUPE*/
+<!-- <script>/*LOUPE*/
     const cursor = document.getElementById('cursor');
 
     function updatePosition(x, y) {
@@ -364,8 +361,81 @@ animate();
       cursor.style.opacity = 0;
     });
 
-</script>
+</script> -->
+<script>/*LOUPE*/
+    let mouseX = 0;
+    let mouseY = 0;
+    let rafId = null;
+    const zoomFactor=2;
+    const containerLoupe = document.querySelector(".container-loupe")
+    
+    
+    
+    const cursor = document.getElementById('cursor');
+    const loupedef = document.querySelector(".loupedef")
 
+    function updatePosition() {
+        const rec = containerLoupe.getBoundingClientRect();
+        const x = mouseX -  rec.left
+        const y = mouseY - rec.top
+        // console.log(x,y);
+        
+        const px = (x / rec.width) * 100;
+        const py = (y / rec.height) * 100;
+        cursor.style.setProperty('--x', px + '%');
+        cursor.style.setProperty('--y', py + '%');
+        // cursor.style.left=`${x}px`
+        // cursor.style.top=`${y}px`
+        const cursorRect = cursor.getBoundingClientRect()
+        const offsetX = -x * zoomFactor + cursorRect.width/2;
+        const offsetY = -y * zoomFactor + cursorRect.height/2;
+        console.log(offsetX,offsetY);
+        // loupedef.style.transform = `scale(${zoomFactor}) translate(${offsetX / zoomFactor}px, ${offsetY / zoomFactor}px)`;
+    loupedef.style.transform = `translate(-15%, -15%) scale(${zoomFactor}) translate(${offsetX / zoomFactor}px, ${offsetY / zoomFactor}px)`;
+
+        
+        rafId = requestAnimationFrame(updatePosition);
+
+    }
+
+    /* DESKTOP */
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX
+        mouseY= e.clientY
+
+      if (!rafId) {
+            rafId = requestAnimationFrame(updatePosition);
+        }
+    });
+
+    /* TOUCH */
+    document.addEventListener('touchstart', (e) => {
+      cursor.style.opacity = 1;
+      const t = e.touches[0];
+      updatePosition(t.clientX, t.clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+      const t = e.touches[0];
+      updatePosition(t.clientX, t.clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchend', () => {
+      cursor.style.opacity = 0;
+    });
+    /*
+      let active = false;
+
+    document.addEventListener('touchstart', (e) => {
+      active = !active;
+      cursor.style.opacity = active ? 1 : 0;
+
+      if (!active) return;
+      const t = e.touches[0];
+      updatePosition(t.clientX, t.clientY);
+    });
+    */
+</script>
 
 <script> /*HOLOGRAMME WIP*/
 const holo = document.querySelector(".holo");
@@ -534,6 +604,5 @@ window.addEventListener('scroll', () => {
 });
 
 </script>
-
 
 </html>
