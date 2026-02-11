@@ -114,7 +114,6 @@
 
           </div>
         <!-- <img src="img/2A3A9813.JPG" alt=""> -->
-        <p>He’s right there.</p>
     </section>
 
 <section class="etape-5">
@@ -123,13 +122,13 @@
             <img src="img/2A3A9805.JPG" alt="">
         </div>
         <div class="state hover">
-            <p>He won’t be hurt</p>
+            <p class="hurt" style="color:#42e19c">He won’t be <br><span class="hurt-span">hurt</span></p>
         </div>
     </div>
 
     <div class="half right">
         <div class="state default">
-            <p>If he hears the shot</p>
+            <p>If he <br><span class="hears">hears</span> <br>the shot</p>
         </div>
         <div class="state hover">
             <img src="img/2A3A9805.JPG" alt="">
@@ -264,7 +263,7 @@ window.addEventListener("DOMContentLoaded", initStickerDrawer);
 
 
 
-<script> /* IGOT HIM */
+<!-- <script> /* IGOT HIM */
 const holo1 = document.querySelector(".holo1");
 const images = holo1.querySelectorAll(".img-s2");
 const texts  = holo1.querySelectorAll(".txt-s2");
@@ -309,10 +308,10 @@ function updateScene(t) {
     }
 }
 
-function animate() {
+function animateHolo1() {
     currentT1 += (targetT1 - currentT1) * smoothness1;
     updateScene(currentT1);
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animateHolo1);
 }
 
 function setTargetHolo1(x) {
@@ -330,6 +329,91 @@ holo1.addEventListener("touchstart", e => {
 
 holo1.addEventListener("touchmove", e => {
     if (e.touches.length) setTargetHolo1(e.touches[0].clientX);
+}, { passive: true });
+
+animateHolo1();
+</script> -->
+
+<script> /* IGOT HIM WIP*/
+const holo1 = document.querySelector(".holo1");
+const images = holo1.querySelectorAll(".img-s2");
+const texts  = holo1.querySelectorAll(".txt-s2");
+
+const steps = images.length - 1;
+
+let targetT = 0;
+let currentT = 0;
+const smoothness = 0.08;
+
+// état initial
+images[0].style.opacity = 1;
+texts[0].style.opacity = 1;
+
+function clamp(v, min, max) {
+    return Math.min(max, Math.max(min, v));
+}
+
+function updateScene(t) {
+    const scaled = t * steps;
+    const index = Math.floor(scaled);
+    const localT = scaled - index;
+
+    images.forEach(img => img.style.opacity = 0);
+    texts.forEach(txt => txt.style.opacity = 0);
+
+    // images
+    if (images[index]) {
+        images[index].style.opacity = 1 - localT;
+    }
+    if (images[index + 1]) {
+        images[index + 1].style.opacity = localT;
+    }
+
+    // textes synchronisés
+    if (index === 0 && localT < 0.5) {
+        texts[0].style.opacity = 1;
+    }
+
+    if (index === steps - 1 && localT > 0.5) {
+        texts[1].style.opacity = 1;
+    }
+}
+
+function animate() {
+    currentT += (targetT - currentT) * smoothness;
+    updateScene(currentT);
+    requestAnimationFrame(animate);
+}
+
+holo1.addEventListener("mousemove", e => {
+    const rect = holo1.getBoundingClientRect();
+    targetT = clamp(
+        (e.clientX - rect.left) / rect.width,
+        0,
+        1
+    );
+});
+
+holo1.addEventListener("touchstart", e => {
+    if (e.touches.length) {
+        const rect = holo1.getBoundingClientRect();
+        targetT = clamp(
+            (e.touches[0].clientX - rect.left) / rect.width,
+            0,
+            1
+        );
+    }
+}, { passive: true });
+
+holo1.addEventListener("touchmove", e => {
+    if (e.touches.length) {
+        const rect = holo1.getBoundingClientRect();
+        targetT = clamp(
+            (e.touches[0].clientX - rect.left) / rect.width,
+            0,
+            1
+        );
+    }
 }, { passive: true });
 
 animate();
@@ -369,7 +453,7 @@ animate();
 
 </script>
 
-<script> /*HOLOGRAMME WIP*/
+<!-- <script> /*HOLOGRAMME WIP*/
 const holo = document.querySelector(".holo");
 const imagesholo = holo.querySelectorAll(".img-s6");
 const steps = imagesholo.length - 1;
@@ -395,10 +479,10 @@ function updateImages(t) {
     }
 }
 
-function animate() {
+function animateHolo() {
     currentT += (targetT - currentT) * smoothness;
     updateImages(currentT);
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animateHolo);
 }
 
 function setTargetHolo(x) {
@@ -428,9 +512,67 @@ function clamp(v, min, max) {
     return Math.min(max, Math.max(min, v));
 }
 
-animate();
-</script>
+animateHolo();
+</script> -->
+<script> /*HOLOGRAMME WIP*/
+const holo = document.querySelector(".holo");
+const imagesholo = holo.querySelectorAll(".img-s6");
+const steps2 = imagesholo.length - 1;
 
+let targetT2 = 0;
+let currentT2 = 0;
+const smoothness2 = 0.1;
+
+imagesholo[0].style.opacity = 1;
+
+function updateImages(t) {
+    const scaled = t * steps2;
+    const index = Math.floor(scaled);
+    const localT = scaled - index;
+
+    imagesholo.forEach(img => img.style.opacity = 0);
+
+    if (imagesholo[index]) {
+        imagesholo[index].style.opacity = 1 - localT;
+    }
+    if (imagesholo[index + 1]) {
+        imagesholo[index + 1].style.opacity = localT;
+    }
+}
+
+function animateHolo() {
+    currentT += (targetT - currentT) * smoothness;
+    updateImages(currentT);
+    requestAnimationFrame(animateHolo);
+}
+
+// desktop - changement principal : window au lieu de holo
+window.addEventListener("mousemove", e => {
+    targetT = clamp(e.clientX / window.innerWidth, 0, 1);
+});
+
+// touch - changement principal : window au lieu de holo
+window.addEventListener("touchstart", e => {
+    if (e.touches.length) targetT = clamp(e.touches[0].clientX / window.innerWidth, 0, 1);
+}, { passive: true });
+
+window.addEventListener("touchmove", e => {
+    if (e.touches.length) targetT = clamp(e.touches[0].clientX / window.innerWidth, 0, 1);
+}, { passive: true });
+
+// deviceorientation (gardé comme dans l'original)
+window.addEventListener("deviceorientation", e => {
+    const minAngle = -70;
+    const maxAngle = 70;
+    if (e.gamma != null) targetT = clamp((e.gamma - minAngle) / (maxAngle - minAngle), 0, 1);
+});
+
+function clamp(v, min, max) {
+    return Math.min(max, Math.max(min, v));
+}
+
+animateHolo();
+</script>
 
 <script>/*FONT SCROLL – FAKE FONT VARIABLE*/
 
