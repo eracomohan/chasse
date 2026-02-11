@@ -85,22 +85,7 @@
     </div>
 
 </section>
-<!-- <section class="holo1">
 
-
-    <div class="images">
-        <img class="img-s2" src="img/2A3A9705.JPG" alt="">
-        <img class="img-s2" src="img/2A3A9707.JPG" alt="">
-        <img class="img-s2" src="img/2A3A9708.JPG" alt="">
-    </div>
-
-
-    <div class="texts">
-        <p class="txt-s2 left">I got him</p>
-        <p class="txt-s2 right">I got him</p>
-    </div>
-
-</section> -->
     <section class="etape-3">
         <p>You can’t take him like that.</p>
         
@@ -131,7 +116,12 @@
           </div>
         <!-- <img src="img/2A3A9813.JPG" alt=""> -->
     </section>
-
+    <section class="holo">
+    <img class="img-s6" src="img/2A3A9717.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9718.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9719.JPG" alt="">
+    <img class="img-s6" src="img/2A3A9720.JPG" alt="">
+    </section>
 <section class="etape-5">
     <div class="half left">
         <div class="state default">
@@ -152,12 +142,7 @@
     </div>
 </section>
 
-    <section class="holo">
-    <img class="img-s6" src="img/2A3A9717.JPG" alt="">
-    <img class="img-s6" src="img/2A3A9718.JPG" alt="">
-    <img class="img-s6" src="img/2A3A9719.JPG" alt="">
-    <img class="img-s6" src="img/2A3A9720.JPG" alt="">
-    </section>
+
 <section class="etape-10">
   <div class="images">
         <img src="img/1.png" alt="" class="image active">
@@ -179,14 +164,12 @@
     
     <section class="etape-11 typo-section" id="typoSection">
     <div class="sticky">
-      <div id="text">
-        It's a good shot
+      <div id="text" style="  font-size: clamp(2rem, 11vw, 20rem);">
+            It’s a good shot
     </div>
     </div>
   </section>      
-    <footer>
-
-        
+    <footer>        
           <p class="mmleho">Hé mais, mets le à chaud!&nbsp;&copy;&nbsp;2026</p>
     </footer>
     <audio src="rifle_mixdown.mp3" id="monSon"></audio>
@@ -461,7 +444,6 @@ animateHolo();
 
     const section = document.getElementById("typoSection");
     const text = document.getElementById("text");
-    const hud = document.getElementById("hud");
 
     const fonts = [
       { name: "Thin", family: "Amazonia Extra Light Contrast" },
@@ -492,7 +474,7 @@ animateHolo();
         if (index !== currentIndex) {
           currentIndex = index;
           text.style.fontFamily = fonts[index].family;
-          if (hud) hud.textContent = `Antarctica ${fonts[index].name}`;
+          if (hud) hud.textContent = `Amazonia ${fonts[index].name}`;
         }
       }
     });
