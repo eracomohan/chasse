@@ -60,8 +60,8 @@
             </div>
         </div>
         <div id="stickerDrawer" class="drawer closed">
-    <div class="img-container">
-    <div id="stickerDrawerHandle" class="handle">☰</div>
+    <div class="img-container no-scrollbar">
+    <div id="stickerDrawerHandle" class="handle"><div class="poignee"></div></div>
         <img class="one-e1" src="img/e1-1.png" alt="">
         <img class="one-e1" src="img/e1-2.png" alt="">
         <img class="one-e1" src="img/e1-3.png" alt="">
@@ -69,7 +69,7 @@
 </div>
 
     </section>
-<section class="holo1">
+    <section class="holo1">
 
     <!-- IMAGES -->
     <div class="images">
@@ -85,6 +85,22 @@
     </div>
 
 </section>
+<!-- <section class="holo1">
+
+
+    <div class="images">
+        <img class="img-s2" src="img/2A3A9705.JPG" alt="">
+        <img class="img-s2" src="img/2A3A9707.JPG" alt="">
+        <img class="img-s2" src="img/2A3A9708.JPG" alt="">
+    </div>
+
+
+    <div class="texts">
+        <p class="txt-s2 left">I got him</p>
+        <p class="txt-s2 right">I got him</p>
+    </div>
+
+</section> -->
     <section class="etape-3">
         <p>You can’t take him like that.</p>
         
@@ -261,121 +277,48 @@ window.addEventListener("DOMContentLoaded", initStickerDrawer);
 
 </script>
 
-
-
-<!-- <script> /* IGOT HIM */
-const holo1 = document.querySelector(".holo1");
-const images = holo1.querySelectorAll(".img-s2");
-const texts  = holo1.querySelectorAll(".txt-s2");
-
-const steps1 = images.length - 1;
-
-let targetT1 = 0;
-let currentT1 = 0;
-const smoothness1 = 0.08;
-
-// état initial
-images[0].style.opacity = 1;
-texts[0].style.opacity = 1;
-
-function clamp(v, min, max) {
-    return Math.min(max, Math.max(min, v));
-}
-
-function updateScene(t) {
-    const scaled = t * steps1;
-    const index = Math.floor(scaled);
-    const localT = scaled - index;
-
-    images.forEach(img => img.style.opacity = 0);
-    texts.forEach(txt => txt.style.opacity = 0);
-
-    // images
-    if (images[index]) {
-        images[index].style.opacity = 1 - localT;
-    }
-    if (images[index + 1]) {
-        images[index + 1].style.opacity = localT;
-    }
-
-    // textes synchronisés
-    if (index === 0 && localT < 0.5) {
-        texts[0].style.opacity = 1;
-    }
-
-    if (index === steps1 - 1 && localT > 0.5) {
-        texts[1].style.opacity = 1;
-    }
-}
-
-function animateHolo1() {
-    currentT1 += (targetT1 - currentT1) * smoothness1;
-    updateScene(currentT1);
-    requestAnimationFrame(animateHolo1);
-}
-
-function setTargetHolo1(x) {
-    const rect = holo1.getBoundingClientRect();
-    targetT1 = clamp((x - rect.left) / rect.width, 0, 1);
-}
-
-holo1.addEventListener("mousemove", e => {
-    setTargetHolo1(e.clientX);
-});
-
-holo1.addEventListener("touchstart", e => {
-    if (e.touches.length) setTargetHolo1(e.touches[0].clientX);
-}, { passive: true });
-
-holo1.addEventListener("touchmove", e => {
-    if (e.touches.length) setTargetHolo1(e.touches[0].clientX);
-}, { passive: true });
-
-animateHolo1();
-</script> -->
-
 <script> /* IGOT HIM WIP*/
 const holo1 = document.querySelector(".holo1");
-const images = holo1.querySelectorAll(".img-s2");
-const texts  = holo1.querySelectorAll(".txt-s2");
+const holoImages = holo1.querySelectorAll(".img-s2");
+const holoTexts  = holo1.querySelectorAll(".txt-s2");
 
-const steps = images.length - 1;
+const holoSteps = holoImages.length - 1;
 
 let targetT = 0;
 let currentT = 0;
 const smoothness = 0.08;
 
 // état initial
-images[0].style.opacity = 1;
-texts[0].style.opacity = 1;
+holoImages[0].style.opacity = 1;
+holoTexts[0].style.opacity = 1;
 
 function clamp(v, min, max) {
     return Math.min(max, Math.max(min, v));
 }
 
 function updateScene(t) {
-    const scaled = t * steps;
+    const scaled = t * holoSteps;
     const index = Math.floor(scaled);
     const localT = scaled - index;
 
-    images.forEach(img => img.style.opacity = 0);
-    texts.forEach(txt => txt.style.opacity = 0);
+    holoImages.forEach(img => img.style.opacity = 0);
+    holoTexts.forEach(txt => txt.style.opacity = 0);
 
     // images
-    if (images[index]) {
-        images[index].style.opacity = 1 - localT;
+    if (holoImages[index]) {
+        holoImages[index].style.opacity = 1 - localT;
     }
-    if (images[index + 1]) {
-        images[index + 1].style.opacity = localT;
+    if (holoImages[index + 1]) {
+        holoImages[index + 1].style.opacity = localT;
     }
 
     // textes synchronisés
     if (index === 0 && localT < 0.5) {
-        texts[0].style.opacity = 1;
+        holoTexts[0].style.opacity = 1;
     }
 
-    if (index === steps - 1 && localT > 0.5) {
-        texts[1].style.opacity = 1;
+    if (index === holoSteps - 1 && localT > 0.5) {
+        holoTexts[1].style.opacity = 1;
     }
 }
 
@@ -453,71 +396,11 @@ animate();
 
 </script>
 
-<!-- <script> /*HOLOGRAMME WIP*/
-const holo = document.querySelector(".holo");
-const imagesholo = holo.querySelectorAll(".img-s6");
-const steps = imagesholo.length - 1;
 
-let targetT = 0;
-let currentT = 0;
-const smoothness = 0.1;
-
-imagesholo[0].style.opacity = 1;
-
-function updateImages(t) {
-    const scaled = t * steps;
-    const index = Math.floor(scaled);
-    const localT = scaled - index;
-
-    imagesholo.forEach(img => img.style.opacity = 0);
-
-    if (imagesholo[index]) {
-        imagesholo[index].style.opacity = 1 - localT;
-    }
-    if (imagesholo[index + 1]) {
-        imagesholo[index + 1].style.opacity = localT;
-    }
-}
-
-function animateHolo() {
-    currentT += (targetT - currentT) * smoothness;
-    updateImages(currentT);
-    requestAnimationFrame(animateHolo);
-}
-
-function setTargetHolo(x) {
-    const rect = holo.getBoundingClientRect();
-    targetT = clamp((x - rect.left) / rect.width, 0, 1);
-}
-
-holo.addEventListener("mousemove", e => {
-    setTargetHolo(e.clientX);
-});
-
-holo.addEventListener("touchstart", e => {
-    if (e.touches.length) setTargetHolo(e.touches[0].clientX);
-}, { passive: true });
-
-holo.addEventListener("touchmove", e => {
-    if (e.touches.length) setTargetHolo(e.touches[0].clientX);
-}, { passive: true });
-
-window.addEventListener("deviceorientation", e => {
-    const minAngle = -70;
-    const maxAngle = 70;
-    if (e.gamma != null) targetT = clamp((e.gamma - minAngle) / (maxAngle - minAngle), 0, 1);
-});
-
-function clamp(v, min, max) {
-    return Math.min(max, Math.max(min, v));
-}
-
-animateHolo();
-</script> -->
 <script> /*HOLOGRAMME WIP*/
 const holo = document.querySelector(".holo");
 const imagesholo = holo.querySelectorAll(".img-s6");
-const steps2 = imagesholo.length - 1;
+const stepsTwo = imagesholo.length - 1;
 
 let targetT2 = 0;
 let currentT2 = 0;
@@ -526,7 +409,7 @@ const smoothness2 = 0.1;
 imagesholo[0].style.opacity = 1;
 
 function updateImages(t) {
-    const scaled = t * steps2;
+    const scaled = t * stepsTwo;
     const index = Math.floor(scaled);
     const localT = scaled - index;
 
@@ -639,11 +522,14 @@ function draw() {
 }
 
 function windowResized() {
-  if (p5Section) resizeCanvas(p5Section.offsetWidth, p5Section.offsetHeight);
-}
-if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+    if (p5Section) {
+        resizeCanvas(p5Section.offsetWidth, p5Section.offsetHeight)
+    }
+    
+    if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
   line(0, mouseY, width, mouseY);
   line(mouseX, 0, mouseX, height);
+    }
 }
 </script>
 
@@ -679,5 +565,6 @@ window.addEventListener('scroll', () => {
 });
 
 </script>
+
 
 </html>
