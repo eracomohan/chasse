@@ -1,7 +1,3 @@
-/*
-MMLEHO
-*/
-
 /* Antartica 
 @font-face{
     font-family: "Antartica Black" ;
@@ -2011,6 +2007,13 @@ body::-webkit-scrollbar-thumb:hover {
             width: 100%;
             padding-top: 10%;
         }
+
+.poignee{
+    width: 10px;
+    height: 100px;
+    background-color: #000;
+    border-radius: 5px;
+}
 @media screen and (max-width:710px) {
     .etape-1{
         height: 100vh;
@@ -2583,7 +2586,7 @@ section.holo1 {
     }
 
     .text {
-      font-size: clamp(2.5rem, 6vw, 6rem);
+      font-size: clamp(2.5rem, 5vw, 6rem);
       line-height: 1.1;
       font-variation-settings: "wght" 100;
       transition: font-variation-settings 0.05s linear;
