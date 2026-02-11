@@ -48,10 +48,10 @@
     <!-- <script src="sketch.js"></script> FAIT PLANTER LE FONT SCROLL-->
     <!-- <script src="font-scroll.js"></script> -->
         <style>
-        img{
+        /* img{
         height: 30%;
         width: auto;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -73,10 +73,7 @@
         <!-- enlever le blink -->
     </section>
     <section class="etape-1">
-      <!-- entre deux arbres HOVER FLOU -->
-        <img class="one" src="img/2A3A9674.JPG" alt="">
-        <img class="one" src="img/2A3A9797.JPG" alt="">
-        <img class="one" src="img/2A3A9799.JPG" alt="">
+
         <div class="repetition block" >
             <div class="oneshot block">
                 <div class="layer back back-1">ONE SHOT</div>
@@ -88,20 +85,32 @@
                 <div class="layer back back-3">ONE SHOT</div>
             </div>
         </div>
-        <!-- scroll depuis le côté -->
+        <div id="stickerDrawer" class="drawer closed">
+    <div class="img-container">
+    <div id="stickerDrawerHandle" class="handle">☰</div>
+        <img class="one-e1" src="img/e1-1.png" alt="">
+        <img class="one-e1" src="img/e1-2.png" alt="">
+        <img class="one-e1" src="img/e1-3.png" alt="">
+    </div>
+</div>
+
     </section>
-    <section class="etape-2">
-      <!-- fantome nuit -->
-        <img src="img/2A3A9705.JPG" alt="">
-        <img src="img/2A3A9707.JPG" alt="">
-        <img src="img/2A3A9708.JPG" alt="">
-                <div class="oneshot2 block">
-                    <div class="layer back back-2">I GOT HIM</div>
-                </div>    
-                <div class="oneshot3 block">
-                    <div class="layer back back-3">I GOT HIM</div>
-                </div>
-    </section>
+<section class="holo1">
+
+    <!-- IMAGES -->
+    <div class="images">
+        <img class="img-s2" src="img/2A3A9705.JPG" alt="">
+        <img class="img-s2" src="img/2A3A9707.JPG" alt="">
+        <img class="img-s2" src="img/2A3A9708.JPG" alt="">
+    </div>
+
+    <!-- TEXTES -->
+    <div class="texts">
+        <p class="txt-s2 left">I got him</p>
+        <p class="txt-s2 right">I got him</p>
+    </div>
+
+</section>
     <section class="etape-3">
 <!-- texte only COMME BASEDESIGN, MAIS EN MIEUX -->
         <p>You can’t take him like that.</p>
@@ -245,14 +254,74 @@
         <!-- <img src="img/2A3A9813.JPG" alt=""> -->
         <p>He’s right there.</p>
     </section>
-    <section class="etape-5">
-      <!-- dessus nuit PAN PAN -->
-        <img src="img/2A3A9804.JPG" alt="">
-        <img src="img/2A3A9805.JPG" alt="">
-        <p></p>
-        <p>If he hears the shot, he won’t be hurt</p>
-    </section>
-      <!-- SLIDER 
+    <!-- <section class="etape-5">
+        <div class="wrapper-e5">
+            <div class="img-e5">
+                <div class="content1-e5">
+                    <img src="img/2A3A9804.JPG" alt="">
+                    <p class="txt-e5">If he hears the shot</p>
+                </div>
+                <div class="content-e5">
+                    <p>He won’t be hurt</p>
+                    <img src="img/2A3A9805.JPG" alt="">
+                </div>
+            </div>
+        </div>
+    </section> -->
+<!-- <section class="etape-5">
+    <div class="half right">
+        <div class="state default">
+            <img src="img/2A3A9805.JPG" alt="">
+        </div>
+        <div class="state hover">
+            <p>He won’t be hurt</p>
+        </div>
+    </div>
+    <div class="half left">
+        <div class="state default">
+            <p>If he hears the shot</p>
+        </div>
+        <div class="state hover">
+            <img src="img/2A3A9805.JPG" alt="">
+        </div>
+    </div>
+</section> -->
+<section class="etape-5">
+    <div class="half left">
+        <div class="state default">
+            <img src="img/2A3A9805.JPG" alt="">
+        </div>
+        <div class="state hover">
+            <p>He won’t be hurt</p>
+        </div>
+    </div>
+
+    <div class="half right">
+        <div class="state default">
+            <p>If he hears the shot</p>
+        </div>
+        <div class="state hover">
+            <img src="img/2A3A9805.JPG" alt="">
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+        <!-- <div class="wrapper-e5">
+            <div class="img-e5-2">
+                <img src="img/2A3A9805.JPG" alt="">
+                <div class="content-e5-2">
+                    <p>If he hears the shot</p>
+                </div>
+            </div>
+        </div> -->
+
+
+    <!-- SLIDER 
     <section class="etape-6">
         <div class="carousel">
             <div class="group">
@@ -377,8 +446,7 @@
         <img class="scr" src="img/2A3A9703.JPG" alt=""> 
     </section>-->
 
-    <section class="etape-8">
-      <!-- fuite nuit HOLOGRAMME + CURSOR POSITION -->
+    <section class="holo">
     <img class="img-s6" src="img/2A3A9717.JPG" alt="">
     <img class="img-s6" src="img/2A3A9718.JPG" alt="">
     <img class="img-s6" src="img/2A3A9719.JPG" alt="">
@@ -405,7 +473,7 @@
     <section class="etape-7">
       <!-- grossissement -->
         <!-- <p>Michael aims for a long time</p> -->
-        <p class="gunshot">Gunshot</p>
+        <p class="gunshot" id="monParagraphe">Gunshot</p>
         <p>The deer falls</p>
     </section>    
       <!-- <div class="spacer">
@@ -414,8 +482,8 @@
     <section class="etape-11 typo-section" id="typoSection">
     <div class="sticky">
       <div id="text">
-ONE SHOT
-      </div>
+        It's a good shot
+    </div>
     </div>
   </section>      
     <footer>
@@ -425,8 +493,178 @@ ONE SHOT
           <p class="mmleho">Hé mais, mets le à chaud!&nbsp;&copy;&nbsp;2026</p>
           <!-- <p class="mmleho">Hé mais, mets le <sup>H</sup> haut!&nbsp;&copy;&nbsp;2026</p> -->
     </footer>
+    <audio src="rifle_mixdown.mp3" id="monSon"></audio>
 </body>
 <!-- <script src="app.js"></script> -->
+<script>
+    /*
+function initStickerDrawer() {
+    const drawer = document.getElementById("stickerDrawer");
+    const handle = document.getElementById("stickerDrawerHandle");
+
+    drawer.classList.add("closed");
+
+    handle.addEventListener("click", () => {
+        if (drawer.classList.contains("open")) {
+            drawer.classList.remove("open");
+            drawer.classList.add("closed");
+        } else {
+            drawer.classList.remove("closed");
+            drawer.classList.add("open");
+        }
+    });
+}
+
+window.addEventListener("DOMContentLoaded", initStickerDrawer);
+*/
+function initStickerDrawer() {
+    const drawer = document.getElementById("stickerDrawer");
+    const handle = document.getElementById("stickerDrawerHandle");
+
+    drawer.classList.add("closed");
+
+    let isDragging = false;
+    let startX = 0;
+    let startWidth = 0;
+
+    // Début du drag (mouse ou touch)
+    const startDrag = (e) => {
+        isDragging = true;
+        startX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
+        startWidth = drawer.getBoundingClientRect().width;
+        drawer.style.transition = "none"; // désactive la transition pendant le drag
+    };
+
+    // Drag en cours
+    const onDrag = (e) => {
+        if (!isDragging) return;
+        const currentX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
+        const dx = startX - currentX; // déplacement horizontal
+
+        // drawer.parentElement.width
+        const maxWidth = drawer.parentElement.getBoundingClientRect().width;
+        let newWidth = startWidth + dx; // on augmente ou réduit la largeur
+
+        // bornes
+        newWidth = Math.min(maxWidth, Math.max(maxWidth / 2, newWidth));
+        drawer.style.width = newWidth + "px";
+    };
+
+    // Fin du drag
+    const endDrag = () => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        const maxWidth = drawer.parentElement.getBoundingClientRect().width;
+        const currentWidth = drawer.getBoundingClientRect().width;
+
+        drawer.style.transition = "width 0.5s ease"; // réactive la transition
+
+        // si drawer > 75% → open, sinon → closed
+        if (currentWidth > maxWidth * 0.75) {
+            drawer.classList.add("open");
+            drawer.classList.remove("closed");
+            drawer.style.width = ""; // reset, prend la valeur CSS
+        } else {
+            drawer.classList.add("closed");
+            drawer.classList.remove("open");
+            drawer.style.width = ""; // reset
+        }
+    };
+
+    // événements
+    handle.addEventListener("mousedown", startDrag);
+    handle.addEventListener("touchstart", startDrag);
+
+    window.addEventListener("mousemove", onDrag);
+    window.addEventListener("touchmove", onDrag);
+
+    window.addEventListener("mouseup", endDrag);
+    window.addEventListener("touchend", endDrag);
+
+    // click normal
+    handle.addEventListener("click", (e) => {
+        // si on était en drag, ignore le click
+        if (isDragging) return;
+
+        if (drawer.classList.contains("open")) {
+            drawer.classList.remove("open");
+            drawer.classList.add("closed");
+        } else {
+            drawer.classList.remove("closed");
+            drawer.classList.add("open");
+        }
+    });
+}
+
+window.addEventListener("DOMContentLoaded", initStickerDrawer);
+
+</script>
+
+
+
+<script>
+const holo1 = document.querySelector(".holo1");
+const images = holo1.querySelectorAll(".img-s2");
+const texts  = holo1.querySelectorAll(".txt-s2");
+
+const steps1 = images.length - 1;
+
+let targetT1 = 0;
+let currentT1 = 0;
+const smoothness1 = 0.08;
+
+// état initial
+images[0].style.opacity = 1;
+texts[0].style.opacity = 1;
+
+function clamp(v, min, max) {
+    return Math.min(max, Math.max(min, v));
+}
+
+function updateScene(t) {
+    const scaled = t * steps1;
+    const index = Math.floor(scaled);
+    const localT = scaled - index;
+
+    images.forEach(img => img.style.opacity = 0);
+    texts.forEach(txt => txt.style.opacity = 0);
+
+    // images
+    if (images[index]) {
+        images[index].style.opacity = 1 - localT;
+    }
+    if (images[index + 1]) {
+        images[index + 1].style.opacity = localT;
+    }
+
+    // textes synchronisés
+    if (index === 0 && localT < 0.5) {
+        texts[0].style.opacity = 1;
+    }
+
+    if (index === steps1 - 1 && localT > 0.5) {
+        texts[1].style.opacity = 1;
+    }
+}
+
+function animate() {
+    currentT1 += (targetT1 - currentT1) * smoothness1;
+    updateScene(currentT1);
+    requestAnimationFrame(animate);
+}
+
+holo1.addEventListener("mousemove", e => {
+    const rect = holo1.getBoundingClientRect();
+    targetT1 = clamp(
+        (e.clientX - rect.left) / rect.width,
+        0,
+        1
+    );
+});
+
+animate();
+</script>
 
 <script>/*LOUPE*/
     const cursor = document.getElementById('cursor');
@@ -471,6 +709,51 @@ ONE SHOT
       updatePosition(t.clientX, t.clientY);
     });
     */
+</script>
+
+<script> /*HOLOGRAMME WIP*/
+const holo = document.querySelector(".holo");
+const imagesholo = holo.querySelectorAll(".img-s6");
+const steps = imagesholo.length - 1;
+
+let targetT = 0;
+let currentT = 0;
+const smoothness = 0.1;
+
+imagesholo[0].style.opacity = 1;
+
+function updateImages(t) {
+    const scaled = t * steps;
+    const index = Math.floor(scaled);
+    const localT = scaled - index;
+
+    imagesholo.forEach(img => img.style.opacity = 0);
+
+    if (imagesholo[index]) {
+        imagesholo[index].style.opacity = 1 - localT;
+    }
+    if (imagesholo[index + 1]) {
+        imagesholo[index + 1].style.opacity = localT;
+    }
+}
+
+function animate() {
+    currentT += (targetT - currentT) * smoothness;
+    updateImages(currentT);
+    requestAnimationFrame(animate);
+}
+
+// interaction UNIQUEMENT dans la section
+holo.addEventListener("mousemove", e => {
+    const rect = holo.getBoundingClientRect();
+    targetT = clamp((e.clientY - rect.left) / rect.height, 0, 1);
+});
+
+function clamp(v, min, max) {
+    return Math.min(max, Math.max(min, v));
+}
+
+animate();
 </script>
 
 
@@ -551,6 +834,17 @@ if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
 }
 </script>
 
+<script>
+  // On récupère les éléments
+  const paragraphe = document.getElementById("monParagraphe");
+  const son = document.getElementById("monSon");
+
+  // On déclenche le son au clic
+  paragraphe.addEventListener("click", () => {
+    son.currentTime = 0; // pour pouvoir rejouer le son rapidement
+    son.play();
+  });
+</script>
 
 <script>/*IMAGE AVEC FONDU*/
   document.addEventListener("DOMContentLoaded", () => {
@@ -573,60 +867,4 @@ window.addEventListener('scroll', () => {
 
 </script>
 
- <script>/* ETAPE-6: HOLOGRAMME */
-/*
-const images = document.querySelectorAll(".img-s6");
-const steps = images.length - 1;
-
-// état
-let targetT = 0;
-let currentT = 0;
-const smoothness = 0.1;
-
-// init
-images[0].style.opacity = 1;
-
-function updateImages(t) {
-    const scaled = t * steps;
-    const index = Math.floor(scaled);
-    const localT = scaled - index;
-
-    // reset simple et fiable
-    images.forEach(img => img.style.opacity = 0);
-
-    if (images[index]) {
-        images[index].style.opacity = 1 - localT;
-    }
-    if (images[index + 1]) {
-        images[index + 1].style.opacity = localT;
-    }
-}
-
-function animate() {
-    currentT += (targetT - currentT) * smoothness;
-    updateImages(currentT);
-    requestAnimationFrame(animate);
-}
-
-// desktop
-window.addEventListener("mousemove", e => {
-    targetT = clamp(e.clientX / window.innerHeight, 0, 1);
-});
-
-// mobile
-window.addEventListener("deviceorientation", e => {
-    const minAngle = -70;
-    const maxAngle = 70;
-    targetT = clamp((e.gamma - minAngle) / (maxAngle - minAngle), 0, 1);
-});
-
-function clamp(v, min, max) {
-    return Math.min(max, Math.max(min, v));
-}
-
-animate();
-*/
-
-
-</script>
 </html>
