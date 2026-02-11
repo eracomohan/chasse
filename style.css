@@ -2258,7 +2258,6 @@ section.holo1 {
 .etape-4{
     padding: 0;
     height: 100vh;
-    cursor: none;
 }   
     .container-loupe {
       position: relative;
@@ -2297,36 +2296,20 @@ section.holo1 {
       transition: clip-path 0.001s linear;
     }
 
-#cursor img {
-    position: absolute;
-    /* Centrer l'image agrandie */
-    top: 50%;
-    left: 50%;
-    /* L'image fait 150% du conteneur pour couvrir les bords */
-    width: 150%;
-    height: 150%;
-    object-fit: cover;
-    /* Centrer par rapport au point de transformation */
-    transform: translate(-50%, -50%);
-}
-    #cursor {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-    }
-
-    @media (pointer: fine) {
-        #cursor {
-            opacity: 1; /* toujours visible à la souris */
-        }
-    }
-    #zoomed {
+    #cursor img {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%; /* base image fills container */
-        height: 100%;
-        transform-origin: top left; /* important for zoom mapping */
-        pointer-events: none;
+        transform-origin: top left;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+        /* transform-origin: 50% 50%; */
+      
+    }
+    #cursor {
+        opacity: 0;
+        transition: opacity 0.2s ease;
     }
 
     @media (pointer: fine) {
