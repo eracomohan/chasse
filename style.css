@@ -2113,7 +2113,25 @@ body::-webkit-scrollbar-thumb:hover {
     .drawer.open {
         height: 40%;
     }
-}
+    .oneshot{
+        height: 10px;          
+    }
+    .oneshot2{
+        height: 0px;
+        background: none;
+        margin-top: -14.5em;
+        background: white;
+    }
+    .oneshot3{
+        height: 10px;  
+        margin-top: -18.5em;
+    }
+    .back-1{margin-left: 15%; background: white; transform: translateY(-16px); }
+    .back-2{margin-left: 15%; background: white; transform: translateY(-100px); }
+    .back-3{margin-left: 15%; background: white; transform: translateY(-100px); }        .block{
+            animation: none;
+        }
+    }
 @media screen and (max-width:610px) {
     .drawer.open {
         height: 30%;
@@ -2502,7 +2520,16 @@ section.holo1 {
     margin-bottom: 5em;
     font-size: clamp(3.5rem, 15vw, 15rem);
 }
-
+@media screen and (max-width:500px) {
+    .gunshot{
+        margin-top: 20em;
+        margin-bottom: 10em;
+    }
+    .gunshot:hover{
+        margin-top: 20em;
+        margin-bottom: 10em;
+    }
+}
 /* SECTION 8 =============================================================================================*/
  /* .etape-8{
     display: grid;
@@ -2687,4 +2714,28 @@ footer{
     width: 0 !important;
     height: 0 !important;
     background: transparent !important;
+}
+
+@media screen and (min-width:511px) {
+    .easter{
+    font-family:"Amazonia Extra Condensed Black";
+    display: none;
+    }
+.egg{
+    display: contents;
+    /* font-size: 2.5em; */
+    font-size: 1em;
+    font-family:"Amazonia Extra Condensed Black";
+}
+}
+@media screen and (max-width:511px) {
+    .easter{
+    font-family:"Amazonia Extra Condensed Black";
+    /* display: none; */
+    display: contents;
+    color: #000;
+    }
+.egg{
+    display: none;
+}
 }
