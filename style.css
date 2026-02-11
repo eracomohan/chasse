@@ -1481,7 +1481,6 @@
         }
 section{
     /* height: 100vh; */
-    border-bottom: 1px solid gold;
     padding: 1em;
    position: relative;
             background-color: white;
@@ -2164,6 +2163,9 @@ body::-webkit-scrollbar-thumb:hover {
     .back-2{margin-left: 5%; transform: translateY(-100px); }
     .back-3{margin-left: 5%; transform: translateY(-100px); }
 }
+.espace{
+    height: 5em;
+}
 /* SECTION 2 =============================================================================================*/
 section.holo1 {
     height: 100vh;/* FAIRE DE LA MARGE AU DESSUS */
@@ -2258,6 +2260,7 @@ section.holo1 {
 .etape-4{
     padding: 0;
     height: 100vh;
+    cursor: none;
 }   
     .container-loupe {
       position: relative;
