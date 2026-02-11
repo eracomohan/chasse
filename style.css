@@ -1,3 +1,7 @@
+/*
+MMLEHO
+*/
+
 /* Antartica 
 @font-face{
     font-family: "Antartica Black" ;
@@ -1684,6 +1688,7 @@ body::-webkit-scrollbar-thumb:hover {
             justify-content: center;
             align-items: center;
             margin-top: -150px;
+            margin-right: 0.8em;
         }
         .hunter{ 
             margin-top: 130px;
@@ -1691,6 +1696,7 @@ body::-webkit-scrollbar-thumb:hover {
             flex-direction: column-reverse;
             justify-content: center;
             align-items: center;
+            margin-left: 0.8em;
         }
         
         @keyframes blink{
@@ -1759,7 +1765,7 @@ body::-webkit-scrollbar-thumb:hover {
             height: 25px;          
         }
         .hero-oneshot5{
-            height: 63px;          
+            height: 70px;          
         }
 .hunter-oneshot{
             height: 10px;          /* ajuste selon ton besoin */
@@ -1774,20 +1780,20 @@ body::-webkit-scrollbar-thumb:hover {
             height: 25px;          
         }
         .hunter-oneshot5{
-            height: 63px;          
+            height: 63px;  
+            background: white;
+            margin-bottom: 3px;        
         }
-        .hero-back-1{ transform: translateY(-18px); }
-        .hero-back-2{ transform: translateY(-18px); }
-        .hero-back-3{ transform: translateY(-18px); }
-        .hero-back-4{ transform: translateY(-18px); }
-        .hero-back-5{ transform: translateY(-18px); }
-        .hunter-back-1{ transform: translateY(-70px); }
+        .hero-back-1{ transform: translateY(-5px); }
+        .hero-back-2{ transform: translateY(-5px); }
+        .hero-back-3{ transform: translateY(-5px); }
+        .hero-back-4{ transform: translateY(-5px); }
+        .hero-back-5{ transform: translateY(-5px); }
+        .hunter-back-1{ transform: translateY(-65px); }
         .hunter-back-2{ transform: translateY(-65px); }
         .hunter-back-3{ transform: translateY(-60px); }
         .hunter-back-4{ transform: translateY(-55px); }
-        .hunter-back-5{ transform: translateY(-18px); } 
-
-
+        .hunter-back-5{ transform: translateY(-8px); } 
 }
 
 @media screen and (max-width:737px) {
@@ -1795,7 +1801,7 @@ body::-webkit-scrollbar-thumb:hover {
         margin-top: -100px;
     }
     .hunter{
-        margin-top: 40px;
+        margin-top: 14px;
     }
     .hunter-layer{
         font-size: 2.5em;
@@ -1803,6 +1809,48 @@ body::-webkit-scrollbar-thumb:hover {
     .hero-layer{
         font-size: 2.5em;
     }
+.hero-oneshot{
+            height: 5px;          /* ajuste selon ton besoin */
+        }
+        .hero-oneshot2{
+            height: 10px;         
+        }
+        .hero-oneshot3{
+            height: 15px;          
+        }
+        .hero-oneshot4{
+            height: 20px;          
+        }
+        .hero-oneshot5{
+            height: 70px;          
+        }
+.hunter-oneshot{
+            height: 5px;          /* ajuste selon ton besoin */
+        }
+        .hunter-oneshot2{
+            height: 12px;         
+        }
+        .hunter-oneshot3{
+            height: 15px;          
+        }
+        .hunter-oneshot4{
+            height: 20px;          
+        }
+        .hunter-oneshot5{
+            height: 35px;  
+            background: white;
+            margin-bottom: 2px;        
+        }
+        .hero-back-1{ transform: translateY(-2px); }
+        .hero-back-2{ transform: translateY(-2px); }
+        .hero-back-3{ transform: translateY(-2px); }
+        .hero-back-4{ transform: translateY(-2px); }
+        .hero-back-5{ transform: translateY(-2px); }
+        .hunter-back-1{ transform: translateY(-31px); }
+        .hunter-back-2{ transform: translateY(-27px); }
+        .hunter-back-3{ transform: translateY(-23px); }
+        .hunter-back-4{ transform: translateY(-18px); }
+        .hunter-back-5{ transform: translateY(-1px); } 
 }
 
 
@@ -1964,7 +2012,11 @@ body::-webkit-scrollbar-thumb:hover {
             padding-top: 10%;
         }
 @media screen and (max-width:710px) {
-
+    .etape-1{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
     .layer{
         font-size: 5em;
     }
@@ -1977,17 +2029,10 @@ body::-webkit-scrollbar-thumb:hover {
         .oneshot3{
             height: 20px;          
         }
-        .oneshot4{
-            height: 25px;          
-        }
-        .oneshot5{
-            height: 63px;          
-        }
         .back-1{ transform: translateY(-36px); }
         .back-2{ transform: translateY(-36px); }
         .back-3{ transform: translateY(-36px); }
-        .back-4{ transform: translateY(-36px); }
-        .back-5{ transform: translateY(-36px); }
+
 }
 /* SECTION 2 =============================================================================================*/
 section.holo1 {
@@ -2050,7 +2095,6 @@ section.holo1 {
     right: 0;
     text-align: right;
 }
-
 
 /* SECTION 3 =============================================================================================*/
 .etape-3{
@@ -2283,7 +2327,7 @@ section.holo1 {
     position: absolute;
     color: black;
     font-size: 2rem;
-    text-align: center;
+    text-align: left;
 }
 
 /* visibilité */
@@ -2314,9 +2358,17 @@ section.holo1 {
 .left:hover ~ .right .hover {
     opacity: 1;
 }
-
-
-
+.hears{
+    font-size:3em;
+}
+.hurt{
+    color: rgb(66, 225, 156);
+}
+.hurt-span{
+    text-transform: uppercase;
+    font-size:3em;
+    margin-left:-3px;
+}
 /* SECTION 6 =============================================================================================*/
 .etape-6{
     height: 50vh;
@@ -2407,6 +2459,8 @@ section.holo1 {
     font-size: 15em;
     color: rgba(0, 0, 0, 1);
     text-transform: uppercase;
+        font-size: clamp(3.5rem, 15vw, 15rem);
+    margin-bottom: 10em;
 }
 .gunshot:hover{
     margin-top: 50em;
@@ -2414,8 +2468,50 @@ section.holo1 {
     font-size: 15em;
     color: red;
     text-transform: uppercase;
-}
+    margin-bottom: 10em;
 
+            font-size: clamp(3.5rem, 15vw, 15rem);
+}
+/* @media screen and (max-width: 1350px) {
+    .gunshot{
+        font-size: 10em;
+    }
+    .gunshot:hover{
+        font-size: 10em;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .gunshot{
+        font-size: 7em;
+    }
+    .gunshot:hover{
+        font-size: 7em;
+    }
+}
+@media screen and (max-width: 700px) {
+    .gunshot{
+        font-size: 5em;
+    }
+    .gunshot:hover{
+        font-size: 5em;
+    }
+}
+@media screen and (max-width: 500px) {
+    .gunshot{
+        font-size: 4em;
+    }
+    .gunshot:hover{
+        font-size: 4em;
+    }
+}
+@media screen and (max-width: 410px) {
+    .gunshot{
+        font-size: 3.5em;
+    }
+    .gunshot:hover{
+        font-size: 3.5em;
+    }
+} */
 /* SECTION 8 =============================================================================================*/
  /* .etape-8{
     display: grid;
@@ -2536,10 +2632,10 @@ footer{
         height: 70vh;
     }
 
-    .gunshot {
+    /* .gunshot {
         font-size: 4rem;
         margin-top: 2em;
-    }
+    } */
 
     .txt-s2 {
         font-size: 1rem;
@@ -2580,12 +2676,12 @@ footer{
     }
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 1380px) {
     p {
         font-size: 1rem;
     }
 
     .gunshot {
-        font-size: 2.5rem;
+        font-size: 8rem;
     }
-}
+} */
