@@ -15,6 +15,6 @@ Les objectifs sont:
  – Expérimenter les hiérarchies typographiques, le rythme, les blancs et la lisibilité
  – Intégrer, le cas échéant, des principes d'interaction et de navigation pertinents
 
-Nous avons réalisé une exposition sous forme de site web dans lequel on interagit avec les images et le texte. Nous voulons que les spectateurs aient du contrôle sur comment ily voient le contenu afin qu'ils aient leur propre interprétation de l'exposition. Tout comme nous avons interprêté le film, qui lui peut avoir plusieurs niveaux de lecture.
+Nous avons réalisé une exposition sous forme de site web dans lequel on interagit avec les images et le texte. Nous voulons que les spectateurs aient du contrôle sur comment ily voient le contenu afin qu'ils aient leur propre interprétation de l'exposition. Tout comme nous avons interprété le film, qui lui peut avoir plusieurs niveaux de lecture.
 
 HÉ MAIS, METS LE À CHAUD!
