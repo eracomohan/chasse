@@ -129,7 +129,7 @@ body::-webkit-scrollbar-thumb:hover {
 
       --x: 50%;
       --y: 50%;
-      --r: 10vw;
+      --r: 6vw;
       clip-path: circle(var(--r) at var(--x) var(--y));
       -webkit-clip-path: circle(var(--r) at var(--x) var(--y));
         /* transform: scale(1.5); */
@@ -180,6 +180,12 @@ body::-webkit-scrollbar-thumb:hover {
  a{
     text-align: center;
     font-size: 3em;
+ }
+           @media screen and (max-width:510px){
+    #cursor{
+      --r: 15vw;
+
+    }
  }
     </style>
 </head>
