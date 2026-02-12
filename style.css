@@ -2507,7 +2507,9 @@ footer{
     color: rgb(66, 225, 156);
     text-shadow: 0 0 1px black;
 }
-
+strong{
+    margin:2em;
+}
 /* ========== RESPONSIVE – smartphone tactile ========== */
 @media screen and (max-width: 768px) {
     body {
