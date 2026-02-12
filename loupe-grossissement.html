@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+                         __________________________________________________________.                    
+               __  __*="" ╰-------┳--------------------╮---------------------------|     == |MMLEHO:>►  
+     ___..=="""  Y'       __)______╮___________________)–––––––––––––––––––––––––––'                    
+    !"         _     _==""(C_)                                                                          
+    !    _.=""' "=__/                                                                                   
+    ╰==""                                                                                               
+-->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasse – The Deer hunter</title>
+    <link rel="icon" type="image/icon" href="img/favicon.ico"/>
+    <link rel="icon" type="image/svg" href="img/favicon.svg"/>
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="fake-font-variable.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <script src="hologramme.js"></script>
+    <script src="lightbox.js"></script>
+    <script src="p5.js"></script>
+    <script src="script3d.js"></script>
+        <style>
+        img{
+        height: 30%;
+        width: auto;
+        }
+*{
+            margin: 0;
+    font-family: "Antartica Bold" ;
+    font-family: "Weiss Antiqua" ;
+    font-family: "Bradford LL Regular" ;
+    font-family:"Amazonia Regular";
+        }
+        *::selection{
+            color: rgba(0, 0, 0, 0);
+            rotate: -90deg;
+        color:rgb(255, 0, 0);
+        text-shadow:
+        1px 0.1px 1px #7b0000,
+        1px 0.2px 1px #8a0000,
+        1px 0.3px 1px #bc0000,
+        1px 0.4px 1px #d50000,
+        1px 0.5px 1px #ff0000;
+            background-color: white;
+            background: white;
+        } 
+        /* .click body,
+        .click *,
+        body.click *,
+        .click *,
+        .click {
+            cursor: url("coupdefeu.png") 16 16, auto;
+        } */
+        body{
+            height: 100vh;
+            /* padding: 1em; */
+            color: black;
+            background-color: white;
+        }
+        h1{margin-top: 1.5em;}
+        .replique{margin-left: 1em;}
+        .didascalie{font-style: italic;}
+        h2, h3{margin-top: 1em;}
+        h4{margin-top: 0.5em;}
+        p{
+            margin-bottom: 0.5em;
+            font-size: 2em;
+        }
+section{
+    /* height: 100vh; */
+    border-bottom: 1px solid gold;
+    padding: 1em;
+   position: relative;
+}
+img{
+    height: 30%;
+    width: auto;
+}
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+body::-webkit-scrollbar-track {
+    background: rgba(66, 225, 156, 0.5);
+}
+body::-webkit-scrollbar-thumb {
+    background: rgba(66, 225, 156, 0.9);
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(66, 225, 156, 1);
+}
+
+
+
+.etape-4{
+    padding: 0;
+    height: 100vh;
+}
+    .container-loupe {
+      position: relative;
+      height: 90vh;
+      width: auto;
+      overflow: hidden;
+    }
+
+    /* IMAGE DE FOND */
+    .background-loupe img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* CURSOR / LOUPE */
+    #cursor {
+      /* position: fixed; */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+      pointer-events: none;
+      z-index: 10;
+
+      --x: 50%;
+      --y: 50%;
+      --r: 7vw;
+      clip-path: circle(var(--r) at var(--x) var(--y));
+      -webkit-clip-path: circle(var(--r) at var(--x) var(--y));
+        /* transform: scale(1.5); */
+      transition: clip-path 0.001s linear;
+    }
+
+#cursor img {
+    position: absolute;
+    /* Centrer l'image agrandie */
+    top: 50%;
+    left: 50%;
+    /* L'image fait 150% du conteneur pour couvrir les bords */
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    /* Centrer par rapport au point de transformation */
+    transform: translate(-50%, -50%);
+}
+    #cursor {
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    @media (pointer: fine) {
+        #cursor {
+            opacity: 1; /* toujours visible à la souris */
+        }
+    }
+    #zoomed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* base image fills container */
+        height: 100%;
+        transform-origin: top left; /* important for zoom mapping */
+        pointer-events: none;
+    }
+    /*
+    @media (pointer: coarse) {
+        #cursor {
+            --r: 28vw;
+        }
+    }
+    */
+/* .loupedef{
+      transform: scale(1.3);
+} */
+    </style>
+</head>
+<body>
+    
+    <section class="etape-4">
+          <div class="container-loupe">
+            <picture class="background-loupe">
+               <img class="loupe" src="img/2A3A9813.png" alt="">
+            </picture>
+
+            <picture id="cursor">
+               <img class="loupedef loupe" src="img/2A3A9813.JPG" alt="">
+            </picture>
+
+          </div>
+    </section>
+
+</body>
+<script>/*LOUPE*/
+    let mouseX = 0;
+    let mouseY = 0;
+    let rafId = null;
+    const zoomFactor=2;
+    const containerLoupe = document.querySelector(".container-loupe")
+    
+    
+    
+    const cursor = document.getElementById('cursor');
+    const loupedef = document.querySelector(".loupedef")
+
+    function updatePosition() {
+        const rec = containerLoupe.getBoundingClientRect();
+        const x = mouseX -  rec.left
+        const y = mouseY - rec.top
+        // console.log(x,y);
+        
+        const px = (x / rec.width) * 100;
+        const py = (y / rec.height) * 100;
+        cursor.style.setProperty('--x', px + '%');
+        cursor.style.setProperty('--y', py + '%');
+        // cursor.style.left=`${x}px`
+        // cursor.style.top=`${y}px`
+        const cursorRect = cursor.getBoundingClientRect()
+        const offsetX = -x * zoomFactor + cursorRect.width/2;
+        const offsetY = -y * zoomFactor + cursorRect.height/2;
+        console.log(offsetX,offsetY);
+        // loupedef.style.transform = `scale(${zoomFactor}) translate(${offsetX / zoomFactor}px, ${offsetY / zoomFactor}px)`;
+    loupedef.style.transform = `translate(-15%, -15%) scale(${zoomFactor}) translate(${offsetX / zoomFactor}px, ${offsetY / zoomFactor}px)`;
+
+        
+        rafId = requestAnimationFrame(updatePosition);
+
+    }
+
+    /* DESKTOP */
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX
+        mouseY= e.clientY
+
+      if (!rafId) {
+            rafId = requestAnimationFrame(updatePosition);
+        }
+    });
+
+    /* TOUCH */
+    document.addEventListener('touchstart', (e) => {
+      cursor.style.opacity = 1;
+      const t = e.touches[0];
+      updatePosition(t.clientX, t.clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+      const t = e.touches[0];
+      updatePosition(t.clientX, t.clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchend', () => {
+      cursor.style.opacity = 0;
+    });
+    /*
+      let active = false;
+
+    document.addEventListener('touchstart', (e) => {
+      active = !active;
+      cursor.style.opacity = active ? 1 : 0;
+
+      if (!active) return;
+      const t = e.touches[0];
+      updatePosition(t.clientX, t.clientY);
+    });
+    */
+</script>
+
+
+</html>
