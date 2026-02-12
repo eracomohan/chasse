@@ -1944,6 +1944,10 @@ body::-webkit-scrollbar-thumb:hover {
         } */
     }
 @media screen and (max-width:610px) {
+    .repetition{
+        padding-top: 60vh;
+
+    }
     .drawer.open {
         height: 30%;
     }
@@ -2046,10 +2050,9 @@ section.holo1 {
 
 /* SECTION 3 =============================================================================================*/
 .etape-3{
-    height: 100vh;
+    height: auto;
     p{
             font-size: 3em;
-
     }
 }
 
@@ -2083,7 +2086,7 @@ section.holo1 {
     } */
         .wrapper-3d {
 
-            min-height: 69vh;
+            min-height: 60vh;
     }
 }       
 /* SECTION 4 =============================================================================================*/
@@ -2497,6 +2500,7 @@ footer{
 
 .mmleho{
     font-family:"Amazonia Semi Bold";
+    margin-top: 3em;
 }
 .mmleho::selection, .footer::selection, em::selection{
     color: rgba(0, 0, 0, 0);
