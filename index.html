@@ -52,6 +52,20 @@
             <div class="hero-title text-tight"><div class="hero-layer text-tight" id="hunter-10">&nbsp;HUNTER</div></div>
         </div>
     </section> 
+        <!-- <div class="deer">
+            <div class="hero-title hero-oneshot"><div class="hero-layer hero-back hero-back-1">THE DEER</div></div>    
+            <div class="hero-title hero-oneshot2"><div class="hero-layer hero-back hero-back-2">THE DEER</div></div>    
+            <div class="hero-title hero-oneshot3"><div class="hero-layer hero-back hero-back-3">THE DEER</div></div>
+            <div class="hero-title hero-oneshot4"><div class="hero-layer hero-back hero-back-4">THE DEER</div></div>
+            <div class="hero-title hero-oneshot5"><div class="hero-layer hero-back hero-back-5">THE <a href="https://youtu.be/dQw4w9WgXcQ?si=X1S4ZPm2cTpTlsP1" class="easter">DEER</a><p class="egg">DEER</p></div></div>
+        </div>
+        <div class="hunter">
+            <div class="hero-title hunter-oneshot"><div class="hero-layer hunter-back hunter-back-1">HUNTER</div></div>    
+            <div class="hero-title hunter-oneshot2"><div class="hero-layer hunter-back hunter-back-2">HUNTER</div></div>    
+            <div class="hero-title hunter-oneshot3"><div class="hero-layer hunter-back hunter-back-3">HUNTER</div></div>
+            <div class="hero-title hunter-oneshot4"><div class="hero-layer hunter-back hunter-back-4">HUNTER</div></div>
+            <div class="hero-title hunter-oneshot5"><div class="hero-layer hunter-back hunter-back-5">HUNTER</div></div>
+        </div> -->
     
     <section class="etape-1">
 
@@ -78,11 +92,13 @@
     <section class="espace"></section>
 
     <section class="holo1">
+    <!-- IMAGES -->
     <div class="images">
         <img class="img-s2" src="img/2A3A9705.JPG" alt="">
         <img class="img-s2" src="img/2A3A9708.JPG" alt="">
         <img class="img-s2" src="img/2A3A9707.JPG" alt="">
     </div>
+    <!-- TEXTES -->
     <div class="texts">
         <p class="txt-s2 left">I got him</p>
         <p class="txt-s2 right">I got him</p>
@@ -161,17 +177,18 @@
     </div>
     </div>
   </section>  
-    
-    <footer>
-        <p class="footer"><strong><a href="https://youtu.be/dQw4w9WgXcQ?si=zGEVqOul3y0kI1Oq" class="easter-3">FIN</a><span class="egg-3">FIN</span></strong></p>
+    <section class="generique">
+        <p class="fin"><strong><a href="https://youtu.be/dQw4w9WgXcQ?si=zGEVqOul3y0kI1Oq" class="easter-3">FIN</a><span class="egg-3">FIN</span></strong></p>
         <p class="footer">Exposition interactive</p>
         <p class="footer">Par Oryana, Emma et Mohan</p>
         <p class="footer">Inspirés du film <em>The Deer Hunter</em></p>
         <p class="footer">Assistés par A. Hamon et R. Verona</p>
+</section>
+    <footer>
         <p class="mmleho">Hé mais, mets le à chaud!&nbsp;&copy;&nbsp;2026</p>
     </footer>
-    <audio src="tdh-music.m4a" id="monSon"></audio>
-    <audio src="rifle_mixdown.mp3" id="gunSound"></audio>
+    <!-- <audio src="tdh-music.m4a" id="monSon"></audio> -->
+    <audio src="gunshotetmusique_mixdown.mp3" id="gunSound"></audio>
 </body>
 <script>/* TIROIR */
   
@@ -185,26 +202,30 @@ function initStickerDrawer() {
     let startX = 0;
     let startWidth = 0;
 
+    // Début du drag (mouse ou touch)
     const startDrag = (e) => {
         isDragging = true;
         startX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
         startWidth = drawer.getBoundingClientRect().width;
-        drawer.style.transition = "none"; 
+        drawer.style.transition = "none"; // désactive la transition pendant le drag
     };
 
-
+    // Drag en cours
     const onDrag = (e) => {
         if (!isDragging) return;
         const currentX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
-        const dx = startX - currentX; 
+        const dx = startX - currentX; // déplacement horizontal
 
+        // drawer.parentElement.width
         const maxWidth = drawer.parentElement.getBoundingClientRect().width;
-        let newWidth = startWidth + dx; 
+        let newWidth = startWidth + dx; // on augmente ou réduit la largeur
 
+        // bornes
         newWidth = Math.min(maxWidth, Math.max(maxWidth / 2, newWidth));
         drawer.style.width = newWidth + "px";
     };
 
+    // Fin du drag
     const endDrag = () => {
         if (!isDragging) return;
         isDragging = false;
@@ -212,19 +233,21 @@ function initStickerDrawer() {
         const maxWidth = drawer.parentElement.getBoundingClientRect().width;
         const currentWidth = drawer.getBoundingClientRect().width;
 
-        drawer.style.transition = "width 0.5s ease"; 
+        drawer.style.transition = "width 0.5s ease"; // réactive la transition
 
+        // si drawer > 75% → open, sinon → closed
         if (currentWidth > maxWidth * 0.75) {
             drawer.classList.add("open");
             drawer.classList.remove("closed");
-            drawer.style.width = ""; 
+            drawer.style.width = ""; // reset, prend la valeur CSS
         } else {
             drawer.classList.add("closed");
             drawer.classList.remove("open");
-            drawer.style.width = ""; 
+            drawer.style.width = ""; // reset
         }
     };
 
+    // événements
     handle.addEventListener("mousedown", startDrag);
     handle.addEventListener("touchstart", startDrag);
 
@@ -234,7 +257,9 @@ function initStickerDrawer() {
     window.addEventListener("mouseup", endDrag);
     window.addEventListener("touchend", endDrag);
 
+    // click normal
     handle.addEventListener("click", (e) => {
+        // si on était en drag, ignore le click
         if (isDragging) return;
 
         if (drawer.classList.contains("open")) {
@@ -262,6 +287,7 @@ let targetT = 0;
 let currentT = 0;
 const smoothness = 0.08;
 
+// état initial
 holoImages[0].style.opacity = 1;
 holoTexts[0].style.opacity = 1;
 
@@ -277,6 +303,7 @@ function updateScene(t) {
     holoImages.forEach(img => img.style.opacity = 0);
     holoTexts.forEach(txt => txt.style.opacity = 0);
 
+    // images
     if (holoImages[index]) {
         holoImages[index].style.opacity = 1 - localT;
     }
@@ -284,6 +311,7 @@ function updateScene(t) {
         holoImages[index + 1].style.opacity = localT;
     }
 
+    // textes synchronisés
     if (index === 0 && localT < 0.5) {
         holoTexts[0].style.opacity = 1;
     }
@@ -400,10 +428,12 @@ function animateHolo() {
     requestAnimationFrame(animateHolo);
 }
 
+// desktop - changement principal : window au lieu de holo
 window.addEventListener("mousemove", e => {
     targetT = clamp(e.clientX / window.innerWidth, 0, 1);
 });
 
+// touch - changement principal : window au lieu de holo
 window.addEventListener("touchstart", e => {
     if (e.touches.length) targetT = clamp(e.touches[0].clientX / window.innerWidth, 0, 1);
 }, { passive: true });
@@ -412,6 +442,7 @@ window.addEventListener("touchmove", e => {
     if (e.touches.length) targetT = clamp(e.touches[0].clientX / window.innerWidth, 0, 1);
 }, { passive: true });
 
+// deviceorientation (gardé comme dans l'original)
 window.addEventListener("deviceorientation", e => {
     const minAngle = -70;
     const maxAngle = 70;
@@ -502,15 +533,17 @@ function windowResized() {
 </script>
 
 <script>/* SON GUNSHOT */
+  // On récupère les éléments
   const paragraphe = document.getElementById("monParagraphe");
-  const son = document.getElementById("monSon");
+//   const son = document.getElementById("monSon");
   const gunsound = document.getElementById("gunSound");
 
+  // On déclenche le son au clic
   paragraphe.addEventListener("click", () => {
     gunsound.currentTime = 0;
-    son.currentTime = 0; 
+    // son.currentTime = 0; // pour pouvoir rejouer le son rapidement
     gunSound.play();
-    son.play();
+    // son.play();
   });
 </script>
 
