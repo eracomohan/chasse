@@ -2299,9 +2299,9 @@ section.holo1 {
 .etape-7{
     height: auto;
     position: relative;
-    cursor: none;
     background: none;
     border-bottom: 1px solid #42e19c;
+    cursor: none;
 }
 .fall{
         font-size: 3em;
@@ -2313,6 +2313,7 @@ section.holo1 {
     left: 0;
     z-index: -10;        /* au premier plan */
     pointer-events: none; /* laisse les clics passer */
+    cursor: none;
 }
 
 .ShrinkingText_root__3cIPn {
@@ -2376,7 +2377,7 @@ section.holo1 {
     position: relative;
     z-index: 1;
     mix-blend-mode: difference;
-    cursor: default
+    cursor: none;
 }
 
 .gunshot{
@@ -2409,6 +2410,13 @@ section.holo1 {
         margin-top: 20em;
         margin-bottom: 10em;
     }
+}
+.etape-7{
+    height: auto;
+    position: relative;
+    background: none;
+    border-bottom: 1px solid #42e19c;
+    cursor: none;
 }
 /* SECTION 8 =============================================================================================*/
  /* .etape-8{
