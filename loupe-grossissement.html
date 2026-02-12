@@ -250,20 +250,27 @@ body::-webkit-scrollbar-thumb:hover {
     });
 
     /* TOUCH */
-    document.addEventListener('touchstart', (e) => {
-      cursor.style.opacity = 1;
-      const t = e.touches[0];
-      updatePosition(t.clientX, t.clientY);
-    }, { passive: true });
+document.addEventListener('touchstart', (e) => {
+  cursor.style.opacity = 1;
+  const t = e.touches[0];
+  mouseX = t.clientX;
+  mouseY = t.clientY;
 
-    document.addEventListener('touchmove', (e) => {
-      const t = e.touches[0];
-      updatePosition(t.clientX, t.clientY);
-    }, { passive: true });
+  if (!rafId) {
+    rafId = requestAnimationFrame(updatePosition);
+  }
+}, { passive: true });
 
-    document.addEventListener('touchend', () => {
-      cursor.style.opacity = 0;
-    });
+document.addEventListener('touchmove', (e) => {
+  const t = e.touches[0];
+  mouseX = t.clientX;
+  mouseY = t.clientY;
+}, { passive: true });
+
+document.addEventListener('touchend', () => {
+  cursor.style.opacity = 0;
+});
+
     /*
       let active = false;
 
