@@ -1446,24 +1446,9 @@
         }
         *::selection{
             color: rgba(0, 0, 0, 0);
-            rotate: -90deg;
-        color:rgb(255, 0, 0);
-        text-shadow:
-        1px 0.1px 1px #7b0000,
-        1px 0.2px 1px #8a0000,
-        1px 0.3px 1px #bc0000,
-        1px 0.4px 1px #d50000,
-        1px 0.5px 1px #ff0000;
-            background-color: white;
+        text-shadow: 0px 0px 10px rgb(66, 225, 156);
             background: none;
         } 
-        /* .click body,
-        .click *,
-        body.click *,
-        .click *,
-        .click {
-            cursor: url("coupdefeu.png") 16 16, auto;
-        } */
         body{
             height: 100vh;
             /* padding: 1em; */
@@ -2518,7 +2503,7 @@ section.holo1 {
     margin-top: 10em;
     text-align: center;
     font-size: 15em;
-    color: red;
+    color: rgb(66, 225, 156);
     text-transform: uppercase;
     margin-bottom: 5em;
     font-size: clamp(3.5rem, 15vw, 15rem);
