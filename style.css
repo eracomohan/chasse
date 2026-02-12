@@ -1446,9 +1446,6 @@
         }
         *::selection{
             color: rgba(0, 0, 0, 0);
-            rotate: -90deg;
-        color:rgb(255, 0, 0);
-            color: rgba(0, 0, 0, 0);
         text-shadow:
         /* 1px 0.1px 1px #7b0000,
         1px 0.2px 1px #8a0000,
@@ -1456,7 +1453,6 @@
         1px 0.4px 1px #d50000,#ff0000 */
 
         0px 0px 10px rgb(66, 225, 156);
-            background-color: white;
             background: none;
         } 
         
@@ -1515,23 +1511,7 @@ body::-webkit-scrollbar-thumb:hover {
     height: 100vh;
     background-color: black;
 }      
-     /* .deer{ 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: -150px;
-        margin-right: 0.8em;
-    }
-    .hunter{ 
-        margin-top: 130px;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        margin-left: 0.8em;
-        row-gap: 0.5rem;
-    } */
+
     .hero-title {
         width: 100%;
         background: none;
@@ -1682,121 +1662,6 @@ body::-webkit-scrollbar-thumb:hover {
             from { opacity: 0; }
             to   { opacity: 1; }
         }
-            
-@media screen and (max-width:1173px) {
-    .deer{
-        margin-top: -100px;
-    }
-    .hunter{
-        margin-top: 40px;
-    }
-    .hunter-layer{
-        font-size: 5em;
-    }
-    .hero-layer{
-        font-size: 5em;
-    }
-.hero-oneshot{
-            height: 10px;          /* ajuste selon ton besoin */
-        }
-        .hero-oneshot2{
-            height: 15px;         
-        }
-        .hero-oneshot3{
-            height: 20px;          
-        }
-        .hero-oneshot4{
-            height: 25px;          
-        }
-        .hero-oneshot5{
-            height: 70px;          
-        }
-.hunter-oneshot{
-            height: 10px;          /* ajuste selon ton besoin */
-        }
-        .hunter-oneshot2{
-            height: 15px;         
-        }
-        .hunter-oneshot3{
-            height: 20px;          
-        }
-        .hunter-oneshot4{
-            height: 25px;          
-        }
-        .hunter-oneshot5{
-            height: 63px;  
-            background: white;
-            margin-bottom: 3px;        
-        }
-        .hero-back-1{ transform: translateY(-5px); }
-        .hero-back-2{ transform: translateY(-5px); }
-        .hero-back-3{ transform: translateY(-5px); }
-        .hero-back-4{ transform: translateY(-5px); }
-        .hero-back-5{ transform: translateY(-5px); }
-        .hunter-back-1{ transform: translateY(-65px); }
-        .hunter-back-2{ transform: translateY(-65px); }
-        .hunter-back-3{ transform: translateY(-60px); }
-        .hunter-back-4{ transform: translateY(-55px); }
-        .hunter-back-5{ transform: translateY(-8px); } 
-}
-
-@media screen and (max-width:737px) {
-    .deer{
-        margin-top: -100px;
-    }
-    .hunter{
-        margin-top: -33px;
-    }
-    .hunter-layer{
-        font-size: 2.5em;
-    }
-    .hero-layer{
-        font-size: 2.5em;
-    }
-.hero-oneshot{
-            height: 5px;          /* ajuste selon ton besoin */
-        }
-        .hero-oneshot2{
-            height: 10px;         
-        }
-        .hero-oneshot3{
-            height: 15px;          
-        }
-        .hero-oneshot4{
-            height: 20px;          
-        }
-        .hero-oneshot5{
-            height: 70px;          
-        }
-.hunter-oneshot{
-            height: 5px;          /* ajuste selon ton besoin */
-        }
-        .hunter-oneshot2{
-            height: 12px;         
-        }
-        .hunter-oneshot3{
-            height: 15px;          
-        }
-        .hunter-oneshot4{
-            height: 20px;          
-        }
-        .hunter-oneshot5{
-            height: 35px;  
-            background: white;
-            margin-bottom: 2px;        
-        }
-        .hero-back-1{ transform: translateY(-2px); }
-        .hero-back-2{ transform: translateY(-2px); }
-        .hero-back-3{ transform: translateY(-2px); }
-        .hero-back-4{ transform: translateY(-2px); }
-        .hero-back-5{ transform: translateY(-2px); }
-        .hunter-back-1{ transform: translateY(-31px); }
-        .hunter-back-2{ transform: translateY(-27px); }
-        .hunter-back-3{ transform: translateY(-23px); }
-        .hunter-back-4{ transform: translateY(-18px); }
-        .hunter-back-5{ transform: translateY(-1px); } 
-}
-
 
 /* SECTION 1 =============================================================================================*/
 .etape-1{
@@ -1804,16 +1669,7 @@ body::-webkit-scrollbar-thumb:hover {
     display: flex;
     flex-direction: row;
 }
-/* .img-drawer{
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-}
-.one-e1{
-    height: 98vh;
-    width: auto;
-    margin-left: 28px;
-} */
+
 /* section parente */
 .etape-1 {
     position: relative; /* nécessaire pour le positionnement absolu du tiroir */
@@ -1985,7 +1841,8 @@ body::-webkit-scrollbar-thumb:hover {
         height: 0px;
         background: none;
         margin-top: -2.5em;
-        background: white;
+        background: black;
+        color: white;
     }
     .oneshot3{
         height: 10px;  
@@ -2001,8 +1858,9 @@ body::-webkit-scrollbar-thumb:hover {
     top: 0;
     width: 100%;             
     height: 50%;
-    background-color: white;
-    display: flex;
+        background: black;
+        color: white;
+            display: flex;
     flex-direction: row-reverse; 
     overflow-x: auto;
     overflow-y: hidden;
@@ -2022,8 +1880,9 @@ body::-webkit-scrollbar-thumb:hover {
         height: 0px;
         background: none;
         margin-top: -12.5em;
-        background: white;
-    }
+        background: black;
+        color: white;
+        }
     .oneshot3{
         height: 10px;  
         margin-top: -18.5em;
@@ -2068,15 +1927,18 @@ body::-webkit-scrollbar-thumb:hover {
         height: 0px;
         background: none;
         margin-top: -14.5em;
-        background: white;
-    }
+        background: black;
+        color: white;    }
     .oneshot3{
         height: 10px;  
         margin-top: -18.5em;
     }
-    .back-1{margin-left: 15%; background: white; transform: translateY(-16px); }
-    .back-2{margin-left: 15%; background: white; transform: translateY(-100px); }
-    .back-3{margin-left: 15%; background: white; transform: translateY(-100px); }        
+    .back-1{margin-left: 15%;         background: black;
+        color: white; transform: translateY(-16px); }
+    .back-2{margin-left: 15%;         background: black;
+        color: white; transform: translateY(-100px); }
+    .back-3{margin-left: 15%;         background: black;
+        color: white; transform: translateY(-100px); }        
     /* .block{
             animation: none;
         } */
@@ -2090,6 +1952,9 @@ body::-webkit-scrollbar-thumb:hover {
     .back-3{margin-left: 8%; transform: translateY(-100px); }
 }
 @media screen and (max-width:478px) {
+    .block{
+        background: black;
+    }
     .drawer.open {
         height: 24%;
     }
@@ -2103,8 +1968,8 @@ body::-webkit-scrollbar-thumb:hover {
         height: 0px;
         background: none;
         margin-top: -15em;
-        background: white;
-    }
+        background: black;
+        color: white;    }
     .oneshot3{
         height: 10px;  
         margin-top: -19.5em;
@@ -2204,21 +2069,23 @@ section.holo1 {
                     font-size: 3em;
 
             }
-            /* & .text-3d:hover {
-                
-            } */
+
         }
-        @keyframes spin{
-            from{translate: 0;}
-            to{translate: -100%;}/*CHANGER POUR LE SENS*/
-        }
+
 .clean{
     bottom: 0;
     font-size: 3em;
 
 }
-        
+@media screen and (max-width:720px) {
+    /* .etape-3{
+    height: 90vh;
+    } */
+        .wrapper-3d {
 
+            min-height: 69vh;
+    }
+}       
 /* SECTION 4 =============================================================================================*/
 .etape-4{
     padding: 0;
@@ -2307,6 +2174,7 @@ section.holo1 {
 .etape-5 {
     height: 100vh;
     display: flex;
+    padding: 0;
 }
 
 /* moitiés */
@@ -2386,6 +2254,7 @@ section.holo1 {
 .text-tight {
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
+    width: 100%;
 }
 .hears{
     font-size:3em;
@@ -2403,6 +2272,23 @@ section.holo1 {
     font-size:3em;
     margin-left:-3px;
 }
+@media screen and (max-width: 784px) {
+    .etape-5 {
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: center;
+        p{
+            font-size: 7.9vw;
+        }
+    }
+    .etape-5 .half {
+        width: 100%;
+        min-height: 50vh;
+    }
+    .hurt{
+        font-size: 20vw;
+    }
+}
 /* SECTION 6 =============================================================================================*/
 .etape-6{
     height: 50vh;
@@ -2413,6 +2299,7 @@ section.holo1 {
     position: relative;
     cursor: none;
     background: none;
+    border-bottom: 1px solid #42e19c;
 }
 .fall{
         font-size: 3em;
@@ -2607,8 +2494,14 @@ footer{
     background-color: rgb(66, 225, 156);
     padding: 1em;
 }
+
 .mmleho{
     font-family:"Amazonia Semi Bold";
+}
+.mmleho::selection, .footer::selection, em::selection{
+    color: rgba(0, 0, 0, 0);
+    color: rgb(66, 225, 156);
+    text-shadow: 0 0 1px black;
 }
 
 /* ========== RESPONSIVE – smartphone tactile ========== */
@@ -2627,17 +2520,6 @@ footer{
 
     p {
         font-size: 1.25rem;
-    }
-
-    /* etape-5 : empiler les deux moitiés */
-    .etape-5 {
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    .etape-5 .half {
-        width: 100%;
-        min-height: 50vh;
     }
 
     /* loupe : zone tactile plus grande */
